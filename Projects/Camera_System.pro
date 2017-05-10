@@ -1,4 +1,4 @@
-update=10.05.2017 16:50:03
+update=10/05/2017 20:02:12
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=C:/Users/vito7253/Documents/Kicad/Embedded/MyLibrary
+LibDir=../MyLibraries
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -57,5 +57,5 @@ LibName25=siliconi
 LibName26=opto
 LibName27=atmel
 LibName28=contrib
-LibName29=MyLibrary/MyLibrary
-LibName30=valves
+LibName29=valves
+LibName30=C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/MyLibrary
