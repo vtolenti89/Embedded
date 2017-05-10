@@ -27,6 +27,7 @@ LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
+LIBS:MyLibrary
 LIBS:valves
 LIBS:Camera_System-cache
 EELAYER 25 0
