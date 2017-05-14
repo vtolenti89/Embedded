@@ -1,4 +1,4 @@
-update=11.05.2017 15:52:53
+update=14/05/2017 10:29:22
 version=1
 last_client=kicad
 [pcbnew]
@@ -22,9 +22,12 @@ BoardOutlineThickness=0.100000000000
 ModuleOutlineThickness=0.150000000000
 [general]
 version=1
+[cvpcb]
+version=1
+NetIExt=net
 [eeschema]
 version=1
-LibDir=../MyLibraries
+LibDir=../MyLibraries;../MyLibraries/SharedLibrary
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -56,6 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/MyLibrary
-[cvpcb]
-version=1
-NetIExt=net
+LibName31=SharedLibrary/library/atmel

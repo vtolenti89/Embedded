@@ -9,7 +9,7 @@
     (tracks 0)
     (zones 0)
     (modules 10)
-    (nets 7)
+    (nets 6)
   )
 
   (page A4)
@@ -96,7 +96,6 @@
   (net 3 /VDC_IN)
   (net 4 +5V)
   (net 5 "Net-(D1-Pad1)")
-  (net 6 "Net-(U2-Pad4)")
 
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -110,7 +109,6 @@
     (add_net /VDC_IN)
     (add_net GND)
     (add_net "Net-(D1-Pad1)")
-    (add_net "Net-(U2-Pad4)")
   )
 
   (module MyLibraries:IFX1117ME_V33 (layer F.Cu) (tedit 59135E38) (tstamp 59135F69)
@@ -326,7 +324,7 @@
   )
 
   (module MyLibraries:CS3M (layer F.Cu) (tedit 591417E1) (tstamp 59144F41)
-    (at 131.375 99.225 180)
+    (at 131.325 98.275 180)
     (path /591418FD)
     (fp_text reference D1 (at 3.875 3.8 180) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -386,8 +384,7 @@
       (net 3 /VDC_IN))
     (pad 5 smd rect (at -0.95 -2.3 180) (size 0.6 1.2) (layers F.Cu F.Paste F.Mask)
       (net 4 +5V))
-    (pad 4 smd rect (at 0.95 -2.3 180) (size 0.6 1.2) (layers F.Cu F.Paste F.Mask)
-      (net 6 "Net-(U2-Pad4)"))
+    (pad 4 smd rect (at 0.95 -2.3 180) (size 0.6 1.2) (layers F.Cu F.Paste F.Mask))
   )
 
 )
