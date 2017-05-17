@@ -1,4 +1,4 @@
-update=14/05/2017 10:29:22
+update=17.05.2017 08:22:48
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,3 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/MyLibrary
-LibName31=SharedLibrary/library/atmel
