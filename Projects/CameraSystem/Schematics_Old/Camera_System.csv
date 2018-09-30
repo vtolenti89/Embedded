@@ -1,0 +1,73 @@
+Source,C:/Users/vtolenti89/Documents/Projects/Kicad/Projects/Camera_System.sch
+Kicad Rev,Eeschema 4.0.6
+Generated Date,19/05/2017 21:47:50
+
+Title,Not Set
+Company,Not Set
+Revision,Not Set
+Date Issue,Not Set
+
+Reference,Value,Library,Library Ref
+J1,BARREL_JACK,conn,BARREL_JACK
+C4,100n,device,C
+C2,10u,device,CP
+C6,2.2u,device,C
+C3,1u,device,C
+C5,22u,device,C
+U1,IFX1117ME_V33,MyLibrary,IFX1117ME_V33
+U2,LD2980ABM50TR,MyLibrary,LD2980ABM50TR
+D1,CS3M,MyLibrary,CS3M
+C1,47u,device,CP
+C10,100n,device,C
+R4,620,device,R
+D3,LED,device,LED
+R5,1k,device,R
+D4,LED,device,LED
+R1,0,device,R
+Y1,Crystal,device,Crystal
+C7,22p,device,C
+C8,22p,device,C
+R3,10k,device,R
+U4,RT1105AF160Q,MyLibrary,RT1105AF160Q
+U16,ESP8266,MyLibrary,ESP8266
+U15,OV7670-nofifo,Camera_System-rescue,OV7670-nofifo-RESCUE-Camera_System
+U17,SDCARD,MyLibrary,SDCARD
+CON1,AVR-ISP-10,atmel,AVR-ISP-10
+U3,ATMEGA16A-AU,atmel,ATMEGA16A-AU
+C16,100n,device,C
+C15,100n,device,C
+R2,620,device,R
+D2,LED,device,LED
+R16,4.7k,device,R
+R18,4.7k,device,R
+C17,100n,device,C
+C9,100n,device,C
+U14,Si501,MyLibrary,Si501
+R17,24.9,device,R
+C18,100n,device,C
+R15,10k,device,R
+U8,CD4014B,MyLibrary,CD4014B
+C13,100n,device,C
+R6,10k,device,R
+U5,RT1105AF160Q,MyLibrary,RT1105AF160Q
+R7,10k,device,R
+U6,RT1105AF160Q,MyLibrary,RT1105AF160Q
+R8,10k,device,R
+U7,RT1105AF160Q,MyLibrary,RT1105AF160Q
+R11,10k,device,R
+U10,RT1105AF160Q,MyLibrary,RT1105AF160Q
+R12,10k,device,R
+U11,RT1105AF160Q,MyLibrary,RT1105AF160Q
+R14,10k,device,R
+U13,RT1105AF160Q,MyLibrary,RT1105AF160Q
+U12,LCD_1602,MyLibrary,LCD_1602
+C12,100n,device,C
+U9,PCA9306,MyLibrary,PCA9306
+C14,100n,device,C
+C11,100n,device,C
+R9,1.74k,device,R
+R10,1.74k,device,R
+R13,200k,device,R
+U18,header_male_2.54_2x2,MyLibrary,header_male_2.54_2x2
+U19,header_male_2.54_2x2,MyLibrary,header_male_2.54_2x2
+U20,header_male_2.54_2x3,MyLibrary,header_male_2.54_2x3
