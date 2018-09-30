@@ -1593,34 +1593,34 @@ F 3 "" H 6050 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L header_male_2.54_2x2 U?
+L header_male_2.54_2x2 U18
 U 1 1 591EB8FA
 P 3850 5000
-F 0 "U?" H 3850 4600 60  0000 C CNN
+F 0 "U18" H 3850 4600 60  0000 C CNN
 F 1 "header_male_2.54_2x2" H 3850 5300 60  0000 C CNN
-F 2 "" H 3850 5000 60  0001 C CNN
+F 2 "MyLibraries:header_male_2.54_2x2" H 3850 5000 60  0001 C CNN
 F 3 "" H 3850 5000 60  0001 C CNN
 	1    3850 5000
 	1    0    0    -1  
 $EndComp
 $Comp
-L header_male_2.54_2x2 U?
+L header_male_2.54_2x2 U19
 U 1 1 591EB9DB
 P 5300 5000
-F 0 "U?" H 5300 4600 60  0000 C CNN
+F 0 "U19" H 5300 4600 60  0000 C CNN
 F 1 "header_male_2.54_2x2" H 5300 5300 60  0000 C CNN
-F 2 "" H 5300 5000 60  0001 C CNN
+F 2 "MyLibraries:header_male_2.54_2x2" H 5300 5000 60  0001 C CNN
 F 3 "" H 5300 5000 60  0001 C CNN
 	1    5300 5000
 	1    0    0    -1  
 $EndComp
 $Comp
-L header_male_2.54_2x3 U?
+L header_male_2.54_2x3 U20
 U 1 1 591EC2A8
 P 6750 4950
-F 0 "U?" H 6750 4500 60  0000 C CNN
+F 0 "U20" H 6750 4500 60  0000 C CNN
 F 1 "header_male_2.54_2x3" H 6700 5200 60  0000 C CNN
-F 2 "" H 6750 4950 60  0001 C CNN
+F 2 "MyLibraries:header_male_2.54_2x3" H 6750 4950 60  0001 C CNN
 F 3 "" H 6750 4950 60  0001 C CNN
 	1    6750 4950
 	1    0    0    -1  
@@ -2280,13 +2280,13 @@ Text Label 6200 5050 0    60   ~ 0
 MISO
 Text Label 7150 5050 0    60   ~ 0
 MISO
-Text Label 6200 5150 0    60   ~ 0
-SCK
-Text Label 7150 5150 0    60   ~ 0
-SCK
 Text Label 6200 5250 0    60   ~ 0
-MOSI
+SCK
 Text Label 7150 5250 0    60   ~ 0
+SCK
+Text Label 6200 5150 0    60   ~ 0
+MOSI
+Text Label 7150 5150 0    60   ~ 0
 MOSI
 Text Label 4700 5100 0    60   ~ 0
 WLAN_RX

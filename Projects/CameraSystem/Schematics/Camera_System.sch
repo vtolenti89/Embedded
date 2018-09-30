@@ -123,11 +123,11 @@ F 3 "" H 4450 1900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 3250 1200 0    60   ~ 0
-6 < VIN < 15
+6.5 < VIN < 15
 Text Notes 4100 800  0    60   ~ 0
 Order the one with fixed output voltage = 3.3V
 Text Notes 5000 1200 0    60   ~ 0
-I_out = 1.1A
+I_out_max = 1A
 $Comp
 L CP C2
 U 1 1 59131DB6
