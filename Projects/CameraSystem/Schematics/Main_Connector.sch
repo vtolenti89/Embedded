@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 2 2
 Title ""
 Date ""
 Rev ""
@@ -188,37 +188,79 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 1000 1000 900  650 
-U 5BB4C1AE
-F0 "Input_Interface" 60
-F1 "Input_Interface.sch" 60
-F2 "VDD_5V0" O R 1900 1150 60 
-F3 "D-" B R 1900 1300 60 
-F4 "D+" B R 1900 1450 60 
-$EndSheet
-$Sheet
-S 2700 1700 1100 1050
-U 5BB4D99F
-F0 "Microcontroller" 60
-F1 "Microcontroller.sch" 60
-$EndSheet
-$Sheet
-S 4700 900  1100 750 
-U 5BB4D9C1
-F0 "Wifi" 60
-F1 "Wifi.sch" 60
-$EndSheet
-$Sheet
-S 4650 2100 1000 800 
-U 5BB4DA56
-F0 "Memory" 60
-F1 "Memory.sch" 60
-$EndSheet
-$Sheet
-S 6200 2150 850  800 
-U 5BB4DA63
-F0 "Camera" 60
-F1 "Camera.sch" 60
-$EndSheet
+$Comp
+L 10118192-0001LF J?
+U 1 1 5BB4C296
+P 2250 2300
+F 0 "J?" H 2102 2898 60  0000 C CNN
+F 1 "10118192-0001LF" V 2002 2048 60  0000 C CNN
+F 2 "digikey-footprints:USB_Micro_B_Female_10118192" H 2450 2500 60  0001 L CNN
+F 3 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118192.pdf" H 2450 2600 60  0001 L CNN
+F 4 "609-4613-1-ND" H 2450 2700 60  0001 L CNN "Digi-Key_PN"
+F 5 "10118192-0001LF" H 2450 2800 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2450 2900 60  0001 L CNN "Category"
+F 7 "USB, DVI, HDMI Connectors" H 2450 3000 60  0001 L CNN "Family"
+F 8 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118192.pdf" H 2450 3100 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/amphenol-fci/10118192-0001LF/609-4613-1-ND/2785378" H 2450 3200 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN USB MICRO B RECPT SMT R/A" H 2450 3300 60  0001 L CNN "Description"
+F 11 "Amphenol FCI" H 2450 3400 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2450 3500 60  0001 L CNN "Status"
+	1    2250 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2100 2850 2100
+Wire Wire Line
+	2850 2100 2850 1900
+Wire Wire Line
+	2850 1900 2900 1900
+$Comp
+L GND #PWR?
+U 1 1 5BB4C3EB
+P 2850 3050
+F 0 "#PWR?" H 2850 2800 50  0001 C CNN
+F 1 "GND" H 2850 2900 50  0000 C CNN
+F 2 "" H 2850 3050 50  0001 C CNN
+F 3 "" H 2850 3050 50  0001 C CNN
+	1    2850 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2500 2850 2500
+Wire Wire Line
+	2850 2500 2850 3050
+Wire Wire Line
+	2550 2200 2950 2200
+Wire Wire Line
+	2950 2200 2950 2100
+Wire Wire Line
+	2950 2100 3050 2100
+Wire Wire Line
+	2550 2300 3050 2300
+Wire Wire Line
+	2550 2400 2950 2400
+NoConn ~ 3050 2500
+Wire Wire Line
+	2950 2400 2950 2500
+Wire Wire Line
+	2950 2500 3050 2500
+$Comp
+L GND #PWR?
+U 1 1 5BB4C4E7
+P 2150 3050
+F 0 "#PWR?" H 2150 2800 50  0001 C CNN
+F 1 "GND" H 2150 2900 50  0000 C CNN
+F 2 "" H 2150 3050 50  0001 C CNN
+F 3 "" H 2150 3050 50  0001 C CNN
+	1    2150 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 2900 2150 3050
+Text HLabel 2900 1900 2    60   Output ~ 0
+VDD_5V0
+Text HLabel 3050 2100 2    60   BiDi ~ 0
+D-
+Text HLabel 3050 2300 2    60   BiDi ~ 0
+D+
 $EndSCHEMATC

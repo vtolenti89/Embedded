@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 3 3
 Title ""
 Date ""
 Rev ""
@@ -188,37 +188,4 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 1000 1000 900  650 
-U 5BB4C1AE
-F0 "Input_Interface" 60
-F1 "Input_Interface.sch" 60
-F2 "VDD_5V0" O R 1900 1150 60 
-F3 "D-" B R 1900 1300 60 
-F4 "D+" B R 1900 1450 60 
-$EndSheet
-$Sheet
-S 2700 1700 1100 1050
-U 5BB4D99F
-F0 "Microcontroller" 60
-F1 "Microcontroller.sch" 60
-$EndSheet
-$Sheet
-S 4700 900  1100 750 
-U 5BB4D9C1
-F0 "Wifi" 60
-F1 "Wifi.sch" 60
-$EndSheet
-$Sheet
-S 4650 2100 1000 800 
-U 5BB4DA56
-F0 "Memory" 60
-F1 "Memory.sch" 60
-$EndSheet
-$Sheet
-S 6200 2150 850  800 
-U 5BB4DA63
-F0 "Camera" 60
-F1 "Camera.sch" 60
-$EndSheet
 $EndSCHEMATC

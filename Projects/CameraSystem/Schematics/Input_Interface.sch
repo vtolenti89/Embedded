@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -188,37 +188,173 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 1000 1000 900  650 
-U 5BB4C1AE
-F0 "Input_Interface" 60
-F1 "Input_Interface.sch" 60
-F2 "VDD_5V0" O R 1900 1150 60 
-F3 "D-" B R 1900 1300 60 
-F4 "D+" B R 1900 1450 60 
-$EndSheet
-$Sheet
-S 2700 1700 1100 1050
-U 5BB4D99F
-F0 "Microcontroller" 60
-F1 "Microcontroller.sch" 60
-$EndSheet
-$Sheet
-S 4700 900  1100 750 
-U 5BB4D9C1
-F0 "Wifi" 60
-F1 "Wifi.sch" 60
-$EndSheet
-$Sheet
-S 4650 2100 1000 800 
-U 5BB4DA56
-F0 "Memory" 60
-F1 "Memory.sch" 60
-$EndSheet
-$Sheet
-S 6200 2150 850  800 
-U 5BB4DA63
-F0 "Camera" 60
-F1 "Camera.sch" 60
-$EndSheet
+$Comp
+L 10118192-0001LF J1
+U 1 1 5BB4C296
+P 2250 2300
+F 0 "J1" H 2102 2898 60  0000 C CNN
+F 1 "10118192-0001LF" V 2002 2048 60  0000 C CNN
+F 2 "digikey-footprints:USB_Micro_B_Female_10118192" H 2450 2500 60  0001 L CNN
+F 3 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118192.pdf" H 2450 2600 60  0001 L CNN
+F 4 "609-4613-1-ND" H 2450 2700 60  0001 L CNN "Digi-Key_PN"
+F 5 "10118192-0001LF" H 2450 2800 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2450 2900 60  0001 L CNN "Category"
+F 7 "USB, DVI, HDMI Connectors" H 2450 3000 60  0001 L CNN "Family"
+F 8 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118192.pdf" H 2450 3100 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/amphenol-fci/10118192-0001LF/609-4613-1-ND/2785378" H 2450 3200 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN USB MICRO B RECPT SMT R/A" H 2450 3300 60  0001 L CNN "Description"
+F 11 "Amphenol FCI" H 2450 3400 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2450 3500 60  0001 L CNN "Status"
+	1    2250 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2100 2850 2100
+Wire Wire Line
+	2850 2100 2850 1900
+Wire Wire Line
+	2850 1900 2900 1900
+$Comp
+L GND #PWR01
+U 1 1 5BB4C3EB
+P 2850 3050
+F 0 "#PWR01" H 2850 2800 50  0001 C CNN
+F 1 "GND" H 2850 2900 50  0000 C CNN
+F 2 "" H 2850 3050 50  0001 C CNN
+F 3 "" H 2850 3050 50  0001 C CNN
+	1    2850 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2500 2850 2500
+Wire Wire Line
+	2850 2500 2850 3050
+Wire Wire Line
+	2550 2200 2950 2200
+Wire Wire Line
+	2950 2200 2950 2100
+Wire Wire Line
+	2950 2100 3050 2100
+Wire Wire Line
+	2550 2300 3050 2300
+Wire Wire Line
+	2550 2400 2950 2400
+NoConn ~ 3050 2500
+Wire Wire Line
+	2950 2400 2950 2500
+Wire Wire Line
+	2950 2500 3050 2500
+$Comp
+L GND #PWR02
+U 1 1 5BB4C4E7
+P 2150 3050
+F 0 "#PWR02" H 2150 2800 50  0001 C CNN
+F 1 "GND" H 2150 2900 50  0000 C CNN
+F 2 "" H 2150 3050 50  0001 C CNN
+F 3 "" H 2150 3050 50  0001 C CNN
+	1    2150 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 2900 2150 3050
+Text HLabel 2900 1900 2    60   Output ~ 0
+VDD_5V0
+Text HLabel 3050 2100 2    60   BiDi ~ 0
+D-
+Text HLabel 3050 2300 2    60   BiDi ~ 0
+D+
+$Comp
+L AZ1117CH-3_3TRG1 U2
+U 1 1 5BB4D847
+P 5750 1850
+F 0 "U2" H 5800 2000 60  0000 C CNN
+F 1 "AZ1117CH-3_3TRG1" H 5800 2100 60  0000 C CNN
+F 2 "digikey-footprints:SOT-223" H 5950 2050 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf" H 5950 2150 60  0001 L CNN
+F 4 "AZ1117CH-3.3TRG1DICT-ND" H 5950 2250 60  0001 L CNN "Digi-Key_PN"
+F 5 "AZ1117CH-3.3TRG1" H 5950 2350 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 5950 2450 60  0001 L CNN "Category"
+F 7 "PMIC - Voltage Regulators - Linear" H 5950 2550 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf" H 5950 2650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/AZ1117CH-3.3TRG1/AZ1117CH-3.3TRG1DICT-ND/4505206" H 5950 2750 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC REG LINEAR 3.3V 800MA SOT223" H 5950 2850 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 5950 2950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5950 3050 60  0001 L CNN "Status"
+	1    5750 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CH340 U1
+U 1 1 5BB4DB29
+P 4850 3600
+F 0 "U1" H 4850 4100 50  0000 L BNN
+F 1 "CH340" H 4750 3000 50  0000 L BNN
+F 2 "custom-footprints:SO16" H 4750 3250 50  0001 L BNN
+F 3 "Fram" H 4800 3500 50  0001 L BNN
+	1    4850 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 1850 5450 1850
+Text Label 5100 1850 2    60   ~ 0
+VDD_5V0
+$Comp
+L GND #PWR03
+U 1 1 5BB4DDE6
+P 5750 2600
+F 0 "#PWR03" H 5750 2350 50  0001 C CNN
+F 1 "GND" H 5750 2450 50  0000 C CNN
+F 2 "" H 5750 2600 50  0001 C CNN
+F 3 "" H 5750 2600 50  0001 C CNN
+	1    5750 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2250 5750 2600
+Wire Wire Line
+	6150 1950 6300 1950
+Wire Wire Line
+	6300 1950 6300 1850
+Wire Wire Line
+	6150 1850 7000 1850
+Connection ~ 6300 1850
+Text HLabel 7000 1850 2    60   Output ~ 0
+VDD_3V3
+$Comp
+L C C1
+U 1 1 5BB4E02C
+P 5200 2150
+F 0 "C1" H 5225 2250 50  0000 L CNN
+F 1 "1u" H 5225 2050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 5238 2000 50  0001 C CNN
+F 3 "" H 5200 2150 50  0001 C CNN
+	1    5200 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 5BB4E099
+P 6500 2150
+F 0 "C2" H 6525 2250 50  0000 L CNN
+F 1 "1u" H 6525 2050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 6538 2000 50  0001 C CNN
+F 3 "" H 6500 2150 50  0001 C CNN
+	1    6500 2150
+	1    0    0    -1  
+$EndComp
+Text Notes 6700 2200 0    60   ~ 0
+ESR < 1.5Ohm
+Wire Wire Line
+	5200 2000 5200 1850
+Connection ~ 5200 1850
+Wire Wire Line
+	5200 2300 5200 2450
+Wire Wire Line
+	5200 2450 6500 2450
+Connection ~ 5750 2450
+Wire Wire Line
+	6500 2450 6500 2300
+Wire Wire Line
+	6500 2000 6500 1850
+Connection ~ 6500 1850
 $EndSCHEMATC
