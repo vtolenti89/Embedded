@@ -1,0 +1,48 @@
+(export (version D)
+  (design
+    (source C:\Users\vtolenti89\Documents\Projects\Kicad\Projects\CameraSystem\Schematics\CameraSystem.sch)
+    (date "30/09/2018 22:42:31")
+    (tool "Eeschema 4.0.6")
+    (sheet (number 1) (name /) (tstamps /)
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source CameraSystem.sch)
+        (comment (number 1) (value ""))
+        (comment (number 2) (value ""))
+        (comment (number 3) (value ""))
+        (comment (number 4) (value "")))))
+  (components
+    (comp (ref J1)
+      (value USB_B_MICRO_SMD)
+      (footprint MyLibraries:USB_B_MICRO_SMD)
+      (libsource (lib cl-connectors) (part USB_B_MICRO_SMD))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 5BB11F8A)))
+  (libparts
+    (libpart (lib cl-connectors) (part USB_B_MICRO_SMD)
+      (fields
+        (field (name Reference) J)
+        (field (name Value) USB_B_MICRO_SMD))
+      (pins
+        (pin (num 1) (name VCC) (type power_in))
+        (pin (num 2) (name D-) (type BiDi))
+        (pin (num 3) (name D+) (type BiDi))
+        (pin (num 4) (name ID) (type BiDi))
+        (pin (num 5) (name GND) (type power_in)))))
+  (libraries
+    (library (logical cl-connectors)
+      (uri C:\Users\vtolenti89\Documents\Projects\Kicad\MyLibraries\cl-connectors.lib)))
+  (nets
+    (net (code 1) (name "Net-(J1-Pad1)")
+      (node (ref J1) (pin 1)))
+    (net (code 2) (name "Net-(J1-Pad2)")
+      (node (ref J1) (pin 2)))
+    (net (code 3) (name "Net-(J1-Pad3)")
+      (node (ref J1) (pin 3)))
+    (net (code 4) (name "Net-(J1-Pad4)")
+      (node (ref J1) (pin 4)))
+    (net (code 5) (name "Net-(J1-Pad5)")
+      (node (ref J1) (pin 5)))))
