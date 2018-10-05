@@ -1,0 +1,22 @@
+Circuit: * C:\Users\vtolenti89\Documents\Projects\Kicad\Projects\CameraSystem\Simulations\serial_diode.asc
+
+Limiting rise time of source v2 to 0.0004
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Oct 05 23:45:56 2018
+Total elapsed time: 0.047 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2185
+traniter = 2176
+tranpoints = 1085
+accept = 1074
+rejected = 11
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1: 314 bytes object code size  0.3/0.2/[0.1]
+Matrix Compiler2: 641 bytes object code size  0.2/0.2/[0.1]
+

@@ -189,19 +189,25 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 1000 1000 900  650 
+S 1000 1000 900  1500
 U 5BB4C1AE
 F0 "Input_Interface" 60
 F1 "Input_Interface.sch" 60
 F2 "VDD_5V0" O R 1900 1150 60 
-F3 "D-" B R 1900 1300 60 
-F4 "D+" B R 1900 1450 60 
+F3 "VDD_3V3" O R 1900 1450 60 
+F4 "SPI_RST" O R 1900 1750 60 
+F5 "SPI_TX" O R 1900 2050 60 
+F6 "SPI_RX" I R 1900 2350 60 
 $EndSheet
 $Sheet
-S 2700 1700 1100 1050
+S 2750 1300 1100 1900
 U 5BB4D99F
 F0 "Microcontroller" 60
 F1 "Microcontroller.sch" 60
+F2 "VDD_3V3" I L 2750 1450 60 
+F3 "SPI_RST" I L 2750 1750 60 
+F4 "SPI_TX" O L 2750 2350 60 
+F5 "SPI_RX" I L 2750 2050 60 
 $EndSheet
 $Sheet
 S 4700 900  1100 750 
@@ -221,4 +227,14 @@ U 5BB4DA63
 F0 "Camera" 60
 F1 "Camera.sch" 60
 $EndSheet
+Text Notes 900  5450 0    60   ~ 0
+LEDs are designed to draw approx 2.5mA (Lower power consumption)
+Wire Wire Line
+	2750 1450 1900 1450
+Wire Wire Line
+	1900 1750 2750 1750
+Wire Wire Line
+	1900 2050 2750 2050
+Wire Wire Line
+	1900 2350 2750 2350
 $EndSCHEMATC

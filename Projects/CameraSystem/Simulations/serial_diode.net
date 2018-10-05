@@ -1,0 +1,10 @@
+* C:\Users\vtolenti89\Documents\Projects\Kicad\Projects\CameraSystem\Simulations\serial_diode.asc
+XU1 out in DI_BZX84C3V3
+R1 in out 10k
+C1 out in2 100n
+V1 in 0 PULSE(0 3.3 0 1m 1m 1 2)
+V2 in2 0 PULSE(0 3.3 0 0 1m 4m 2)
+.tran 10m
+.lib C:\Users\vtolenti89\Downloads\BZX84C3V3.spice.txt
+.backanno
+.end

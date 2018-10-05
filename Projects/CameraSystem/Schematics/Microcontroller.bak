@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 3 6
 Title ""
 Date ""
 Rev ""
@@ -188,4 +188,132 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 3000 900  0    60   Input ~ 0
+VDD_3V3
+Text HLabel 3000 1700 0    60   Input ~ 0
+SPI_RST
+Text HLabel 6650 4500 2    60   Output ~ 0
+SPI_TX
+Text HLabel 6650 4400 2    60   Input ~ 0
+SPI_RX
+$Comp
+L ATMEGA16A-AU U?
+U 1 1 5BB89FDE
+P 5250 3400
+F 0 "U?" H 4300 5280 50  0000 L BNN
+F 1 "ATMEGA16A-AU" H 5800 1450 50  0000 L BNN
+F 2 "TQFP44" H 5250 3400 50  0001 C CIN
+F 3 "" H 5250 3400 50  0001 C CNN
+	1    5250 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4500 6650 4500
+Wire Wire Line
+	6350 4400 6650 4400
+Wire Wire Line
+	3000 1700 4150 1700
+Wire Wire Line
+	3000 900  5350 900 
+Wire Wire Line
+	5350 900  5350 1400
+Wire Wire Line
+	5150 1400 5150 900 
+Connection ~ 5150 900 
+Wire Wire Line
+	5050 1400 5050 900 
+Connection ~ 5050 900 
+Wire Wire Line
+	4950 1400 4950 900 
+Connection ~ 4950 900 
+$Comp
+L GND #PWR?
+U 1 1 5BB8A17E
+P 5150 5550
+F 0 "#PWR?" H 5150 5300 50  0001 C CNN
+F 1 "GND" H 5150 5400 50  0000 C CNN
+F 2 "" H 5150 5550 50  0001 C CNN
+F 3 "" H 5150 5550 50  0001 C CNN
+	1    5150 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 5400 4950 5500
+Wire Wire Line
+	4950 5500 5350 5500
+Wire Wire Line
+	5350 5500 5350 5400
+Wire Wire Line
+	5150 5400 5150 5550
+Connection ~ 5150 5500
+Wire Wire Line
+	5050 5400 5050 5500
+Connection ~ 5050 5500
+$Comp
+L R R?
+U 1 1 5BB8AD84
+P 3350 1300
+F 0 "R?" V 3430 1300 50  0000 C CNN
+F 1 "10k" V 3350 1300 50  0000 C CNN
+F 2 "" V 3280 1300 50  0001 C CNN
+F 3 "" H 3350 1300 50  0001 C CNN
+	1    3350 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 900  3350 1150
+Connection ~ 3350 900 
+Wire Wire Line
+	3350 1450 3350 1850
+Connection ~ 3350 1700
+$Comp
+L D_Zener D?
+U 1 1 5BB8ADE9
+P 3650 1300
+F 0 "D?" H 3650 1400 50  0000 C CNN
+F 1 "BZX84C3V3LT1G" H 3650 1200 50  0000 C CNN
+F 2 "SOT23-3" H 3650 1500 50  0000 C CNN
+F 3 "" H 3650 1300 50  0001 C CNN
+	1    3650 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3650 1150 3650 900 
+Connection ~ 3650 900 
+Wire Wire Line
+	3650 1450 3650 1700
+Connection ~ 3650 1700
+$Comp
+L GPTS203211B S?
+U 1 1 5BB8AF7E
+P 3350 2050
+F 0 "S?" H 3200 2200 50  0000 C CNN
+F 1 "GPTS203211B" H 3350 1950 50  0000 C CNN
+F 2 "digikey-footprints:PushButton_12x12mm_THT_GPTS203211B" H 3550 2250 50  0001 L CNN
+F 3 "http://switches-connectors-custom.cwind.com/Asset/GPTS203211BR2.pdf" H 3550 2350 60  0001 L CNN
+F 4 "CW181-ND" H 3550 2450 60  0001 L CNN "Digi-Key_PN"
+F 5 "GPTS203211B" H 3550 2550 60  0001 L CNN "MPN"
+F 6 "Switches" H 3550 2650 60  0001 L CNN "Category"
+F 7 "Pushbutton Switches" H 3550 2750 60  0001 L CNN "Family"
+F 8 "http://switches-connectors-custom.cwind.com/Asset/GPTS203211BR2.pdf" H 3550 2850 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/cw-industries/GPTS203211B/CW181-ND/3190590" H 3550 2950 60  0001 L CNN "DK_Detail_Page"
+F 10 "SWITCH PUSHBUTTON SPST 1A 30V" H 3550 3050 60  0001 L CNN "Description"
+F 11 "CW Industries" H 3550 3150 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3550 3250 60  0001 L CNN "Status"
+	1    3350 2050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3350 2250 3350 2500
+$Comp
+L GND #PWR?
+U 1 1 5BB8B0A7
+P 3350 2500
+F 0 "#PWR?" H 3350 2250 50  0001 C CNN
+F 1 "GND" H 3350 2350 50  0000 C CNN
+F 2 "" H 3350 2500 50  0001 C CNN
+F 3 "" H 3350 2500 50  0001 C CNN
+	1    3350 2500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
