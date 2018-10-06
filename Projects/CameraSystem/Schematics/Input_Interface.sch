@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 7
 Title ""
 Date ""
 Rev ""
@@ -301,7 +301,7 @@ F 3 "" H 8650 2200 50  0001 C CNN
 	1    8650 2200
 	1    0    0    -1  
 $EndComp
-Text Notes 8850 2250 0    60   ~ 0
+Text Notes 9050 1800 2    60   ~ 0
 ESR < 1.5Ohm
 $Comp
 L GND #PWR?
@@ -519,7 +519,7 @@ Connection ~ 7350 1900
 Wire Wire Line
 	7350 2350 7350 2500
 Wire Wire Line
-	7350 2500 8650 2500
+	7000 2500 9000 2500
 Connection ~ 7900 2500
 Wire Wire Line
 	8650 2500 8650 2350
@@ -732,4 +732,38 @@ SPI_RX
 Wire Wire Line
 	8550 4200 8650 4200
 Connection ~ 5450 5350
+$Comp
+L CP C?
+U 1 1 5BB91E38
+P 9000 2200
+F 0 "C?" H 9025 2300 50  0000 L CNN
+F 1 "47u" H 9025 2100 50  0000 L CNN
+F 2 "" H 9038 2050 50  0001 C CNN
+F 3 "" H 9000 2200 50  0001 C CNN
+	1    9000 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 1900 9000 2050
+Connection ~ 9000 1900
+Wire Wire Line
+	9000 2500 9000 2350
+Connection ~ 8650 2500
+$Comp
+L CP C?
+U 1 1 5BB9202A
+P 7000 2200
+F 0 "C?" H 7025 2300 50  0000 L CNN
+F 1 "47u" H 7025 2100 50  0000 L CNN
+F 2 "" H 7038 2050 50  0001 C CNN
+F 3 "" H 7000 2200 50  0001 C CNN
+	1    7000 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 1900 7000 2050
+Connection ~ 7000 1900
+Wire Wire Line
+	7000 2350 7000 2500
+Connection ~ 7350 2500
 $EndSCHEMATC

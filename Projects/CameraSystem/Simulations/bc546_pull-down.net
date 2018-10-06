@@ -1,0 +1,13 @@
+* C:\Users\vtolenti89\Documents\Projects\Kicad\Projects\CameraSystem\Simulations\bc546_pull-down.asc
+Q1 rst N001 0 0 BC846B
+R1 N001 0 10k
+R2 vcc rst 10k
+R3 N001 uc 4.7k
+V1 uc 0 PULSE(0 3.3 4m 1m 1m 5m 10m)
+V2 vcc 0 3.3
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\vtolenti89\Documents\LTspiceXVII\lib\cmp\standard.bjt
+.tran 15m
+.backanno
+.end
