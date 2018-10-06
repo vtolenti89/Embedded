@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 7
+Sheet 4 8
 Title ""
 Date ""
 Rev ""
@@ -188,8 +188,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 5700 3500 0    60   Input ~ 0
-VDD_3V3
 Text HLabel 5700 3200 0    60   Output ~ 0
 WIFI_TX
 Text HLabel 7200 3500 2    60   Input ~ 0
@@ -232,7 +230,7 @@ F 3 "" H 5850 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5700 3500 6000 3500
+	5350 3500 6000 3500
 Wire Wire Line
 	5850 3650 5850 3500
 Connection ~ 5850 3500
@@ -303,7 +301,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 2750 5100 2750
 Text Label 5100 2750 0    60   ~ 0
-VDD_3V3
+VDD_3V3_IN
 Connection ~ 5000 3400
 Wire Wire Line
 	4450 3700 4700 3700
@@ -348,4 +346,39 @@ F 12 "Active" H 5100 4900 60  0001 L CNN "Status"
 	1    4900 3700
 	1    0    0    -1  
 $EndComp
+Text HLabel 3400 2150 0    60   Input ~ 0
+VDD_3V3
+Wire Wire Line
+	3400 2150 3650 2150
+Wire Wire Line
+	4250 2150 4600 2150
+Text Label 4600 2150 0    60   ~ 0
+VDD_3V3_IN
+Text Label 5350 3500 0    60   ~ 0
+VDD_3V3_IN
+$Comp
+L CONN_02X02 J?
+U 1 1 5BBA9829
+P 3950 2150
+F 0 "J?" H 3950 2300 50  0000 C CNN
+F 1 "CONN_02X02" H 3950 2000 50  0000 C CNN
+F 2 "" H 3950 950 50  0001 C CNN
+F 3 "" H 3950 950 50  0001 C CNN
+	1    3950 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2100 3650 2100
+Wire Wire Line
+	3650 2100 3650 2200
+Wire Wire Line
+	3650 2200 3700 2200
+Connection ~ 3650 2150
+Wire Wire Line
+	4250 2200 4200 2200
+Wire Wire Line
+	4250 2100 4250 2200
+Wire Wire Line
+	4200 2100 4250 2100
+Connection ~ 4250 2150
 $EndSCHEMATC

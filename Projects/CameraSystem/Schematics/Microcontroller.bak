@@ -178,7 +178,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 7
+Sheet 3 8
 Title ""
 Date ""
 Rev ""
@@ -470,6 +470,110 @@ F 3 "" H 4650 1250 50  0001 C CNN
 	1    4650 1250
 	1    0    0    -1  
 $EndComp
+$Comp
+L C C?
+U 1 1 5BB90D8E
+P 5600 1100
+F 0 "C?" H 5625 1200 50  0000 L CNN
+F 1 "100n" H 5625 1000 50  0000 L CNN
+F 2 "" H 5638 950 50  0001 C CNN
+F 3 "" H 5600 1100 50  0001 C CNN
+	1    5600 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5BB90E22
+P 5600 1300
+F 0 "#PWR?" H 5600 1050 50  0001 C CNN
+F 1 "GND" H 5600 1150 50  0000 C CNN
+F 2 "" H 5600 1300 50  0001 C CNN
+F 3 "" H 5600 1300 50  0001 C CNN
+	1    5600 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L BLM18PG121SN1D FB?
+U 1 1 5BB90F8A
+P 6050 800
+F 0 "FB?" H 5900 950 60  0000 C CNN
+F 1 "BLM18PG121SN1D" H 6050 650 60  0000 L CNN
+F 2 "digikey-footprints:0603" H 6250 1000 60  0001 L CNN
+F 3 "https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf" H 6250 1100 60  0001 L CNN
+F 4 "490-1037-1-ND" H 6250 1200 60  0001 L CNN "Digi-Key_PN"
+F 5 "BLM18PG121SN1D" H 6250 1300 60  0001 L CNN "MPN"
+F 6 "Filters" H 6250 1400 60  0001 L CNN "Category"
+F 7 "Ferrite Beads and Chips" H 6250 1500 60  0001 L CNN "Family"
+F 8 "https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf" H 6250 1600 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/murata-electronics-north-america/BLM18PG121SN1D/490-1037-1-ND/584485" H 6250 1700 60  0001 L CNN "DK_Detail_Page"
+F 10 "FERRITE BEAD 120 OHM 0603 1LN" H 6250 1800 60  0001 L CNN "Description"
+F 11 "Murata Electronics North America" H 6250 1900 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 6250 2000 60  0001 L CNN "Status"
+	1    6050 800 
+	1    0    0    -1  
+$EndComp
+Text Label 6700 800  0    60   ~ 0
+VDD_3V3
+Text HLabel 6950 3100 2    60   Output ~ 0
+MOSI
+Text HLabel 6950 3200 2    60   Input ~ 0
+MISO
+Text HLabel 8750 3300 2    60   Output ~ 0
+SCK
+$Comp
+L R R?
+U 1 1 5BB94301
+P 3300 2500
+F 0 "R?" V 3380 2500 50  0000 C CNN
+F 1 "1M" V 3300 2500 50  0000 C CNN
+F 2 "" V 3230 2500 50  0001 C CNN
+F 3 "" H 3300 2500 50  0001 C CNN
+	1    3300 2500
+	0    1    1    0   
+$EndComp
+Text HLabel 6900 2600 2    60   Output ~ 0
+WIFI_EN
+Text HLabel 6900 2700 2    60   Output ~ 0
+WIFI_RST
+Text HLabel 7750 3500 2    60   Output ~ 0
+SCL_3V3
+Text HLabel 7750 3600 2    60   BiDi ~ 0
+SDA_3V3
+$Comp
+L LED D?
+U 1 1 5BBA7F65
+P 8400 4000
+F 0 "D?" H 8400 4100 50  0000 C CNN
+F 1 "APG1608SYKC/T" H 8400 3900 50  0000 C CNN
+F 2 "" H 8400 4000 50  0001 C CNN
+F 3 "" H 8400 4000 50  0001 C CNN
+	1    8400 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5BBA823A
+P 8400 3650
+F 0 "R?" V 8480 3650 50  0000 C CNN
+F 1 "560" V 8400 3650 50  0000 C CNN
+F 2 "" V 8330 3650 50  0001 C CNN
+F 3 "" H 8400 3650 50  0001 C CNN
+	1    8400 3650
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5BBA86F6
+P 8400 4300
+F 0 "#PWR?" H 8400 4050 50  0001 C CNN
+F 1 "GND" H 8400 4150 50  0000 C CNN
+F 2 "" H 8400 4300 50  0001 C CNN
+F 3 "" H 8400 4300 50  0001 C CNN
+	1    8400 4300
+	1    0    0    -1  
+$EndComp
+Text HLabel 6950 3000 2    60   Output ~ 0
+CS
 Wire Wire Line
 	6350 4500 6650 4500
 Wire Wire Line
@@ -595,100 +699,81 @@ Wire Wire Line
 Wire Wire Line
 	4350 900  4350 800 
 Connection ~ 4350 800 
-$Comp
-L C C?
-U 1 1 5BB90D8E
-P 5600 1100
-F 0 "C?" H 5625 1200 50  0000 L CNN
-F 1 "100n" H 5625 1000 50  0000 L CNN
-F 2 "" H 5638 950 50  0001 C CNN
-F 3 "" H 5600 1100 50  0001 C CNN
-	1    5600 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5BB90E22
-P 5600 1300
-F 0 "#PWR?" H 5600 1050 50  0001 C CNN
-F 1 "GND" H 5600 1150 50  0000 C CNN
-F 2 "" H 5600 1300 50  0001 C CNN
-F 3 "" H 5600 1300 50  0001 C CNN
-	1    5600 1300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5600 1300 5600 1250
 Wire Wire Line
 	5600 950  5600 800 
 Wire Wire Line
 	5350 800  5850 800 
-$Comp
-L BLM18PG121SN1D FB?
-U 1 1 5BB90F8A
-P 6050 800
-F 0 "FB?" H 5900 950 60  0000 C CNN
-F 1 "BLM18PG121SN1D" H 6050 650 60  0000 L CNN
-F 2 "digikey-footprints:0603" H 6250 1000 60  0001 L CNN
-F 3 "https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf" H 6250 1100 60  0001 L CNN
-F 4 "490-1037-1-ND" H 6250 1200 60  0001 L CNN "Digi-Key_PN"
-F 5 "BLM18PG121SN1D" H 6250 1300 60  0001 L CNN "MPN"
-F 6 "Filters" H 6250 1400 60  0001 L CNN "Category"
-F 7 "Ferrite Beads and Chips" H 6250 1500 60  0001 L CNN "Family"
-F 8 "https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf" H 6250 1600 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/murata-electronics-north-america/BLM18PG121SN1D/490-1037-1-ND/584485" H 6250 1700 60  0001 L CNN "DK_Detail_Page"
-F 10 "FERRITE BEAD 120 OHM 0603 1LN" H 6250 1800 60  0001 L CNN "Description"
-F 11 "Murata Electronics North America" H 6250 1900 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 6250 2000 60  0001 L CNN "Status"
-	1    6050 800 
-	1    0    0    -1  
-$EndComp
 Connection ~ 5600 800 
 Wire Wire Line
 	6250 800  6700 800 
-Text Label 6700 800  0    60   ~ 0
-VDD_3V3
 Wire Wire Line
 	6350 3100 6950 3100
 Wire Wire Line
 	6350 3200 6950 3200
 Wire Wire Line
-	6350 3300 6950 3300
-Text HLabel 6950 3100 2    60   Output ~ 0
-MOSI
-Text HLabel 6950 3200 2    60   Input ~ 0
-MISO
-Text HLabel 6950 3300 2    60   Output ~ 0
-SCK
-$Comp
-L R R?
-U 1 1 5BB94301
-P 3300 2500
-F 0 "R?" V 3380 2500 50  0000 C CNN
-F 1 "1M" V 3300 2500 50  0000 C CNN
-F 2 "" V 3230 2500 50  0001 C CNN
-F 3 "" H 3300 2500 50  0001 C CNN
-	1    3300 2500
-	0    1    1    0   
-$EndComp
+	6350 3300 8750 3300
 Connection ~ 3600 2500
 Wire Wire Line
 	3150 2500 2950 2500
 Connection ~ 2950 2500
 Wire Wire Line
 	6350 2600 6900 2600
-Text HLabel 6900 2600 2    60   Output ~ 0
-WIFI_EN
 Wire Wire Line
 	6350 2700 6900 2700
-Text HLabel 6900 2700 2    60   Output ~ 0
-WIFI_RST
 Wire Wire Line
-	6350 3500 6950 3500
+	6350 3500 7750 3500
 Wire Wire Line
-	6350 3600 6950 3600
-Text HLabel 6950 3500 2    60   Output ~ 0
-SCL_3V3
-Text HLabel 6950 3600 2    60   BiDi ~ 0
-SDA_3V3
+	6350 3600 7750 3600
+Connection ~ 8400 3300
+Wire Wire Line
+	8400 3800 8400 3850
+Wire Wire Line
+	8400 4150 8400 4300
+Wire Wire Line
+	6350 3000 6950 3000
+Wire Wire Line
+	8400 3300 8400 3500
+$Comp
+L R R?
+U 1 1 5BBB9240
+P 7450 2950
+F 0 "R?" V 7530 2950 50  0000 C CNN
+F 1 "2K2" V 7450 2950 50  0000 C CNN
+F 2 "" V 7380 2950 50  0001 C CNN
+F 3 "" H 7450 2950 50  0001 C CNN
+	1    7450 2950
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R?
+U 1 1 5BBB92F1
+P 7650 2950
+F 0 "R?" V 7730 2950 50  0000 C CNN
+F 1 "2K2" V 7650 2950 50  0000 C CNN
+F 2 "" V 7580 2950 50  0001 C CNN
+F 3 "" H 7650 2950 50  0001 C CNN
+	1    7650 2950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7450 3100 7450 3500
+Connection ~ 7450 3500
+Wire Wire Line
+	7650 3100 7650 3600
+Connection ~ 7650 3600
+Wire Wire Line
+	7450 2800 7450 2550
+Wire Wire Line
+	7450 2550 7650 2550
+Wire Wire Line
+	7650 2550 7650 2800
+Wire Wire Line
+	7550 2550 7550 2400
+Wire Wire Line
+	7550 2400 7600 2400
+Connection ~ 7550 2550
+Text Label 7600 2400 0    60   ~ 0
+VDD_3V3
 $EndSCHEMATC
