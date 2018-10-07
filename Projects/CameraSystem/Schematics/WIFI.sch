@@ -173,6 +173,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:cl-integrated_circuits
+LIBS:cl-misc
 LIBS:CameraSystem-cache
 EELAYER 25 0
 EELAYER END

@@ -173,6 +173,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:cl-integrated_circuits
+LIBS:cl-misc
 LIBS:CameraSystem-cache
 EELAYER 25 0
 EELAYER END
@@ -188,9 +189,9 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 2000 800  0    60   Input ~ 0
+Text HLabel 1650 800  0    60   Input ~ 0
 VDD_3V3
-Text HLabel 2000 1700 0    60   Input ~ 0
+Text HLabel 1650 1700 0    60   Input ~ 0
 SPI_RST
 Text HLabel 6650 4500 2    60   Output ~ 0
 SPI_TX
@@ -221,12 +222,12 @@ $EndComp
 $Comp
 L R R?
 U 1 1 5BB8AD84
-P 2350 1200
-F 0 "R?" V 2430 1200 50  0000 C CNN
-F 1 "10k" V 2350 1200 50  0000 C CNN
-F 2 "" V 2280 1200 50  0001 C CNN
-F 3 "" H 2350 1200 50  0001 C CNN
-	1    2350 1200
+P 2000 1200
+F 0 "R?" V 2080 1200 50  0000 C CNN
+F 1 "10k" V 2000 1200 50  0000 C CNN
+F 2 "" V 1930 1200 50  0001 C CNN
+F 3 "" H 2000 1200 50  0001 C CNN
+	1    2000 1200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -243,12 +244,12 @@ $EndComp
 $Comp
 L GND #PWR?
 U 1 1 5BB8B0A7
-P 2350 3100
-F 0 "#PWR?" H 2350 2850 50  0001 C CNN
-F 1 "GND" H 2350 2950 50  0000 C CNN
-F 2 "" H 2350 3100 50  0001 C CNN
-F 3 "" H 2350 3100 50  0001 C CNN
-	1    2350 3100
+P 2000 3100
+F 0 "#PWR?" H 2000 2850 50  0001 C CNN
+F 1 "GND" H 2000 2950 50  0000 C CNN
+F 2 "" H 2000 3100 50  0001 C CNN
+F 3 "" H 2000 3100 50  0001 C CNN
+	1    2000 3100
 	1    0    0    -1  
 $EndComp
 Text Label 3050 1700 0    60   ~ 0
@@ -333,32 +334,32 @@ $EndComp
 $Comp
 L R R?
 U 1 1 5BB8C561
-P 2350 2050
-F 0 "R?" V 2430 2050 50  0000 C CNN
-F 1 "330" V 2350 2050 50  0000 C CNN
-F 2 "" V 2280 2050 50  0001 C CNN
-F 3 "" H 2350 2050 50  0001 C CNN
-	1    2350 2050
+P 2000 2050
+F 0 "R?" V 2080 2050 50  0000 C CNN
+F 1 "330" V 2000 2050 50  0000 C CNN
+F 2 "" V 1930 2050 50  0001 C CNN
+F 3 "" H 2000 2050 50  0001 C CNN
+	1    2000 2050
 	1    0    0    -1  
 $EndComp
 $Comp
 L KS-01Q-01 S?
 U 1 1 5BB8C7F1
-P 2350 2650
-F 0 "S?" H 2350 2850 50  0000 C CNN
-F 1 "KS-01Q-01" H 2350 2475 50  0000 C CNN
-F 2 "digikey-footprints:PushButton_Round_D12mm_THT_KS-01Q-01" H 2550 2850 50  0001 L CNN
-F 3 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2550 2950 60  0001 L CNN
-F 4 "EG4791-ND" H 2550 3050 60  0001 L CNN "Digi-Key_PN"
-F 5 "KS-01Q-01" H 2550 3150 60  0001 L CNN "MPN"
-F 6 "Switches" H 2550 3250 60  0001 L CNN "Category"
-F 7 "Pushbutton Switches" H 2550 3350 60  0001 L CNN "Family"
-F 8 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2550 3450 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/e-switch/KS-01Q-01/EG4791-ND/2116270" H 2550 3550 60  0001 L CNN "DK_Detail_Page"
-F 10 "SWITCH PUSH SPST-NO 0.01A 35V" H 2550 3650 60  0001 L CNN "Description"
-F 11 "E-Switch" H 2550 3750 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 2550 3850 60  0001 L CNN "Status"
-	1    2350 2650
+P 2000 2650
+F 0 "S?" H 2000 2850 50  0000 C CNN
+F 1 "KS-01Q-01" H 2000 2475 50  0000 C CNN
+F 2 "digikey-footprints:PushButton_Round_D12mm_THT_KS-01Q-01" H 2200 2850 50  0001 L CNN
+F 3 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2200 2950 60  0001 L CNN
+F 4 "EG4791-ND" H 2200 3050 60  0001 L CNN "Digi-Key_PN"
+F 5 "KS-01Q-01" H 2200 3150 60  0001 L CNN "MPN"
+F 6 "Switches" H 2200 3250 60  0001 L CNN "Category"
+F 7 "Pushbutton Switches" H 2200 3350 60  0001 L CNN "Family"
+F 8 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2200 3450 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/e-switch/KS-01Q-01/EG4791-ND/2116270" H 2200 3550 60  0001 L CNN "DK_Detail_Page"
+F 10 "SWITCH PUSH SPST-NO 0.01A 35V" H 2200 3650 60  0001 L CNN "Description"
+F 11 "E-Switch" H 2200 3750 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2200 3850 60  0001 L CNN "Status"
+	1    2000 2650
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -579,9 +580,29 @@ Wire Wire Line
 Wire Wire Line
 	6350 4400 6650 4400
 Wire Wire Line
-	2000 1700 4150 1700
+	1650 1700 2000 1700
 Wire Wire Line
-	2000 800  5150 800 
+	2000 1700 2400 1700
+Wire Wire Line
+	2400 1700 3000 1700
+Wire Wire Line
+	3000 1700 4150 1700
+Wire Wire Line
+	1650 800  2000 800 
+Wire Wire Line
+	2000 800  3000 800 
+Wire Wire Line
+	3000 800  4050 800 
+Wire Wire Line
+	4050 800  4350 800 
+Wire Wire Line
+	4350 800  4650 800 
+Wire Wire Line
+	4650 800  4950 800 
+Wire Wire Line
+	4950 800  5050 800 
+Wire Wire Line
+	5050 800  5150 800 
 Wire Wire Line
 	5350 800  5350 1400
 Wire Wire Line
@@ -595,21 +616,29 @@ Connection ~ 4950 800
 Wire Wire Line
 	4950 5400 4950 5500
 Wire Wire Line
-	4950 5500 5350 5500
+	4950 5500 5050 5500
+Wire Wire Line
+	5050 5500 5150 5500
+Wire Wire Line
+	5150 5500 5350 5500
 Wire Wire Line
 	5350 5500 5350 5400
 Wire Wire Line
-	5150 5400 5150 5550
+	5150 5400 5150 5500
+Wire Wire Line
+	5150 5500 5150 5550
 Connection ~ 5150 5500
 Wire Wire Line
 	5050 5400 5050 5500
 Connection ~ 5050 5500
 Wire Wire Line
-	2350 800  2350 1050
-Connection ~ 2350 800 
+	2000 800  2000 1050
+Connection ~ 2000 800 
 Wire Wire Line
-	2350 1350 2350 1900
-Connection ~ 2350 1700
+	2000 1350 2000 1700
+Wire Wire Line
+	2000 1700 2000 1900
+Connection ~ 2000 1700
 Wire Wire Line
 	3000 1050 3000 800 
 Connection ~ 3000 800 
@@ -619,13 +648,21 @@ Connection ~ 3000 1700
 Wire Wire Line
 	2950 3500 2950 3400
 Wire Wire Line
-	2950 2100 2950 3100
+	2950 2100 2950 2500
+Wire Wire Line
+	2950 2500 2950 3000
+Wire Wire Line
+	2950 3000 2950 3100
 Wire Wire Line
 	2950 2100 4150 2100
 Wire Wire Line
-	3450 2500 4150 2500
+	3450 2500 3600 2500
 Wire Wire Line
-	3600 2500 3600 3100
+	3600 2500 4150 2500
+Wire Wire Line
+	3600 2500 3600 3000
+Wire Wire Line
+	3600 3000 3600 3100
 Wire Wire Line
 	3600 3400 3600 3500
 Wire Wire Line
@@ -640,23 +677,27 @@ Connection ~ 4050 800
 Wire Wire Line
 	4050 1200 4050 1250
 Wire Wire Line
-	2250 2450 2250 2400
+	1900 2450 1900 2400
 Wire Wire Line
-	2250 2400 2450 2400
+	1900 2400 2000 2400
 Wire Wire Line
-	2450 2400 2450 2450
+	2000 2400 2100 2400
 Wire Wire Line
-	2250 2850 2250 2900
+	2100 2400 2100 2450
 Wire Wire Line
-	2250 2900 2450 2900
+	1900 2850 1900 2900
 Wire Wire Line
-	2450 2900 2450 2850
+	1900 2900 2000 2900
 Wire Wire Line
-	2350 2200 2350 2400
-Connection ~ 2350 2400
+	2000 2900 2100 2900
 Wire Wire Line
-	2350 2900 2350 3100
-Connection ~ 2350 2900
+	2100 2900 2100 2850
+Wire Wire Line
+	2000 2200 2000 2400
+Connection ~ 2000 2400
+Wire Wire Line
+	2000 2900 2000 3100
+Connection ~ 2000 2900
 Wire Wire Line
 	1550 4950 1700 4950
 Wire Wire Line
@@ -704,7 +745,9 @@ Wire Wire Line
 Wire Wire Line
 	5600 950  5600 800 
 Wire Wire Line
-	5350 800  5850 800 
+	5350 800  5600 800 
+Wire Wire Line
+	5600 800  5850 800 
 Connection ~ 5600 800 
 Wire Wire Line
 	6250 800  6700 800 
@@ -713,7 +756,9 @@ Wire Wire Line
 Wire Wire Line
 	6350 3200 6950 3200
 Wire Wire Line
-	6350 3300 8750 3300
+	6350 3300 8400 3300
+Wire Wire Line
+	8400 3300 8750 3300
 Connection ~ 3600 2500
 Wire Wire Line
 	3150 2500 2950 2500
@@ -723,9 +768,13 @@ Wire Wire Line
 Wire Wire Line
 	6350 2700 6900 2700
 Wire Wire Line
-	6350 3500 7750 3500
+	6350 3500 7450 3500
 Wire Wire Line
-	6350 3600 7750 3600
+	7450 3500 7750 3500
+Wire Wire Line
+	6350 3600 7650 3600
+Wire Wire Line
+	7650 3600 7750 3600
 Connection ~ 8400 3300
 Wire Wire Line
 	8400 3800 8400 3850
@@ -766,7 +815,9 @@ Connection ~ 7650 3600
 Wire Wire Line
 	7450 2800 7450 2550
 Wire Wire Line
-	7450 2550 7650 2550
+	7450 2550 7550 2550
+Wire Wire Line
+	7550 2550 7650 2550
 Wire Wire Line
 	7650 2550 7650 2800
 Wire Wire Line
@@ -776,4 +827,83 @@ Wire Wire Line
 Connection ~ 7550 2550
 Text Label 7600 2400 0    60   ~ 0
 VDD_3V3
+Wire Wire Line
+	6350 2400 6900 2400
+Wire Wire Line
+	6350 2300 6900 2300
+Wire Wire Line
+	6350 2200 6900 2200
+Wire Wire Line
+	6350 2100 6900 2100
+Wire Wire Line
+	6350 2000 6900 2000
+Wire Wire Line
+	6350 1900 6900 1900
+Wire Wire Line
+	6350 1800 6900 1800
+Wire Wire Line
+	6350 1700 6900 1700
+Text HLabel 6900 1700 2    60   Input ~ 0
+CAM_D0
+Text HLabel 6900 1800 2    60   Input ~ 0
+CAM_D1
+Text HLabel 6900 1900 2    60   Input ~ 0
+CAM_D2
+Text HLabel 6900 2000 2    60   Input ~ 0
+CAM_D3
+Text HLabel 6900 2100 2    60   Input ~ 0
+CAM_D4
+Text HLabel 6900 2200 2    60   Input ~ 0
+CAM_D5
+Text HLabel 6900 2300 2    60   Input ~ 0
+CAM_D6
+Text HLabel 6900 2400 2    60   Input ~ 0
+CAM_D7
+Wire Wire Line
+	6350 4900 6650 4900
+Text HLabel 6650 4900 2    60   Output ~ 0
+CAM_CLK
+Text HLabel 6650 4800 2    60   Input ~ 0
+CAM_PCLK
+Text HLabel 6650 4700 2    60   Input ~ 0
+CAM_HSYNC
+Text HLabel 6650 4600 2    60   Input ~ 0
+CAM_VSYNC
+Wire Wire Line
+	6650 4800 6350 4800
+Wire Wire Line
+	6350 4700 6650 4700
+Wire Wire Line
+	6650 4600 6350 4600
+Wire Wire Line
+	6350 5000 6650 5000
+Text HLabel 6650 5000 2    60   Output ~ 0
+CAM_XCLK_CTL
+$Comp
+L C C?
+U 1 1 5BBE76EA
+P 2400 2700
+F 0 "C?" H 2425 2800 50  0000 L CNN
+F 1 "100n" H 2425 2600 50  0000 L CNN
+F 2 "" H 2438 2550 50  0001 C CNN
+F 3 "" H 2400 2700 50  0001 C CNN
+	1    2400 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 2550 2400 1700
+Connection ~ 2400 1700
+Wire Wire Line
+	2400 2850 2400 3100
+$Comp
+L GND #PWR?
+U 1 1 5BBE788F
+P 2400 3100
+F 0 "#PWR?" H 2400 2850 50  0001 C CNN
+F 1 "GND" H 2400 2950 50  0000 C CNN
+F 2 "" H 2400 3100 50  0001 C CNN
+F 3 "" H 2400 3100 50  0001 C CNN
+	1    2400 3100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

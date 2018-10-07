@@ -1,4 +1,4 @@
-update=03/10/2018 14:16:26
+update=07/10/2018 14:48:26
 version=1
 last_client=kicad
 [pcbnew]
@@ -203,3 +203,4 @@ LibName171=atmel
 LibName172=contrib
 LibName173=valves
 LibName174=cl-integrated_circuits
+LibName175=cl-misc
