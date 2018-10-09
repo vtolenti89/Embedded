@@ -302,4 +302,6 @@ Wire Wire Line
 	3150 5050 1750 5050
 Wire Wire Line
 	3350 5300 1750 5300
+Text Notes 8900 1650 0    60   ~ 0
+To be done:\n1. Add debug ping in all communication lines
 $EndSCHEMATC

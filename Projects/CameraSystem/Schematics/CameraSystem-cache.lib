@@ -156,63 +156,6 @@ X ~ 2 200 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CameraSystem-rescue:CONN_02X02
-#
-DEF CameraSystem-rescue:CONN_02X02 J 0 1 Y N 1 F N
-F0 "J" 0 150 50 H V C CNN
-F1 "CameraSystem-rescue:CONN_02X02" 0 -150 50 H V C CNN
-F2 "" 0 -1200 50 H I C CNN
-F3 "" 0 -1200 50 H I C CNN
-$FPLIST
- Pin_Header_Straight_2X*
- Pin_Header_Angled_2X*
- Socket_Strip_Straight_2X*
- Socket_Strip_Angled_2X*
-$ENDFPLIST
-DRAW
-S -100 -45 -50 -55 0 1 0 N
-S -100 55 -50 45 0 1 0 N
-S -100 100 100 -100 0 1 0 N
-S 50 -45 100 -55 0 1 0 N
-S 50 55 100 45 0 1 0 N
-X P1 1 -250 50 150 R 50 50 1 1 P
-X P2 2 250 50 150 L 50 50 1 1 P
-X P3 3 -250 -50 150 R 50 50 1 1 P
-X P4 4 250 -50 150 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# CameraSystem-rescue:CONN_02X03
-#
-DEF CameraSystem-rescue:CONN_02X03 J 0 1 Y N 1 F N
-F0 "J" 0 200 50 H V C CNN
-F1 "CameraSystem-rescue:CONN_02X03" 0 -200 50 H V C CNN
-F2 "" 0 -1200 50 H I C CNN
-F3 "" 0 -1200 50 H I C CNN
-$FPLIST
- Pin_Header_Straight_2X*
- Pin_Header_Angled_2X*
- Socket_Strip_Straight_2X*
- Socket_Strip_Angled_2X*
- IDC_Header_Straight_*
-$ENDFPLIST
-DRAW
-S -100 -95 -50 -105 0 1 0 N
-S -100 5 -50 -5 0 1 0 N
-S -100 105 -50 95 0 1 0 N
-S -100 150 100 -150 0 1 0 N
-S 50 -95 100 -105 0 1 0 N
-S 50 5 100 -5 0 1 0 N
-S 50 105 100 95 0 1 0 N
-X P1 1 -250 100 150 R 50 50 1 1 P
-X P2 2 250 100 150 L 50 50 1 1 P
-X P3 3 -250 0 150 R 50 50 1 1 P
-X P4 4 250 0 150 L 50 50 1 1 P
-X P5 5 -250 -100 150 R 50 50 1 1 P
-X P6 6 250 -100 150 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # CameraSystem-rescue:KS-01Q-01
 #
 DEF CameraSystem-rescue:KS-01Q-01 S 0 40 Y Y 1 F N
@@ -355,6 +298,113 @@ X N.C. 2 -100 -400 100 U 50 50 1 1 B N
 X IO1 3 -400 100 100 R 50 50 1 1 P
 X GND 4 200 -500 100 U 50 50 1 1 W
 X IO2 5 -400 -200 100 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector:TestPoint
+#
+DEF Connector:TestPoint TP 0 30 N N 1 F N
+F0 "TP" 0 270 50 H V C CNN
+F1 "Connector:TestPoint" 0 200 50 H V C CNN
+F2 "" 200 0 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
+$FPLIST
+ Pin*
+ Test*
+$ENDFPLIST
+DRAW
+C 0 130 30 0 1 0 N
+X 1 1 0 0 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic:Conn_01x02
+#
+DEF Connector_Generic:Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Generic:Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic:Conn_01x03
+#
+DEF Connector_Generic:Conn_01x03 J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Generic:Conn_01x03" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 50 -150 1 1 10 f
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic:Conn_02x02_Odd_Even
+#
+DEF Connector_Generic:Conn_02x02_Odd_Even J 0 40 Y N 1 F N
+F0 "J" 50 100 50 H V C CNN
+F1 "Connector_Generic:Conn_02x02_Odd_Even" 50 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 150 -150 1 1 10 f
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 300 0 150 L 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+X Pin_4 4 300 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic:Conn_02x03_Odd_Even
+#
+DEF Connector_Generic:Conn_02x03_Odd_Even J 0 40 Y N 1 F N
+F0 "J" 50 200 50 H V C CNN
+F1 "Connector_Generic:Conn_02x03_Odd_Even" 50 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 150 -150 1 1 10 f
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+S 150 105 100 95 1 1 6 N
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 300 100 150 L 50 50 1 1 P
+X Pin_3 3 -200 0 150 R 50 50 1 1 P
+X Pin_4 4 300 0 150 L 50 50 1 1 P
+X Pin_5 5 -200 -100 150 R 50 50 1 1 P
+X Pin_6 6 300 -100 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
