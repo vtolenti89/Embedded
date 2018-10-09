@@ -317,11 +317,6 @@ Wire Wire Line
 Wire Wire Line
 	7800 2300 7800 2500
 Wire Wire Line
-	8450 2000 8450 1900
-Wire Wire Line
-	8300 1900 8450 1900
-Connection ~ 8450 1900
-Wire Wire Line
 	7050 2050 7050 1900
 Connection ~ 7050 1900
 Wire Wire Line
@@ -575,8 +570,6 @@ Wire Wire Line
 	6700 2350 6700 2500
 Connection ~ 7050 2500
 Wire Wire Line
-	8450 1900 8650 1900
-Wire Wire Line
 	7800 2500 7800 2650
 Wire Wire Line
 	7800 2500 8650 2500
@@ -625,4 +618,6 @@ Wire Wire Line
 	7050 1900 7350 1900
 Text Notes 7400 3250 0    50   ~ 0
 Max Dis. Power = (150 - 23)°C / 70°C/W = 1.81W (worst case)\nMax Dis. Power = (125 - 23)°C / 70°C/W = 1.45W (recommended)\n
+Wire Wire Line
+	8300 1900 8650 1900
 $EndSCHEMATC
