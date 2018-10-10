@@ -23,10 +23,10 @@ WIFI_RST
 Text HLabel 5700 3300 0    60   Input ~ 0
 WIFI_EN
 $Comp
-L cl-integrated_circuits:ESP8266 U?
+L cl-integrated_circuits:ESP8266 U4
 U 1 1 5BB97A97
 P 6500 3350
-F 0 "U?" H 6500 3050 60  0000 C CNN
+F 0 "U4" H 6500 3050 60  0000 C CNN
 F 1 "ESP8266" H 6500 3650 60  0000 C CNN
 F 2 "" H 6500 3350 60  0001 C CNN
 F 3 "" H 6500 3350 60  0001 C CNN
@@ -34,12 +34,12 @@ F 3 "" H 6500 3350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C18
 U 1 1 5BB97B07
 P 5850 3800
-F 0 "C?" H 5875 3900 50  0000 L CNN
+F 0 "C18" H 5875 3900 50  0000 L CNN
 F 1 "100n" H 5875 3700 50  0000 L CNN
-F 2 "" H 5888 3650 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5888 3650 50  0001 C CNN
 F 3 "" H 5850 3800 50  0001 C CNN
 	1    5850 3800
 	1    0    0    -1  
@@ -84,12 +84,12 @@ Wire Wire Line
 Wire Wire Line
 	6000 3300 5700 3300
 $Comp
-L Device:R R?
+L Device:R R22
 U 1 1 5BB97CCF
 P 4300 3700
-F 0 "R?" V 4380 3700 50  0000 C CNN
+F 0 "R22" V 4380 3700 50  0000 C CNN
 F 1 "4K7" V 4300 3700 50  0000 C CNN
-F 2 "" V 4230 3700 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4230 3700 50  0001 C CNN
 F 3 "" H 4300 3700 50  0001 C CNN
 	1    4300 3700
 	0    1    1    0   
@@ -97,12 +97,12 @@ $EndComp
 Wire Wire Line
 	4050 3700 4150 3700
 $Comp
-L Device:R R?
+L Device:R R23
 U 1 1 5BB97D2C
 P 4600 4000
-F 0 "R?" V 4680 4000 50  0000 C CNN
+F 0 "R23" V 4680 4000 50  0000 C CNN
 F 1 "10k" V 4600 4000 50  0000 C CNN
-F 2 "" V 4530 4000 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4530 4000 50  0001 C CNN
 F 3 "" H 4600 4000 50  0001 C CNN
 	1    4600 4000
 	-1   0    0    1   
@@ -112,12 +112,12 @@ Wire Wire Line
 Wire Wire Line
 	5000 3250 5000 3400
 $Comp
-L Device:R R?
+L Device:R R24
 U 1 1 5BB97D8F
 P 5000 3100
-F 0 "R?" V 5080 3100 50  0000 C CNN
+F 0 "R24" V 5080 3100 50  0000 C CNN
 F 1 "10k" V 5000 3100 50  0000 C CNN
-F 2 "" V 4930 3100 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4930 3100 50  0001 C CNN
 F 3 "" H 5000 3100 50  0001 C CNN
 	1    5000 3100
 	-1   0    0    1   
@@ -157,8 +157,8 @@ L CameraSystem-rescue:BC846B_215 Q?
 U 1 1 5BB98225
 P 4900 3700
 AR Path="/5BB98225" Ref="Q?"  Part="1" 
-AR Path="/5BB4D9C1/5BB98225" Ref="Q?"  Part="1" 
-F 0 "Q?" H 4774 3866 60  0000 L CNN
+AR Path="/5BB4D9C1/5BB98225" Ref="Q1"  Part="1" 
+F 0 "Q1" H 4774 3866 60  0000 L CNN
 F 1 "BC846B_215" V 5106 3700 60  0000 C CNN
 F 2 "digikey-footprints:SOT-23-3" H 5100 3900 60  0001 L CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/BC846_SER.pdf" H 5100 4000 60  0001 L CNN
@@ -211,14 +211,16 @@ Wire Wire Line
 Wire Wire Line
 	4250 2150 4250 2200
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J?
+L Connector_Generic:Conn_02x02_Odd_Even J6
 U 1 1 5BC6841F
 P 3900 2100
-F 0 "J?" H 3950 2317 50  0000 C CNN
+F 0 "J6" H 3950 2317 50  0000 C CNN
 F 1 "Conn_02x02_Odd_Even" H 3950 2226 50  0000 C CNN
 F 2 "" H 3900 2100 50  0001 C CNN
 F 3 "~" H 3900 2100 50  0001 C CNN
 	1    3900 2100
 	1    0    0    -1  
 $EndComp
+NoConn ~ 7000 3400
+NoConn ~ 7000 3300
 $EndSCHEMATC
