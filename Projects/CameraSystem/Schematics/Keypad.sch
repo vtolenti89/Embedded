@@ -14,8 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 3650 3200 0    60   Input ~ 0
-VDD_3V3
 $Comp
 L cl-integrated_circuits:AT42QT1070-SSUR U10
 U 1 1 5BBEA4BE
@@ -236,19 +234,6 @@ Wire Wire Line
 Wire Wire Line
 	5850 2850 6150 2850
 Wire Wire Line
-	6150 2850 6150 2950
-$Comp
-L power:GND #PWR0141
-U 1 1 5BBEB5AC
-P 6150 2950
-F 0 "#PWR0141" H 6150 2700 50  0001 C CNN
-F 1 "GND" H 6150 2800 50  0000 C CNN
-F 2 "" H 6150 2950 50  0001 C CNN
-F 3 "" H 6150 2950 50  0001 C CNN
-	1    6150 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	3650 3200 3950 3200
 Wire Wire Line
 	3950 3200 3950 2500
@@ -264,19 +249,6 @@ F 3 "" H 4200 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 3950 3200
-$Comp
-L power:GND #PWR0142
-U 1 1 5BBEBA45
-P 4200 2900
-F 0 "#PWR0142" H 4200 2650 50  0001 C CNN
-F 1 "GND" H 4200 2750 50  0000 C CNN
-F 2 "" H 4200 2900 50  0001 C CNN
-F 3 "" H 4200 2900 50  0001 C CNN
-	1    4200 2900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4200 2900 4200 2850
 Wire Wire Line
 	4200 2550 4200 2500
 Wire Wire Line
@@ -288,26 +260,9 @@ Wire Wire Line
 Wire Wire Line
 	4450 3300 4350 3300
 Wire Wire Line
-	4350 3300 4350 4100
-$Comp
-L power:GND #PWR0143
-U 1 1 5BBEBE54
-P 4350 4100
-F 0 "#PWR0143" H 4350 3850 50  0001 C CNN
-F 1 "GND" H 4350 3950 50  0000 C CNN
-F 2 "" H 4350 4100 50  0001 C CNN
-F 3 "" H 4350 4100 50  0001 C CNN
-	1    4350 4100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	4450 3700 3650 3700
 Wire Wire Line
 	4450 3400 3650 3400
-Text HLabel 3650 3400 0    60   BiDi ~ 0
-SDA_3V3
-Text HLabel 3650 3700 0    60   Input ~ 0
-SCL_3V3
 Wire Wire Line
 	4450 3500 3650 3500
 Wire Wire Line
@@ -366,32 +321,10 @@ F 3 "" H 2050 6450 50  0001 C CNN
 	1    2050 6450
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:GND #PWR0144
-U 1 1 5BBED885
-P 2050 6750
-F 0 "#PWR0144" H 2050 6500 50  0001 C CNN
-F 1 "GND" H 2050 6600 50  0000 C CNN
-F 2 "" H 2050 6750 50  0001 C CNN
-F 3 "" H 2050 6750 50  0001 C CNN
-	1    2050 6750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2050 6600 2050 6750
 Wire Wire Line
 	2550 6300 2550 6750
-$Comp
-L power:GND #PWR0145
-U 1 1 5BBED94F
-P 2550 6750
-F 0 "#PWR0145" H 2550 6500 50  0001 C CNN
-F 1 "GND" H 2550 6600 50  0000 C CNN
-F 2 "" H 2550 6750 50  0001 C CNN
-F 3 "" H 2550 6750 50  0001 C CNN
-	1    2550 6750
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R31
 U 1 1 5BBED993
@@ -417,8 +350,6 @@ Wire Wire Line
 Connection ~ 2550 5700
 Text Label 3150 5700 0    60   ~ 0
 _QT_RST_IN
-Text HLabel 1350 6100 0    60   Input ~ 0
-QT_RST
 $Comp
 L CameraSystem-rescue:BC846B_215 Q?
 U 1 1 5BBEE372
@@ -469,32 +400,10 @@ F 3 "" H 4850 6450 50  0001 C CNN
 	1    4850 6450
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:GND #PWR0146
-U 1 1 5BBEE387
-P 4850 6750
-F 0 "#PWR0146" H 4850 6500 50  0001 C CNN
-F 1 "GND" H 4850 6600 50  0000 C CNN
-F 2 "" H 4850 6750 50  0001 C CNN
-F 3 "" H 4850 6750 50  0001 C CNN
-	1    4850 6750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4850 6600 4850 6750
 Wire Wire Line
 	5350 6300 5350 6750
-$Comp
-L power:GND #PWR0147
-U 1 1 5BBEE38F
-P 5350 6750
-F 0 "#PWR0147" H 5350 6500 50  0001 C CNN
-F 1 "GND" H 5350 6600 50  0000 C CNN
-F 2 "" H 5350 6750 50  0001 C CNN
-F 3 "" H 5350 6750 50  0001 C CNN
-	1    5350 6750
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R35
 U 1 1 5BBEE395
@@ -518,8 +427,6 @@ VDD_3V3
 Wire Wire Line
 	5350 5700 5950 5700
 Connection ~ 5350 5700
-Text HLabel 4150 6100 0    60   Input ~ 0
-QT_CHN
 Text Label 5950 5700 0    60   ~ 0
 _QT_CHN_IN
 Wire Wire Line
@@ -532,4 +439,127 @@ Wire Wire Line
 	4850 6100 5050 6100
 Wire Wire Line
 	5350 5700 5350 5550
+$Comp
+L Connector_Generic:Conn_01x06 J?
+U 1 1 5BBF5B08
+P 1750 3500
+F 0 "J?" H 1830 3492 50  0000 L CNN
+F 1 "Conn_01x06" H 1830 3401 50  0000 L CNN
+F 2 "" H 1750 3500 50  0001 C CNN
+F 3 "~" H 1750 3500 50  0001 C CNN
+	1    1750 3500
+	1    0    0    -1  
+$EndComp
+Text HLabel 1450 3800 0    60   Input ~ 0
+QT_RST_CON
+Text HLabel 1450 3700 0    60   Input ~ 0
+QT_CHN_CON
+Text HLabel 1450 3600 0    60   Input ~ 0
+SCL_3V3_CON
+Text HLabel 1450 3400 0    60   BiDi ~ 0
+SDA_3V3_CON
+Text HLabel 1450 3300 0    60   Input ~ 0
+VDD_3V3_CON
+Wire Wire Line
+	1450 3300 1550 3300
+Wire Wire Line
+	1450 3400 1550 3400
+Wire Wire Line
+	1450 3600 1550 3600
+Wire Wire Line
+	1450 3700 1550 3700
+Wire Wire Line
+	1450 3800 1550 3800
+Wire Wire Line
+	2050 6750 2550 6750
+Connection ~ 2550 6750
+Wire Wire Line
+	2550 6850 2650 6850
+Wire Wire Line
+	2550 6750 2550 6850
+Text Label 2650 6850 0    60   ~ 0
+QP_GND
+Wire Wire Line
+	4850 6750 5350 6750
+Wire Wire Line
+	5350 6750 5350 6850
+Wire Wire Line
+	5350 6850 5450 6850
+Connection ~ 5350 6750
+Text Label 5450 6850 0    60   ~ 0
+QP_GND
+Wire Wire Line
+	4350 4200 4450 4200
+Wire Wire Line
+	4350 3300 4350 4200
+Wire Wire Line
+	4200 3000 4300 3000
+Wire Wire Line
+	4200 2850 4200 3000
+Text Label 4300 3000 0    60   ~ 0
+QP_GND
+Text Label 4450 4200 0    60   ~ 0
+QP_GND
+Text Label 6150 2850 0    60   ~ 0
+QP_GND
+Text Label 1350 6100 2    60   ~ 0
+QT_RST
+Text Label 4150 6100 2    60   ~ 0
+QT_CHN
+Text Label 3650 3200 2    60   ~ 0
+VDD_3V3
+Text Label 3650 3400 2    60   ~ 0
+SDA_3V3
+Text Label 3650 3700 2    60   ~ 0
+SCL_3V3
+$Comp
+L Connector_Generic:Conn_01x06 J?
+U 1 1 5BC19F1B
+P 1750 4450
+F 0 "J?" H 1830 4442 50  0000 L CNN
+F 1 "Conn_01x06" H 1830 4351 50  0000 L CNN
+F 2 "" H 1750 4450 50  0001 C CNN
+F 3 "~" H 1750 4450 50  0001 C CNN
+	1    1750 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 4250 1550 4250
+Wire Wire Line
+	1450 4350 1550 4350
+Wire Wire Line
+	1450 4450 1550 4450
+Wire Wire Line
+	1450 4550 1550 4550
+Wire Wire Line
+	1450 4650 1550 4650
+Wire Wire Line
+	1450 4750 1550 4750
+Text Label 1450 4250 2    60   ~ 0
+VDD_3V3
+Text Label 1450 4350 2    60   ~ 0
+SDA_3V3
+Text Label 1450 4450 2    60   ~ 0
+QP_GND
+Text Label 1450 4550 2    60   ~ 0
+SCL_3V3
+Text Label 1450 4650 2    60   ~ 0
+QT_CHN
+Text Label 1450 4750 2    60   ~ 0
+QT_RST
+Wire Wire Line
+	650  3500 650  3650
+Wire Wire Line
+	650  3500 1550 3500
+$Comp
+L power:GND #PWR?
+U 1 1 5BC1F64F
+P 650 3650
+F 0 "#PWR?" H 650 3400 50  0001 C CNN
+F 1 "GND" H 655 3477 50  0000 C CNN
+F 2 "" H 650 3650 50  0001 C CNN
+F 3 "" H 650 3650 50  0001 C CNN
+	1    650  3650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
