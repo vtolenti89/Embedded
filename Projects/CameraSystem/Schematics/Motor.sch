@@ -19,10 +19,10 @@ VDD_3V3_CON
 Wire Wire Line
 	1400 1250 1550 1250
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J?
+L Connector_Generic:Conn_02x02_Odd_Even J13
 U 1 1 5BC62F82
 P 1800 1200
-F 0 "J?" H 1850 1417 50  0000 C CNN
+F 0 "J13" H 1850 1417 50  0000 C CNN
 F 1 "Conn_02x02_Odd_Even" H 1850 1326 50  0000 C CNN
 F 2 "" H 1800 1200 50  0001 C CNN
 F 3 "~" H 1800 1200 50  0001 C CNN
@@ -64,10 +64,10 @@ Wire Wire Line
 Wire Wire Line
 	3650 1450 3850 1450
 $Comp
-L Connector_Generic:Conn_02x05_Counter_Clockwise J?
+L Connector_Generic:Conn_02x05_Counter_Clockwise J15
 U 1 1 5BC641C3
 P 3350 1450
-F 0 "J?" H 3400 1867 50  0000 C CNN
+F 0 "J15" H 3400 1867 50  0000 C CNN
 F 1 "Conn_02x05_Counter_Clockwise" H 3400 1776 50  0000 C CNN
 F 2 "" H 3350 1450 50  0001 C CNN
 F 3 "~" H 3350 1450 50  0001 C CNN
@@ -75,10 +75,10 @@ F 3 "~" H 3350 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x05_Counter_Clockwise J?
+L Connector_Generic:Conn_02x05_Counter_Clockwise J14
 U 1 1 5BC64226
 P 1800 2400
-F 0 "J?" H 1850 2817 50  0000 C CNN
+F 0 "J14" H 1850 2817 50  0000 C CNN
 F 1 "Conn_02x05_Counter_Clockwise" H 1850 2726 50  0000 C CNN
 F 2 "" H 1800 2400 50  0001 C CNN
 F 3 "~" H 1800 2400 50  0001 C CNN
@@ -93,10 +93,10 @@ Wire Wire Line
 Wire Wire Line
 	3850 1350 3850 1250
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0142
 U 1 1 5BC64498
 P 4600 1350
-F 0 "#PWR?" H 4600 1100 50  0001 C CNN
+F 0 "#PWR0142" H 4600 1100 50  0001 C CNN
 F 1 "GND" H 4605 1177 50  0000 C CNN
 F 2 "" H 4600 1350 50  0001 C CNN
 F 3 "" H 4600 1350 50  0001 C CNN

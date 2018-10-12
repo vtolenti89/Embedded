@@ -164,4 +164,6 @@ Wire Wire Line
 	2100 2400 2650 2400
 Wire Wire Line
 	2100 2500 2650 2500
+Text Notes 850  1900 0    50   ~ 0
+Use a cable with a bigger cross section for the power supply
 $EndSCHEMATC
