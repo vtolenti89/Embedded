@@ -74,17 +74,6 @@ F 3 "~" H 3350 1450 50  0001 C CNN
 	1    3350 1450
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_02x05_Counter_Clockwise J14
-U 1 1 5BC64226
-P 1800 2400
-F 0 "J14" H 1850 2817 50  0000 C CNN
-F 1 "Conn_02x05_Counter_Clockwise" H 1850 2726 50  0000 C CNN
-F 2 "" H 1800 2400 50  0001 C CNN
-F 3 "~" H 1800 2400 50  0001 C CNN
-	1    1800 2400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2900 1250 2900 1350
 Connection ~ 2900 1250
@@ -122,48 +111,5 @@ Text HLabel 3850 1450 2    50   Output ~ 0
 SENSOR1_CON
 Text HLabel 3850 1550 2    50   Output ~ 0
 SENSOR2_CON
-Wire Wire Line
-	1600 2200 1250 2200
-Wire Wire Line
-	1250 2200 1250 2300
-Wire Wire Line
-	1250 2300 1600 2300
-Connection ~ 1250 2200
-Wire Wire Line
-	1250 2200 1050 2200
-Wire Wire Line
-	2450 2200 2450 2300
-Wire Wire Line
-	2450 2200 2650 2200
-Connection ~ 2450 2200
-Text Label 1050 2200 0    50   ~ 0
-VDD_3V3
-Text Label 2650 2200 2    50   ~ 0
-M_GND
-Wire Wire Line
-	1600 2400 1250 2400
-Wire Wire Line
-	1600 2500 1250 2500
-Wire Wire Line
-	1600 2600 1250 2600
-Text Label 2650 2400 2    50   ~ 0
-SENSOR1
-Text Label 2650 2500 2    50   ~ 0
-SENSOR2
-Text Label 1250 2600 0    50   ~ 0
-M_EN
-Text Label 1250 2500 0    50   ~ 0
-M_DIR
-Text Label 1250 2400 0    50   ~ 0
-M_PWM
-Wire Wire Line
-	2100 2300 2450 2300
-Wire Wire Line
-	2100 2200 2450 2200
-Wire Wire Line
-	2100 2400 2650 2400
-Wire Wire Line
-	2100 2500 2650 2500
-Text Notes 850  1900 0    50   ~ 0
-Use a cable with a bigger cross section for the power supply
+NoConn ~ 3650 1650
 $EndSCHEMATC
