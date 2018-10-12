@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 8
+Sheet 3 9
 Title ""
 Date ""
 Rev ""
@@ -797,34 +797,6 @@ Text Label 9400 4800 0    50   ~ 0
 SPI_TX
 Text Notes 9400 3600 0    50   ~ 0
 For debugging purposes
-Wire Wire Line
-	6350 5100 6650 5100
-Wire Wire Line
-	6650 5100 6650 5200
-$Comp
-L Device:R R15
-U 1 1 5BC21924
-P 6650 5350
-F 0 "R15" V 6730 5350 50  0000 C CNN
-F 1 "10k" V 6650 5350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6580 5350 50  0001 C CNN
-F 3 "" H 6650 5350 50  0001 C CNN
-	1    6650 5350
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR05
-U 1 1 5BC21A51
-P 6650 5550
-F 0 "#PWR05" H 6650 5300 50  0001 C CNN
-F 1 "GND" H 6650 5400 50  0000 C CNN
-F 2 "" H 6650 5550 50  0001 C CNN
-F 3 "" H 6650 5550 50  0001 C CNN
-	1    6650 5550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6650 5500 6650 5550
 Text Notes 6700 5350 0    50   ~ 0
 NA
 $Comp
@@ -837,50 +809,6 @@ F 2 "" H 1900 4950 50  0001 C CNN
 F 3 "~" H 1900 4950 50  0001 C CNN
 	1    1900 4950
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R14
-U 1 1 5BC2A60A
-P 6600 4200
-F 0 "R14" V 6680 4200 50  0000 C CNN
-F 1 "10k" V 6600 4200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6530 4200 50  0001 C CNN
-F 3 "" H 6600 4200 50  0001 C CNN
-	1    6600 4200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R18
-U 1 1 5BC2A764
-P 6900 4100
-F 0 "R18" V 6980 4100 50  0000 C CNN
-F 1 "10k" V 6900 4100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6830 4100 50  0001 C CNN
-F 3 "" H 6900 4100 50  0001 C CNN
-	1    6900 4100
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R13
-U 1 1 5BC2A815
-P 6600 4000
-F 0 "R13" V 6680 4000 50  0000 C CNN
-F 1 "10k" V 6600 4000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6530 4000 50  0001 C CNN
-F 3 "" H 6600 4000 50  0001 C CNN
-	1    6600 4000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R17
-U 1 1 5BC2A86F
-P 6900 3900
-F 0 "R17" V 6980 3900 50  0000 C CNN
-F 1 "10k" V 6900 3900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6830 3900 50  0001 C CNN
-F 3 "" H 6900 3900 50  0001 C CNN
-	1    6900 3900
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R12
@@ -904,37 +832,8 @@ F 3 "" H 6850 2800 50  0001 C CNN
 	1    6850 2800
 	0    1    1    0   
 $EndComp
-Text Notes 7250 4300 0    50   ~ 0
-NA
 Text Notes 6350 3000 0    50   ~ 0
 NA
-Wire Wire Line
-	6350 3900 6750 3900
-Wire Wire Line
-	7600 3900 7600 4000
-Wire Wire Line
-	7050 3900 7600 3900
-Wire Wire Line
-	6350 4200 6450 4200
-Connection ~ 7600 4200
-Wire Wire Line
-	7600 4200 7600 4250
-Wire Wire Line
-	6750 4200 7600 4200
-Wire Wire Line
-	6450 4000 6350 4000
-Wire Wire Line
-	6350 4100 6750 4100
-Wire Wire Line
-	7050 4100 7600 4100
-Connection ~ 7600 4100
-Wire Wire Line
-	7600 4100 7600 4200
-Wire Wire Line
-	6750 4000 7600 4000
-Connection ~ 7600 4000
-Wire Wire Line
-	7600 4000 7600 4100
 Wire Wire Line
 	6350 2900 6450 2900
 Wire Wire Line
@@ -945,17 +844,6 @@ Wire Wire Line
 	7250 2800 7000 2800
 Wire Wire Line
 	6750 2900 7250 2900
-$Comp
-L power:GND #PWR07
-U 1 1 5BC56C7A
-P 7600 4250
-F 0 "#PWR07" H 7600 4000 50  0001 C CNN
-F 1 "GND" H 7600 4100 50  0000 C CNN
-F 2 "" H 7600 4250 50  0001 C CNN
-F 3 "" H 7600 4250 50  0001 C CNN
-	1    7600 4250
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR06
 U 1 1 5BC56CC7
@@ -968,14 +856,6 @@ F 3 "" H 7250 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 7250 2900
-Wire Notes Line
-	6400 4300 6400 3850
-Wire Notes Line
-	6400 3850 7150 3850
-Wire Notes Line
-	7150 3850 7150 4300
-Wire Notes Line
-	7150 4300 6400 4300
 Wire Notes Line
 	6450 2750 6450 2950
 Wire Notes Line
@@ -1012,4 +892,24 @@ Wire Wire Line
 	3950 2900 3950 3000
 Wire Wire Line
 	3950 3300 3950 3500
+Text HLabel 6650 5100 2    60   Output ~ 0
+M_PWM
+Wire Wire Line
+	6350 5100 6650 5100
+Text HLabel 6950 3900 2    60   Output ~ 0
+M_DIR
+Wire Wire Line
+	6350 3900 6950 3900
+Wire Wire Line
+	6350 4000 6950 4000
+Text HLabel 6950 4000 2    60   Output ~ 0
+M_EN
+Text HLabel 6950 4100 2    60   Input ~ 0
+SENSOR1
+Text HLabel 6950 4200 2    60   Input ~ 0
+SENSOR2
+Wire Wire Line
+	6350 4200 6950 4200
+Wire Wire Line
+	6350 4100 6950 4100
 $EndSCHEMATC
