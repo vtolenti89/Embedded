@@ -139,8 +139,8 @@ L Device:Crystal Y1
 U 1 1 5BB50C6F
 P 2550 6350
 F 0 "Y1" H 2550 6500 50  0000 C CNN
-F 1 "12MHz" H 2550 6200 50  0000 C CNN
-F 2 "" H 2550 6350 50  0001 C CNN
+F 1 "ABLS-12.000MHZ-B2-T" H 2550 6200 50  0000 C CNN
+F 2 "custom-footprints:ABLS2-10.000MHZ-D4Y-T" H 2550 6350 50  0001 C CNN
 F 3 "" H 2550 6350 50  0001 C CNN
 	1    2550 6350
 	1    0    0    -1  
@@ -362,8 +362,6 @@ Wire Wire Line
 Wire Wire Line
 	4400 5650 4200 5650
 Wire Wire Line
-	3950 1600 4250 1600
-Wire Wire Line
 	2400 2150 2400 2350
 Wire Wire Line
 	2400 2350 2500 2350
@@ -584,8 +582,6 @@ Wire Wire Line
 Wire Wire Line
 	3450 1600 3650 1600
 Wire Wire Line
-	9700 1900 10150 1900
-Wire Wire Line
 	8550 4350 8900 4350
 Wire Wire Line
 	5450 5350 5600 5350
@@ -609,7 +605,7 @@ U 1 1 5BBEC1C5
 P 7800 1900
 F 0 "U2" H 7825 2215 50  0000 C CNN
 F 1 "AZ1117CD-3.3TRG1DICT-ND" H 7825 2124 50  0000 C CNN
-F 2 "" H 7800 1900 50  0001 C CNN
+F 2 "custom-footprints:TO252-2" H 7800 1900 50  0001 C CNN
 F 3 "" H 7800 1900 50  0001 C CNN
 	1    7800 1900
 	1    0    0    -1  
@@ -620,36 +616,6 @@ Text Notes 7400 3250 0    50   ~ 0
 Max Dis. Power = (150 - 23)°C / 70°C/W = 1.81W (worst case)\nMax Dis. Power = (125 - 23)°C / 70°C/W = 1.45W (recommended)\n
 Wire Wire Line
 	8300 1900 8650 1900
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5BC699B6
-P 4250 1600
-F 0 "TP1" H 4308 1720 50  0000 L CNN
-F 1 "TestPoint" H 4308 1629 50  0000 L CNN
-F 2 "" H 4450 1600 50  0001 C CNN
-F 3 "~" H 4450 1600 50  0001 C CNN
-	1    4250 1600
-	1    0    0    -1  
-$EndComp
-Connection ~ 4250 1600
-Wire Wire Line
-	4250 1600 4750 1600
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5BC6E770
-P 10150 1750
-F 0 "TP2" H 10208 1870 50  0000 L CNN
-F 1 "TestPoint" H 10208 1779 50  0000 L CNN
-F 2 "" H 10350 1750 50  0001 C CNN
-F 3 "~" H 10350 1750 50  0001 C CNN
-	1    10150 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10150 1750 10150 1900
-Connection ~ 10150 1900
-Wire Wire Line
-	10150 1900 10300 1900
 NoConn ~ 4200 5450
 NoConn ~ 4200 5550
 NoConn ~ 4200 5750
@@ -657,4 +623,8 @@ NoConn ~ 4200 5850
 NoConn ~ 4200 5950
 NoConn ~ 4200 6050
 NoConn ~ 2800 2550
+Wire Wire Line
+	3950 1600 4750 1600
+Wire Wire Line
+	9700 1900 10300 1900
 $EndSCHEMATC

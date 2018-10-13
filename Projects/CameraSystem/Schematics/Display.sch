@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 9
+Sheet 6 9
 Title ""
 Date ""
 Rev ""
@@ -28,7 +28,7 @@ U 1 1 5BB9D5E3
 P 6350 2300
 F 0 "U9" H 6350 1950 60  0000 C CNN
 F 1 "LCD_2x16_w_i2c" H 6350 2650 60  0000 C CNN
-F 2 "" H 6350 2300 60  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 6350 2300 60  0001 C CNN
 F 3 "" H 6350 2300 60  0001 C CNN
 	1    6350 2300
 	1    0    0    -1  
