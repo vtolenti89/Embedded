@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:\Users\vtolenti89\Documents\Projects\Kicad\Projects\CameraSystem\Schematics\CameraSystem.sch)
-    (date "13/10/2018 21:52:50")
+    (date "13/10/2018 22:14:47")
     (tool "Eeschema (5.0.0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -460,7 +460,7 @@
       (tstamp 5BC621A1))
     (comp (ref U4)
       (value ESP8266)
-      (footprint Pin_Headers:Pin_Header_Straight_2x08_Pitch2.54mm)
+      (footprint Pin_Headers:Pin_Header_Straight_2x04_Pitch2.54mm)
       (libsource (lib cl-integrated_circuits) (part ESP8266) (description ""))
       (sheetpath (names /Wifi/) (tstamps /5BB4D9C1/))
       (tstamp 5BB97A97))
@@ -514,7 +514,7 @@
       (tstamp 5BC6841F))
     (comp (ref U6)
       (value OV7670)
-      (footprint Pin_Headers:Pin_Header_Straight_2x16_Pitch2.54mm)
+      (footprint Pin_Headers:Pin_Header_Straight_2x08_Pitch2.54mm)
       (libsource (lib cl-integrated_circuits) (part OV7670) (description ""))
       (sheetpath (names /Camera/) (tstamps /5BB4DA63/))
       (tstamp 5BBB684E))
