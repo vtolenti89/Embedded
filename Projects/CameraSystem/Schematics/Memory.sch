@@ -94,24 +94,24 @@ $EndComp
 $Comp
 L power:GND #PWR0126
 U 1 1 5BBAAE94
-P 7500 2650
-F 0 "#PWR0126" H 7500 2400 50  0001 C CNN
-F 1 "GND" H 7500 2500 50  0000 C CNN
-F 2 "" H 7500 2650 50  0001 C CNN
-F 3 "" H 7500 2650 50  0001 C CNN
-	1    7500 2650
-	1    0    0    -1  
+P 7000 2600
+F 0 "#PWR0126" H 7000 2350 50  0001 C CNN
+F 1 "GND" H 7000 2450 50  0000 C CNN
+F 2 "" H 7000 2600 50  0001 C CNN
+F 3 "" H 7000 2600 50  0001 C CNN
+	1    7000 2600
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0127
 U 1 1 5BBAAEA8
-P 7500 2950
-F 0 "#PWR0127" H 7500 2700 50  0001 C CNN
-F 1 "GND" H 7500 2800 50  0000 C CNN
-F 2 "" H 7500 2950 50  0001 C CNN
-F 3 "" H 7500 2950 50  0001 C CNN
-	1    7500 2950
-	1    0    0    -1  
+P 7050 2900
+F 0 "#PWR0127" H 7050 2650 50  0001 C CNN
+F 1 "GND" H 7050 2750 50  0000 C CNN
+F 2 "" H 7050 2900 50  0001 C CNN
+F 3 "" H 7050 2900 50  0001 C CNN
+	1    7050 2900
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	4250 2550 4250 2500
@@ -126,13 +126,9 @@ Wire Wire Line
 Wire Wire Line
 	4250 3100 5250 3100
 Wire Wire Line
-	7500 2950 7500 2900
+	7050 2900 6300 2900
 Wire Wire Line
-	7500 2900 6300 2900
-Wire Wire Line
-	7500 2650 7500 2600
-Wire Wire Line
-	7500 2600 6300 2600
+	7000 2600 6300 2600
 Wire Wire Line
 	5250 2700 4700 2700
 Wire Wire Line
@@ -142,9 +138,9 @@ Wire Wire Line
 Text Label 4700 2700 0    60   ~ 0
 SD_DATA_IN
 Text HLabel 4700 2600 0    60   Input ~ 0
-MISO
+SD_MISO
 Text HLabel 4700 2900 0    60   Input ~ 0
-SCK
+SD_SCK
 Text Label 4700 3000 0    60   ~ 0
 SD_SCK_IN
 Wire Wire Line
@@ -152,21 +148,14 @@ Wire Wire Line
 $Comp
 L Device:R R25
 U 1 1 5BBAB32F
-P 6500 2700
-F 0 "R25" V 6580 2700 50  0000 C CNN
-F 1 "10k" V 6500 2700 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 6430 2700 50  0001 C CNN
-F 3 "" H 6500 2700 50  0001 C CNN
-	1    6500 2700
-	0    1    1    0   
+P 7300 2550
+F 0 "R25" V 7380 2550 50  0000 C CNN
+F 1 "10k" V 7300 2550 50  0000 C CNN
+F 2 "digikey-footprints:0603" V 7230 2550 50  0001 C CNN
+F 3 "" H 7300 2550 50  0001 C CNN
+	1    7300 2550
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	6300 2700 6350 2700
-Wire Wire Line
-	6650 2700 6850 2700
-Wire Wire Line
-	6850 2700 6850 2500
-Connection ~ 6850 2500
 Wire Wire Line
 	6400 2500 6400 2300
 Connection ~ 6400 2500
@@ -198,8 +187,7 @@ F 3 "" H 6700 2000 50  0001 C CNN
 	1    6700 2000
 	1    0    0    -1  
 $EndComp
-Connection ~ 6850 2700
-Text HLabel 7050 2700 2    60   Input ~ 0
+Text HLabel 7500 2700 2    60   Input ~ 0
 SD_CS
 Wire Wire Line
 	6300 2800 7050 2800
@@ -210,7 +198,7 @@ Wire Wire Line
 Wire Wire Line
 	6300 3100 7050 3100
 Text HLabel 7050 3100 2    60   Output ~ 0
-MOSI
+SD_MOSI
 Text Label 7050 3000 2    60   ~ 0
 SD_DATA_OUT
 $Comp
@@ -277,12 +265,6 @@ Wire Wire Line
 	2650 1500 2650 1550
 Wire Wire Line
 	3250 1500 3250 1550
-Wire Wire Line
-	6850 2500 7400 2500
-Wire Wire Line
-	6400 2500 6850 2500
-Wire Wire Line
-	6850 2700 7050 2700
 Wire Wire Line
 	3800 4700 5550 4700
 $Comp
@@ -381,8 +363,24 @@ F 3 "" H 5550 5500 50  0001 C CNN
 $EndComp
 Text Label 3450 1500 0    50   ~ 0
 VDD_3V3_IN
-Text Label 7400 2500 0    50   ~ 0
+Text Label 7000 2500 2    50   ~ 0
 VDD_3V3_IN
 Text Label 3550 4700 0    50   ~ 0
 VDD_3V3_IN
+Wire Wire Line
+	6400 2500 6800 2500
+Wire Wire Line
+	6300 2700 7300 2700
+Connection ~ 7300 2700
+Wire Wire Line
+	7300 2700 7500 2700
+Wire Wire Line
+	7300 2400 7300 2300
+Wire Wire Line
+	7300 2300 6800 2300
+Wire Wire Line
+	6800 2300 6800 2500
+Connection ~ 6800 2500
+Wire Wire Line
+	6800 2500 7000 2500
 $EndSCHEMATC
