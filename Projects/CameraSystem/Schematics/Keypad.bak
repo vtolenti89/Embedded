@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 9
+Sheet 7 9
 Title ""
 Date ""
 Rev ""
@@ -454,9 +454,9 @@ Text HLabel 1450 3800 0    60   Input ~ 0
 QT_RST_CON
 Text HLabel 1450 3700 0    60   Input ~ 0
 QT_CHN_CON
-Text HLabel 1450 3400 0    60   Input ~ 0
+Text HLabel 1450 3600 0    60   Input ~ 0
 SCL_3V3_CON
-Text HLabel 1450 3600 0    60   BiDi ~ 0
+Text HLabel 1450 3400 0    60   BiDi ~ 0
 SDA_3V3_CON
 Text HLabel 1450 3900 0    60   Input ~ 0
 VDD_3V3_CON
@@ -537,11 +537,11 @@ Wire Wire Line
 	1450 4750 1550 4750
 Text Label 1450 4850 2    60   ~ 0
 VDD_3V3
-Text Label 1450 4550 2    60   ~ 0
+Text Label 1450 4350 2    60   ~ 0
 SDA_3V3
 Text Label 1450 4450 2    60   ~ 0
 QP_GND
-Text Label 1450 4350 2    60   ~ 0
+Text Label 1450 4550 2    60   ~ 0
 SCL_3V3
 Text Label 1450 4650 2    60   ~ 0
 QT_CHN
