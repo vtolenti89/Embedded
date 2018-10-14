@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 9
+Sheet 7 9
 Title ""
 Date ""
 Rev ""
@@ -442,12 +442,12 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x06 J11
 U 1 1 5BBF5B08
-P 1750 3500
-F 0 "J11" H 1830 3492 50  0000 L CNN
-F 1 "Conn_01x06" H 1830 3401 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1750 3500 50  0001 C CNN
-F 3 "~" H 1750 3500 50  0001 C CNN
-	1    1750 3500
+P 1750 3600
+F 0 "J11" H 1830 3592 50  0000 L CNN
+F 1 "Conn_01x06" H 1830 3501 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1750 3600 50  0001 C CNN
+F 3 "~" H 1750 3600 50  0001 C CNN
+	1    1750 3600
 	1    0    0    -1  
 $EndComp
 Text HLabel 1450 3800 0    60   Input ~ 0
@@ -458,10 +458,10 @@ Text HLabel 1450 3600 0    60   Input ~ 0
 SCL_3V3_CON
 Text HLabel 1450 3400 0    60   BiDi ~ 0
 SDA_3V3_CON
-Text HLabel 1450 3300 0    60   Input ~ 0
+Text HLabel 1450 3900 0    60   Input ~ 0
 VDD_3V3_CON
 Wire Wire Line
-	1450 3300 1550 3300
+	1450 3900 1550 3900
 Wire Wire Line
 	1450 3400 1550 3400
 Wire Wire Line
@@ -515,16 +515,16 @@ SCL_3V3
 $Comp
 L Connector_Generic:Conn_01x06 J12
 U 1 1 5BC19F1B
-P 1750 4450
-F 0 "J12" H 1830 4442 50  0000 L CNN
-F 1 "Conn_01x06" H 1830 4351 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1750 4450 50  0001 C CNN
-F 3 "~" H 1750 4450 50  0001 C CNN
-	1    1750 4450
+P 1750 4550
+F 0 "J12" H 1830 4542 50  0000 L CNN
+F 1 "Conn_01x06" H 1830 4451 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1750 4550 50  0001 C CNN
+F 3 "~" H 1750 4550 50  0001 C CNN
+	1    1750 4550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1450 4250 1550 4250
+	1450 4850 1550 4850
 Wire Wire Line
 	1450 4350 1550 4350
 Wire Wire Line
@@ -535,7 +535,7 @@ Wire Wire Line
 	1450 4650 1550 4650
 Wire Wire Line
 	1450 4750 1550 4750
-Text Label 1450 4250 2    60   ~ 0
+Text Label 1450 4850 2    60   ~ 0
 VDD_3V3
 Text Label 1450 4350 2    60   ~ 0
 SDA_3V3

@@ -28,7 +28,7 @@ U 1 1 5BB97A97
 P 6500 3350
 F 0 "U4" H 6500 3050 60  0000 C CNN
 F 1 "ESP8266" H 6500 3650 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x08_Pitch2.54mm" H 6500 3350 60  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch2.54mm" H 6500 3350 60  0001 C CNN
 F 3 "" H 6500 3350 60  0001 C CNN
 	1    6500 3350
 	1    0    0    -1  

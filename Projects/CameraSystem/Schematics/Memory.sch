@@ -34,8 +34,6 @@ Wire Wire Line
 Connection ~ 3250 1500
 Text HLabel 2400 1500 0    60   Input ~ 0
 VDD_3V3
-Text Label 3450 1500 0    60   ~ 0
-VDD_3V3_IN
 $Comp
 L cl-integrated_circuits:MC74HC125ADTR2G U5
 U 1 1 5BBAA814
@@ -151,8 +149,6 @@ Text Label 4700 3000 0    60   ~ 0
 SD_SCK_IN
 Wire Wire Line
 	6300 2500 6400 2500
-Text Label 7400 2500 0    60   ~ 0
-VDD_3V3_IN
 $Comp
 L Device:R R25
 U 1 1 5BBAB32F
@@ -246,8 +242,6 @@ $EndComp
 Wire Wire Line
 	3800 5200 3800 5350
 Connection ~ 3800 4700
-Text Label 3550 4700 2    60   ~ 0
-VDD_3V3_IN
 Wire Wire Line
 	5550 4800 4750 4800
 Text Label 4750 4800 0    60   ~ 0
@@ -330,15 +324,6 @@ F 3 "" H 5150 5200 50  0001 C CNN
 	1    5150 5200
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5300 5200 5400 5200
-Wire Wire Line
-	5550 5300 5400 5300
-Wire Wire Line
-	5400 5300 5400 5200
-Connection ~ 5400 5200
-Wire Wire Line
-	5400 5200 5550 5200
 $Comp
 L Device:C C27
 U 1 1 5BC32E9B
@@ -365,7 +350,6 @@ Wire Wire Line
 	5400 6050 5400 5900
 Wire Wire Line
 	5400 5600 5400 5500
-Connection ~ 5400 5300
 Wire Wire Line
 	4350 5200 5000 5200
 Text Label 4350 5200 0    60   ~ 0
@@ -376,5 +360,29 @@ Wire Wire Line
 	5050 5500 5400 5500
 Connection ~ 5400 5500
 Wire Wire Line
-	5400 5500 5400 5300
+	5300 5200 5400 5200
+Connection ~ 5400 5200
+Wire Wire Line
+	5400 5200 5550 5200
+Wire Wire Line
+	5400 5200 5400 5500
+Wire Wire Line
+	5550 5300 5550 5500
+$Comp
+L power:GND #PWR07
+U 1 1 5BC7AC6D
+P 5550 5500
+F 0 "#PWR07" H 5550 5250 50  0001 C CNN
+F 1 "GND" H 5550 5350 50  0000 C CNN
+F 2 "" H 5550 5500 50  0001 C CNN
+F 3 "" H 5550 5500 50  0001 C CNN
+	1    5550 5500
+	1    0    0    -1  
+$EndComp
+Text Label 3450 1500 0    50   ~ 0
+VDD_3V3_IN
+Text Label 7400 2500 0    50   ~ 0
+VDD_3V3_IN
+Text Label 3550 4700 0    50   ~ 0
+VDD_3V3_IN
 $EndSCHEMATC

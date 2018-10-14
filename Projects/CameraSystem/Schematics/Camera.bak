@@ -20,7 +20,7 @@ U 1 1 5BBB684E
 P 5350 3050
 F 0 "U6" H 5350 2550 60  0000 C CNN
 F 1 "OV7670" H 5350 3550 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x16_Pitch2.54mm" H 5350 3050 60  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x08_Pitch2.54mm" H 5350 3050 60  0001 C CNN
 F 3 "" H 5350 3050 60  0001 C CNN
 	1    5350 3050
 	1    0    0    -1  
