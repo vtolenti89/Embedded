@@ -1,0 +1,22 @@
+* C:\Users\vtolentino\Documents\test\Kicad\Projects\CameraSystem\Simulations\Draft3.asc
+V1 N001 0 PWL(0 0 5m 0 {ramp} 18 1 18) Rser=10m
+C1 out N003 100n
+R1 N003 0 10k
+R2 N003 vb 100
+C2 vb 0 10n
+Q1 EN vb 0 0 2N4124
+R3 N001 EN 47k
+M1 out N002 N001 N001 BSC014N03LS
+R4 N001 N002 10k
+Q2 N002 EN 0 0 2N2222
+R5 N002 EN 10k
+.model NPN NPN
+.model PNP PNP
+.lib \\pfde-netapp2.eu.p-f.biz\home\My Documents\LTspiceXVII\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib \\pfde-netapp2.eu.p-f.biz\home\My Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 40m
+.step param ramp 10m 40m 2m
+.backanno
+.end
