@@ -245,28 +245,6 @@ F 3 "" H 3100 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CameraSystem-rescue:TPD2E001DRLR D?
-U 1 1 5BB52C47
-P 2900 2150
-AR Path="/5BB52C47" Ref="D?"  Part="1" 
-AR Path="/5BB4C1AE/5BB52C47" Ref="D1"  Part="1" 
-F 0 "D1" H 2590 2465 60  0000 L CNN
-F 1 "TPD2E001DRLR" H 3030 1700 60  0000 R CNN
-F 2 "digikey-footprints:SOT-553" H 3100 2350 60  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2450 60  0001 L CNN
-F 4 "296-21883-1-ND" H 3100 2550 60  0001 L CNN "Digi-Key_PN"
-F 5 "TPD2E001DRLR" H 3100 2650 60  0001 L CNN "MPN"
-F 6 "Circuit Protection" H 3100 2750 60  0001 L CNN "Category"
-F 7 "TVS - Diodes" H 3100 2850 60  0001 L CNN "Family"
-F 8 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2950 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/texas-instruments/TPD2E001DRLR/296-21883-1-ND/1629242" H 3100 3050 60  0001 L CNN "DK_Detail_Page"
-F 10 "TVS DIODE 5.5V SOT5" H 3100 3150 60  0001 L CNN "Description"
-F 11 "Texas Instruments" H 3100 3250 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 3100 3350 60  0001 L CNN "Status"
-	1    2900 2150
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C5
 U 1 1 5BB53BD8
 P 3450 2000
@@ -304,10 +282,6 @@ Wire Wire Line
 	1550 2350 2050 2350
 Wire Wire Line
 	2050 2350 2050 2900
-Wire Wire Line
-	1550 2050 2500 2050
-Wire Wire Line
-	1550 2150 2400 2150
 Wire Wire Line
 	1550 2250 2050 2250
 Wire Wire Line
@@ -622,9 +596,51 @@ NoConn ~ 4200 5750
 NoConn ~ 4200 5850
 NoConn ~ 4200 5950
 NoConn ~ 4200 6050
-NoConn ~ 2800 2550
 Wire Wire Line
 	3950 1600 4750 1600
 Wire Wire Line
 	9700 1900 10300 1900
+Wire Wire Line
+	2400 2150 2250 2150
+Wire Wire Line
+	2250 2150 2250 2050
+Wire Wire Line
+	1550 2050 2250 2050
+Wire Wire Line
+	2500 2050 2300 2050
+Wire Wire Line
+	2300 2050 2300 2200
+Wire Wire Line
+	2300 2200 2150 2200
+Wire Wire Line
+	2150 2200 2150 2150
+Wire Wire Line
+	1550 2150 2150 2150
+$Comp
+L CameraSystem-rescue:TPD2E001DRLR D?
+U 1 1 5BB52C47
+P 2900 2150
+AR Path="/5BB52C47" Ref="D?"  Part="1" 
+AR Path="/5BB4C1AE/5BB52C47" Ref="D1"  Part="1" 
+F 0 "D1" H 2590 2465 60  0000 L CNN
+F 1 "TPD2E001DRLR" H 3030 1700 60  0000 R CNN
+F 2 "custom-footprints:TPD2E001DRLR_no_stencil" H 3100 2350 60  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2450 60  0001 L CNN
+F 4 "296-21883-1-ND" H 3100 2550 60  0001 L CNN "Digi-Key_PN"
+F 5 "TPD2E001DRLR" H 3100 2650 60  0001 L CNN "MPN"
+F 6 "Circuit Protection" H 3100 2750 60  0001 L CNN "Category"
+F 7 "TVS - Diodes" H 3100 2850 60  0001 L CNN "Family"
+F 8 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2950 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/texas-instruments/TPD2E001DRLR/296-21883-1-ND/1629242" H 3100 3050 60  0001 L CNN "DK_Detail_Page"
+F 10 "TVS DIODE 5.5V SOT5" H 3100 3150 60  0001 L CNN "Description"
+F 11 "Texas Instruments" H 3100 3250 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3100 3350 60  0001 L CNN "Status"
+	1    2900 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 2550 2400 2550
+Wire Wire Line
+	2400 2550 2400 2350
+Connection ~ 2400 2350
 $EndSCHEMATC
