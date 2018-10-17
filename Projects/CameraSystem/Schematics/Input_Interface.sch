@@ -275,9 +275,9 @@ USB TO UART
 Text HLabel 4850 5650 2    60   Output ~ 0
 SPI_RST
 Text HLabel 1350 5450 0    60   Output ~ 0
-SPI_TX
+U2U_SPI_TX
 Text HLabel 1350 5550 0    60   Input ~ 0
-SPI_RX
+U2U_SPI_RX
 Wire Wire Line
 	1550 2350 2050 2350
 Wire Wire Line
@@ -499,11 +499,11 @@ VDD_3V3
 Wire Wire Line
 	8250 5600 8350 5600
 Text Label 8350 5600 0    60   ~ 0
-SPI_TX
+U2U_SPI_TX
 Wire Wire Line
 	8900 5600 9000 5600
 Text Label 9000 5600 0    60   ~ 0
-SPI_RX
+U2U_SPI_RX
 Wire Wire Line
 	8550 4200 8650 4200
 Connection ~ 5450 5350

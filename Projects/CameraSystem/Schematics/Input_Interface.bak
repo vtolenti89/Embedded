@@ -275,9 +275,9 @@ USB TO UART
 Text HLabel 4850 5650 2    60   Output ~ 0
 SPI_RST
 Text HLabel 1350 5450 0    60   Output ~ 0
-SPI_TX
+U2U_SPI_TX
 Text HLabel 1350 5550 0    60   Input ~ 0
-SPI_RX
+U2U_SPI_RX
 Wire Wire Line
 	1550 2350 2050 2350
 Wire Wire Line
@@ -624,7 +624,7 @@ AR Path="/5BB52C47" Ref="D?"  Part="1"
 AR Path="/5BB4C1AE/5BB52C47" Ref="D1"  Part="1" 
 F 0 "D1" H 2590 2465 60  0000 L CNN
 F 1 "TPD2E001DRLR" H 3030 1700 60  0000 R CNN
-F 2 "digikey-footprints:SOT-553" H 3100 2350 60  0001 L CNN
+F 2 "custom-footprints:TPD2E001DRLR_no_stencil" H 3100 2350 60  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2450 60  0001 L CNN
 F 4 "296-21883-1-ND" H 3100 2550 60  0001 L CNN "Digi-Key_PN"
 F 5 "TPD2E001DRLR" H 3100 2650 60  0001 L CNN "MPN"
