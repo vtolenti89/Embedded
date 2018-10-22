@@ -4,20 +4,20 @@ WARNING: Node AC_OUT is floating.
 
 Direct Newton iteration for .op point succeeded.
 
-Date: Fri Oct 19 12:58:39 2018
-Total elapsed time: 0.047 seconds.
+Date: Mon Oct 22 09:01:50 2018
+Total elapsed time: 0.051 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 11764
-traniter = 11757
-tranpoints = 4315
-accept = 3062
-rejected = 1253
+totiter = 12856
+traniter = 12849
+tranpoints = 4614
+accept = 3267
+rejected = 1347
 matrix size = 10
 fillins = 4
 solver = Normal
-Matrix Compiler1: 818 bytes object code size  0.1/0.1/[0.1]
-Matrix Compiler2: 890 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler1: 818 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.1/0.1
 
