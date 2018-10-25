@@ -1,0 +1,14 @@
+* C:\Users\vtolentino\Documents\test\Kicad\Projects\FM_Disturber\01-Simulation\01-biasing_2N3904.asc
+V1 c 0 3
+I1 0 b 3µ
+Q1 c b 0 0 2N3904
+.model NPN NPN
+.model PNP PNP
+.lib \\pfde-netapp2.eu.p-f.biz\home\My Documents\LTspiceXVII\lib\cmp\standard.bjt
+.dc v1 0 3 0.01 i1 2u 5u 0.1u
+;.step temp -20 85 1
+;.temp 23
+.op
+;.dc v1 0 3 0.01 i1 2u 5u 0.1u
+.backanno
+.end
