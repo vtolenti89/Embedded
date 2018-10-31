@@ -1,0 +1,9 @@
+* C:\Users\vtolentino\Documents\test\Kicad\Blog\001-Bipolar_Amplifier\01_Simulation\Draft4.asc
+V1 in 0 SINE(0 0.1 {fin}) AC 1
+R1 N001 in 1
+L1 0 out 1.59µ
+C1 N001 out 1.59p
+.tran 10m
+.step param fin list 10k 100k 100e6 1e9
+.backanno
+.end
