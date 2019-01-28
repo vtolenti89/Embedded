@@ -188,7 +188,7 @@ F 3 "" H 6700 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 7500 2700 2    60   Input ~ 0
-SD_CS
+_SD_CS
 Wire Wire Line
 	6300 2800 7050 2800
 Text Label 7050 2800 2    60   ~ 0

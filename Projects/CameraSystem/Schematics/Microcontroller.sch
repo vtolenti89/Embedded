@@ -213,39 +213,6 @@ SCK
 Text Label 950  5150 0    60   ~ 0
 UC_RST
 $Comp
-L Device:R R10
-U 1 1 5BB8F677
-P 2600 4950
-F 0 "R10" V 2680 4950 50  0000 C CNN
-F 1 "330" V 2600 4950 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 2530 4950 50  0001 C CNN
-F 3 "" H 2600 4950 50  0001 C CNN
-	1    2600 4950
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 5BB8F70D
-P 1400 4750
-F 0 "R6" V 1480 4750 50  0000 C CNN
-F 1 "330" V 1400 4750 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 1330 4750 50  0001 C CNN
-F 3 "" H 1400 4750 50  0001 C CNN
-	1    1400 4750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 5BB8F779
-P 1400 4950
-F 0 "R7" V 1480 4950 50  0000 C CNN
-F 1 "330" V 1400 4950 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 1330 4950 50  0001 C CNN
-F 3 "" H 1400 4950 50  0001 C CNN
-	1    1400 4950
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:C C15
 U 1 1 5BB904A3
 P 4350 1050
@@ -519,17 +486,9 @@ Wire Wire Line
 	2000 2900 2000 3100
 Connection ~ 2000 2900
 Wire Wire Line
-	1550 4950 1700 4950
-Wire Wire Line
 	1700 4850 1600 4850
 Wire Wire Line
 	1600 4850 1600 4750
-Wire Wire Line
-	1600 4750 1550 4750
-Wire Wire Line
-	1250 4750 950  4750
-Wire Wire Line
-	1250 4950 950  4950
 Wire Wire Line
 	1700 5050 1600 5050
 Wire Wire Line
@@ -537,15 +496,11 @@ Wire Wire Line
 Wire Wire Line
 	1600 5150 950  5150
 Wire Wire Line
-	2200 4950 2450 4950
-Wire Wire Line
 	2200 4850 2350 4850
 Wire Wire Line
 	2350 4850 2350 4750
 Wire Wire Line
 	2350 4750 2850 4750
-Wire Wire Line
-	2750 4950 2850 4950
 Wire Wire Line
 	2200 5050 2350 5050
 Wire Wire Line
@@ -728,7 +683,7 @@ Wire Wire Line
 	6350 3700 6950 3700
 Wire Wire Line
 	6350 3800 6950 3800
-Text HLabel 6950 3700 2    60   Output ~ 0
+Text HLabel 6950 3700 2    60   Input ~ 0
 QT_CHN
 Text HLabel 6950 3800 2    60   Output ~ 0
 QT_RST
@@ -890,4 +845,10 @@ Wire Wire Line
 	6350 2900 6900 2900
 Wire Wire Line
 	6500 2800 6350 2800
+Wire Wire Line
+	950  4750 1600 4750
+Wire Wire Line
+	950  4950 1700 4950
+Wire Wire Line
+	2200 4950 2850 4950
 $EndSCHEMATC
