@@ -16,12 +16,15 @@
 #define detectionStatus 0x02 // calibrate | overflow |5|4|3|2|1|touch
 #define keyStatus 0x03 //return the keys touched reserved|6|5|4|3|2|1|0
 
-
-
-uint8_t getId() {
-	
-	unsigned char ret;
+QTSensor::QTSensor() {
+	// Constructor
 	i2c_init();
+}
+
+
+uint8_t QTSensor::getId() {
+	unsigned char ret;
+	//i2c_init();
 	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
 		if (!i2c_write(chipId)){
 			// Write was successful
@@ -37,11 +40,10 @@ uint8_t getId() {
 	return 0;
 }
 
-
-uint8_t getFirmware() {
+uint8_t QTSensor::getFirmware() {
 	
 	unsigned char ret;
-	i2c_init();
+	//i2c_init();
 	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
 		if (!i2c_write(firmwareVersion)){
 			// Write was successful
@@ -57,10 +59,10 @@ uint8_t getFirmware() {
 	return 0;
 }
 
-uint8_t getKeyStatus() {
+uint8_t QTSensor::getKeyStatus() {
 	
 	unsigned char ret;
-	i2c_init();
+	//i2c_init();
 	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
 		if (!i2c_write(keyStatus)){
 			// Write was successful

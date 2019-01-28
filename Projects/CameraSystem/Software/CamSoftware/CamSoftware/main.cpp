@@ -1,7 +1,7 @@
 /*
- * CameraSystem.c
+ * CamSoftware.cpp
  *
- * Created: 28.01.2019 10:53:23
+ * Created: 28.01.2019 12:49:36
  * Author : vtolentino
  */ 
 
@@ -25,19 +25,17 @@ int main(void)
 	
 	PORTD|=0xFF;
 	PORTA|=0x00;
-	/* Replace with your application code */
+	
+	//Initialiting modules
+	QTSensor qt;
 	
 	while (1)
 	{
 		
 		PORTD^=(1 << ledGreen);
 		
-		_delay_ms(5000);
-		PORTA = getKeyStatus();
-		
+		_delay_ms(2);
+		PORTA = qt.getKeyStatus();
 		
 	}
 }
-
-
-

@@ -2,9 +2,9 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-main.c
+main.cpp
 
-source\qtSensor.c
+source\qtSensor.cpp
 
-source\twimaster.c
+source\twimaster.cpp
 
