@@ -15,6 +15,7 @@
 #define firmwareVersion 0x01 //should read back e.g. 0x15
 #define detectionStatus 0x02 // calibrate | overflow |5|4|3|2|1|touch
 #define keyStatus 0x03 //return the keys touched reserved|6|5|4|3|2|1|0
+#define lowPowerMode 0x54 // low power mode for reading measurements
 
 QTSensor::QTSensor() {
 	// Constructor
@@ -23,57 +24,29 @@ QTSensor::QTSensor() {
 
 
 uint8_t QTSensor::getId() {
-	unsigned char ret;
-	//i2c_init();
-	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
-		if (!i2c_write(chipId)){
-			// Write was successful
-			if (!i2c_rep_start((chipAddress << 1 ) | I2C_READ)) {
-				// Device is accessible
-				ret = i2c_readNak();
-				i2c_stop();
-				return ret;
-				};
-			};
-		};
-	i2c_stop();
-	return 0;
+	
+	return i2c_read_from_register(chipAddress, chipId);
 }
 
 uint8_t QTSensor::getFirmware() {
 	
-	unsigned char ret;
-	//i2c_init();
-	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
-		if (!i2c_write(firmwareVersion)){
-			// Write was successful
-			if (!i2c_rep_start((chipAddress << 1 ) | I2C_READ)) {
-				// Device is accessible
-				ret = i2c_readNak();
-				i2c_stop();
-				return ret;
-			};
-		};
-	};
-	i2c_stop();
-	return 0;
+	return i2c_read_from_register(chipAddress, firmwareVersion);
 }
 
 uint8_t QTSensor::getKeyStatus() {
 	
-	unsigned char ret;
-	//i2c_init();
-	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
-		if (!i2c_write(keyStatus)){
-			// Write was successful
-			if (!i2c_rep_start((chipAddress << 1 ) | I2C_READ)) {
-				// Device is accessible
-				ret = i2c_readNak();
-				i2c_stop();
-				return ret;
-			};
-		};
-	};
-	i2c_stop();
-	return 0;
+	return i2c_read_from_register(chipAddress, keyStatus);
+	
+}
+
+bool QTSensor::setLowPowerMode(unsigned char intervalTime) {
+	
+	return i2c_write_to_register(chipAddress, lowPowerMode, intervalTime);
+	
+}
+
+uint8_t QTSensor::getLowPowerMode() {
+	
+	return i2c_read_from_register(chipAddress, lowPowerMode);
+	
 }

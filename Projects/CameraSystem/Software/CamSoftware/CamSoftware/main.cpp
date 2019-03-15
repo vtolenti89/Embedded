@@ -28,14 +28,28 @@ int main(void)
 	
 	//Initialiting modules
 	QTSensor qt;
-	
+	uint8_t temp = 0;
 	while (1)
 	{
 		
 		PORTD^=(1 << ledGreen);
 		
-		_delay_ms(2);
+		
 		PORTA = qt.getKeyStatus();
+		//PORTA = qt.getFirmware();
+		
+		//PORTA = qt.getLowPowerMode();
+		
+		//_delay_ms(1000);
+
+		if (qt.setLowPowerMode(255)) {
+			PORTD^=(1 << ledYellow);
+		};
+			
+		//if(temp >= 254) {
+			//temp = 0;
+		//}
+		
 		
 	}
 }

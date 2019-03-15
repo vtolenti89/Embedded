@@ -170,6 +170,27 @@ extern unsigned char i2c_readNak(void);
  @return   byte read from I2C device
  */
 extern unsigned char i2c_read(unsigned char ack);
+
+/**
+ @brief		write data to a register from a given address
+ 
+ @param		address is the address of the device
+			reg is the register to be written to
+			data is the data to be written in the register
+ @return	0 if unsuccessful, 1 if successful
+*/
+extern bool i2c_write_to_register(unsigned char address, unsigned char reg, unsigned char data);
+
+/**
+ @brief		read data from a register from a given address
+ 
+ @param		address is the address of the device
+			reg is the register to be written to
+			data is the data to be written in the register
+ @return	Byte
+*/
+extern unsigned char i2c_read_from_register(unsigned char address, unsigned char reg);
+
 #define i2c_read(ack)  (ack) ? i2c_readAck() : i2c_readNak(); 
 
 

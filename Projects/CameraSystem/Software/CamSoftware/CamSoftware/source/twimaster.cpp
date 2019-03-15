@@ -204,3 +204,79 @@ unsigned char i2c_readNak(void)
     return TWDR;
 
 }/* i2c_readNak */
+
+
+/************************************************************************
+write data to a register from a given address
+
+Return: 0 if unsuccessful, 1 if successful
+************************************************************************/
+bool i2c_write_to_register(unsigned char addr, unsigned char reg, unsigned char data)
+{
+	unsigned char ret;
+	ret = i2c_start((addr << 1) | I2C_WRITE);
+	if(ret) {
+		/* failed to issue start condition, possibly no device found */
+		i2c_stop();
+	} else {
+	/* issuing start condition ok, device accessible */
+
+		if(i2c_start_wait((addr << 1) | I2C_WRITE)) {
+			if (!i2c_write(reg)){
+				// Write address was successful
+				i2c_write(data);
+				i2c_stop();
+				return true;
+			};
+		};
+	}
+i2c_stop();
+return false;
+		
+}
+
+/************************************************************************
+Read data from a register from a given address
+
+Return: byte read from I2C                                                                    
+************************************************************************/
+unsigned char i2c_read_from_register(unsigned char addr, unsigned char reg) 
+{
+	unsigned char ret;
+	
+	ret = i2c_start((addr << 1) | I2C_WRITE);
+	if(ret) {
+		/* failed to issue start condition, possibly no device found */
+		i2c_stop();
+	} else {
+		
+		if(i2c_start_wait((addr << 1) | I2C_WRITE)) {
+			if (!i2c_write(reg)){
+			// Write address was successful
+				if (!i2c_rep_start((addr << 1 ) | I2C_READ)) {
+					// Device is accessible
+					ret = i2c_readNak();
+					i2c_stop();	
+					return ret;
+				};
+			};
+		};
+	}
+	i2c_stop();
+	return 0;
+	//if(i2c_start_wait((addr << 1) | I2C_WRITE)) {
+		//
+		//if (!i2c_write(reg)){
+			//// Write address was successful
+			//
+			//if (!i2c_rep_start((addr << 1 ) | I2C_READ)) {
+				//// Device is accessible
+				//ret = i2c_readNak();
+				////i2c_stop();
+				//
+				//return ret;
+			//};
+		//};
+	//};
+	//i2c_stop();
+}

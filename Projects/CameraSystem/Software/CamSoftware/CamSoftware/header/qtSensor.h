@@ -7,6 +7,8 @@ class QTSensor {
 		uint8_t getId();
 		uint8_t getFirmware();
 		uint8_t getKeyStatus();
+		bool setLowPowerMode(unsigned char intervalTime);
+		uint8_t getLowPowerMode();
 	};
 
 #endif

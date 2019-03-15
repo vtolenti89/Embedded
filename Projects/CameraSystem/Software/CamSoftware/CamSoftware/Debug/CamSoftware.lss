@@ -3,29 +3,29 @@ CamSoftware.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000001b0  00000000  00000000  00000054  2**1
+  0 .text         0000023c  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000204  2**0
+  1 .data         00000000  00800060  00800060  00000290  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000204  2**0
+  2 .comment      00000030  00000000  00000000  00000290  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000234  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002c0  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 000000b0  00000000  00000000  00000270  2**0
+  4 .debug_aranges 000000d0  00000000  00000000  000002fc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000c6b  00000000  00000000  00000320  2**0
+  5 .debug_info   00000dc7  00000000  00000000  000003cc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000086c  00000000  00000000  00000f8b  2**0
+  6 .debug_abbrev 000008cf  00000000  00000000  00001193  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000006a4  00000000  00000000  000017f7  2**0
+  7 .debug_line   000006a4  00000000  00000000  00001a62  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000134  00000000  00000000  00001e9c  2**2
+  8 .debug_frame  0000017c  00000000  00000000  00002108  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000555  00000000  00000000  00001fd0  2**0
+  9 .debug_str    000005ed  00000000  00000000  00002284  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000313  00000000  00000000  00002525  2**0
+ 10 .debug_loc    00000455  00000000  00000000  00002871  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000080  00000000  00000000  00002838  2**0
+ 11 .debug_ranges 000000a0  00000000  00000000  00002cc6  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -61,7 +61,7 @@ Disassembly of section .text:
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
   60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
-  64:	0c 94 d6 00 	jmp	0x1ac	; 0x1ac <_exit>
+  64:	0c 94 1c 01 	jmp	0x238	; 0x238 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -95,218 +95,358 @@ int main(void)
 	QTSensor qt;
   84:	ce 01       	movw	r24, r28
   86:	01 96       	adiw	r24, 0x01	; 1
-  88:	0e 94 56 00 	call	0xac	; 0xac <_ZN8QTSensorC1Ev>
-	
+  88:	0e 94 5b 00 	call	0xb6	; 0xb6 <_ZN8QTSensorC1Ev>
+	uint8_t temp = 0;
 	while (1)
 	{
 		
 		PORTD^=(1 << ledGreen);
   8c:	11 e0       	ldi	r17, 0x01	; 1
-  8e:	82 b3       	in	r24, 0x12	; 18
-  90:	81 27       	eor	r24, r17
-  92:	82 bb       	out	0x12, r24	; 18
-	#else
-		//round up by default
-		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
-	#endif
-
-	__builtin_avr_delay_cycles(__ticks_dc);
-  94:	8f ec       	ldi	r24, 0xCF	; 207
-  96:	97 e0       	ldi	r25, 0x07	; 7
-  98:	01 97       	sbiw	r24, 0x01	; 1
-  9a:	f1 f7       	brne	.-4      	; 0x98 <main+0x2c>
-  9c:	00 c0       	rjmp	.+0      	; 0x9e <main+0x32>
-  9e:	00 00       	nop
+		//PORTA = qt.getLowPowerMode();
 		
-		_delay_ms(2);
+		//_delay_ms(1000);
+
+		if (qt.setLowPowerMode(255)) {
+			PORTD^=(1 << ledYellow);
+  8e:	02 e0       	ldi	r16, 0x02	; 2
+	QTSensor qt;
+	uint8_t temp = 0;
+	while (1)
+	{
+		
+		PORTD^=(1 << ledGreen);
+  90:	82 b3       	in	r24, 0x12	; 18
+  92:	81 27       	eor	r24, r17
+  94:	82 bb       	out	0x12, r24	; 18
+		
+		
 		PORTA = qt.getKeyStatus();
-  a0:	ce 01       	movw	r24, r28
-  a2:	01 96       	adiw	r24, 0x01	; 1
-  a4:	0e 94 59 00 	call	0xb2	; 0xb2 <_ZN8QTSensor12getKeyStatusEv>
-  a8:	8b bb       	out	0x1b, r24	; 27
-  aa:	f1 cf       	rjmp	.-30     	; 0x8e <main+0x22>
+  96:	ce 01       	movw	r24, r28
+  98:	01 96       	adiw	r24, 0x01	; 1
+  9a:	0e 94 5e 00 	call	0xbc	; 0xbc <_ZN8QTSensor12getKeyStatusEv>
+  9e:	8b bb       	out	0x1b, r24	; 27
+		
+		//PORTA = qt.getLowPowerMode();
+		
+		//_delay_ms(1000);
 
-000000ac <_ZN8QTSensorC1Ev>:
-			};
-		};
-	};
-	i2c_stop();
-	return 0;
+		if (qt.setLowPowerMode(255)) {
+  a0:	6f ef       	ldi	r22, 0xFF	; 255
+  a2:	ce 01       	movw	r24, r28
+  a4:	01 96       	adiw	r24, 0x01	; 1
+  a6:	0e 94 63 00 	call	0xc6	; 0xc6 <_ZN8QTSensor15setLowPowerModeEh>
+  aa:	88 23       	and	r24, r24
+  ac:	89 f3       	breq	.-30     	; 0x90 <main+0x24>
+			PORTD^=(1 << ledYellow);
+  ae:	82 b3       	in	r24, 0x12	; 18
+  b0:	80 27       	eor	r24, r16
+  b2:	82 bb       	out	0x12, r24	; 18
+  b4:	ed cf       	rjmp	.-38     	; 0x90 <main+0x24>
+
+000000b6 <_ZN8QTSensorC1Ev>:
 }
-  ac:	0e 94 75 00 	call	0xea	; 0xea <_Z8i2c_initv>
-  b0:	08 95       	ret
 
-000000b2 <_ZN8QTSensor12getKeyStatusEv>:
+uint8_t QTSensor::getFirmware() {
+	
+	return i2c_read_from_register(chipAddress, firmwareVersion);
+}
+  b6:	0e 94 69 00 	call	0xd2	; 0xd2 <_Z8i2c_initv>
+  ba:	08 95       	ret
+
+000000bc <_ZN8QTSensor12getKeyStatusEv>:
 
 uint8_t QTSensor::getKeyStatus() {
-  b2:	cf 93       	push	r28
 	
-	unsigned char ret;
-	//i2c_init();
-	if(i2c_start_wait((chipAddress << 1) | I2C_WRITE)) {
-  b4:	86 e3       	ldi	r24, 0x36	; 54
-  b6:	0e 94 97 00 	call	0x12e	; 0x12e <_Z14i2c_start_waith>
-  ba:	88 23       	and	r24, r24
-  bc:	89 f0       	breq	.+34     	; 0xe0 <_ZN8QTSensor12getKeyStatusEv+0x2e>
-		if (!i2c_write(keyStatus)){
-  be:	83 e0       	ldi	r24, 0x03	; 3
-  c0:	0e 94 c2 00 	call	0x184	; 0x184 <_Z9i2c_writeh>
-  c4:	81 11       	cpse	r24, r1
-  c6:	0c c0       	rjmp	.+24     	; 0xe0 <_ZN8QTSensor12getKeyStatusEv+0x2e>
-			// Write was successful
-			if (!i2c_rep_start((chipAddress << 1 ) | I2C_READ)) {
-  c8:	87 e3       	ldi	r24, 0x37	; 55
-  ca:	0e 94 b9 00 	call	0x172	; 0x172 <_Z13i2c_rep_starth>
-  ce:	81 11       	cpse	r24, r1
-  d0:	07 c0       	rjmp	.+14     	; 0xe0 <_ZN8QTSensor12getKeyStatusEv+0x2e>
-				// Device is accessible
-				ret = i2c_readNak();
-  d2:	0e 94 cf 00 	call	0x19e	; 0x19e <_Z11i2c_readNakv>
-  d6:	c8 2f       	mov	r28, r24
-				i2c_stop();
-  d8:	0e 94 bc 00 	call	0x178	; 0x178 <_Z8i2c_stopv>
-				return ret;
-  dc:	8c 2f       	mov	r24, r28
-  de:	03 c0       	rjmp	.+6      	; 0xe6 <_ZN8QTSensor12getKeyStatusEv+0x34>
-			};
-		};
-	};
-	i2c_stop();
-  e0:	0e 94 bc 00 	call	0x178	; 0x178 <_Z8i2c_stopv>
-	return 0;
-  e4:	80 e0       	ldi	r24, 0x00	; 0
-  e6:	cf 91       	pop	r28
-  e8:	08 95       	ret
+	return i2c_read_from_register(chipAddress, keyStatus);
+  bc:	63 e0       	ldi	r22, 0x03	; 3
+  be:	8b e1       	ldi	r24, 0x1B	; 27
+  c0:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_Z22i2c_read_from_registerhh>
+	
+}
+  c4:	08 95       	ret
 
-000000ea <_Z8i2c_initv>:
+000000c6 <_ZN8QTSensor15setLowPowerModeEh>:
+
+bool QTSensor::setLowPowerMode(unsigned char intervalTime) {
+  c6:	46 2f       	mov	r20, r22
+	
+	return i2c_write_to_register(chipAddress, lowPowerMode, intervalTime);
+  c8:	64 e5       	ldi	r22, 0x54	; 84
+  ca:	8b e1       	ldi	r24, 0x1B	; 27
+  cc:	0e 94 c7 00 	call	0x18e	; 0x18e <_Z21i2c_write_to_registerhhh>
+	
+}
+  d0:	08 95       	ret
+
+000000d2 <_Z8i2c_initv>:
 	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
 	while(!(TWCR & (1<<TWINT)));    
 
     return TWDR;
 
 }/* i2c_readAck */
-  ea:	11 b8       	out	0x01, r1	; 1
-  ec:	8c e0       	ldi	r24, 0x0C	; 12
-  ee:	80 b9       	out	0x00, r24	; 0
-  f0:	08 95       	ret
+  d2:	11 b8       	out	0x01, r1	; 1
+  d4:	8c e0       	ldi	r24, 0x0C	; 12
+  d6:	80 b9       	out	0x00, r24	; 0
+  d8:	08 95       	ret
 
-000000f2 <_Z9i2c_starth>:
-  f2:	94 ea       	ldi	r25, 0xA4	; 164
-  f4:	96 bf       	out	0x36, r25	; 54
+000000da <_Z9i2c_starth>:
+  da:	94 ea       	ldi	r25, 0xA4	; 164
+  dc:	96 bf       	out	0x36, r25	; 54
+  de:	06 b6       	in	r0, 0x36	; 54
+  e0:	07 fe       	sbrs	r0, 7
+  e2:	fd cf       	rjmp	.-6      	; 0xde <_Z9i2c_starth+0x4>
+  e4:	91 b1       	in	r25, 0x01	; 1
+  e6:	98 7f       	andi	r25, 0xF8	; 248
+  e8:	98 30       	cpi	r25, 0x08	; 8
+  ea:	11 f0       	breq	.+4      	; 0xf0 <_Z9i2c_starth+0x16>
+  ec:	90 31       	cpi	r25, 0x10	; 16
+  ee:	79 f4       	brne	.+30     	; 0x10e <_Z9i2c_starth+0x34>
+  f0:	83 b9       	out	0x03, r24	; 3
+  f2:	84 e8       	ldi	r24, 0x84	; 132
+  f4:	86 bf       	out	0x36, r24	; 54
   f6:	06 b6       	in	r0, 0x36	; 54
   f8:	07 fe       	sbrs	r0, 7
-  fa:	fd cf       	rjmp	.-6      	; 0xf6 <_Z9i2c_starth+0x4>
+  fa:	fd cf       	rjmp	.-6      	; 0xf6 <_Z9i2c_starth+0x1c>
   fc:	91 b1       	in	r25, 0x01	; 1
   fe:	98 7f       	andi	r25, 0xF8	; 248
- 100:	98 30       	cpi	r25, 0x08	; 8
- 102:	11 f0       	breq	.+4      	; 0x108 <_Z9i2c_starth+0x16>
- 104:	90 31       	cpi	r25, 0x10	; 16
- 106:	79 f4       	brne	.+30     	; 0x126 <_Z9i2c_starth+0x34>
- 108:	83 b9       	out	0x03, r24	; 3
- 10a:	84 e8       	ldi	r24, 0x84	; 132
- 10c:	86 bf       	out	0x36, r24	; 54
- 10e:	06 b6       	in	r0, 0x36	; 54
- 110:	07 fe       	sbrs	r0, 7
- 112:	fd cf       	rjmp	.-6      	; 0x10e <_Z9i2c_starth+0x1c>
- 114:	91 b1       	in	r25, 0x01	; 1
- 116:	98 7f       	andi	r25, 0xF8	; 248
- 118:	98 31       	cpi	r25, 0x18	; 24
- 11a:	39 f0       	breq	.+14     	; 0x12a <_Z9i2c_starth+0x38>
- 11c:	81 e0       	ldi	r24, 0x01	; 1
- 11e:	90 34       	cpi	r25, 0x40	; 64
- 120:	29 f4       	brne	.+10     	; 0x12c <_Z9i2c_starth+0x3a>
- 122:	80 e0       	ldi	r24, 0x00	; 0
- 124:	08 95       	ret
- 126:	81 e0       	ldi	r24, 0x01	; 1
- 128:	08 95       	ret
- 12a:	80 e0       	ldi	r24, 0x00	; 0
- 12c:	08 95       	ret
+ 100:	98 31       	cpi	r25, 0x18	; 24
+ 102:	39 f0       	breq	.+14     	; 0x112 <_Z9i2c_starth+0x38>
+ 104:	81 e0       	ldi	r24, 0x01	; 1
+ 106:	90 34       	cpi	r25, 0x40	; 64
+ 108:	29 f4       	brne	.+10     	; 0x114 <_Z9i2c_starth+0x3a>
+ 10a:	80 e0       	ldi	r24, 0x00	; 0
+ 10c:	08 95       	ret
+ 10e:	81 e0       	ldi	r24, 0x01	; 1
+ 110:	08 95       	ret
+ 112:	80 e0       	ldi	r24, 0x00	; 0
+ 114:	08 95       	ret
 
-0000012e <_Z14i2c_start_waith>:
- 12e:	24 ea       	ldi	r18, 0xA4	; 164
- 130:	34 e8       	ldi	r19, 0x84	; 132
- 132:	44 e9       	ldi	r20, 0x94	; 148
- 134:	26 bf       	out	0x36, r18	; 54
- 136:	06 b6       	in	r0, 0x36	; 54
- 138:	07 fe       	sbrs	r0, 7
- 13a:	fd cf       	rjmp	.-6      	; 0x136 <_Z14i2c_start_waith+0x8>
- 13c:	91 b1       	in	r25, 0x01	; 1
- 13e:	98 7f       	andi	r25, 0xF8	; 248
- 140:	98 30       	cpi	r25, 0x08	; 8
- 142:	11 f0       	breq	.+4      	; 0x148 <_Z14i2c_start_waith+0x1a>
- 144:	90 31       	cpi	r25, 0x10	; 16
- 146:	b1 f7       	brne	.-20     	; 0x134 <_Z14i2c_start_waith+0x6>
- 148:	83 b9       	out	0x03, r24	; 3
- 14a:	36 bf       	out	0x36, r19	; 54
- 14c:	06 b6       	in	r0, 0x36	; 54
- 14e:	07 fe       	sbrs	r0, 7
- 150:	fd cf       	rjmp	.-6      	; 0x14c <_Z14i2c_start_waith+0x1e>
- 152:	91 b1       	in	r25, 0x01	; 1
- 154:	98 7f       	andi	r25, 0xF8	; 248
- 156:	90 32       	cpi	r25, 0x20	; 32
- 158:	11 f0       	breq	.+4      	; 0x15e <_Z14i2c_start_waith+0x30>
- 15a:	98 35       	cpi	r25, 0x58	; 88
- 15c:	29 f4       	brne	.+10     	; 0x168 <_Z14i2c_start_waith+0x3a>
- 15e:	46 bf       	out	0x36, r20	; 54
- 160:	06 b6       	in	r0, 0x36	; 54
- 162:	04 fc       	sbrc	r0, 4
- 164:	fd cf       	rjmp	.-6      	; 0x160 <_Z14i2c_start_waith+0x32>
- 166:	e6 cf       	rjmp	.-52     	; 0x134 <_Z14i2c_start_waith+0x6>
- 168:	98 31       	cpi	r25, 0x18	; 24
- 16a:	11 f0       	breq	.+4      	; 0x170 <_Z14i2c_start_waith+0x42>
- 16c:	81 e0       	ldi	r24, 0x01	; 1
- 16e:	08 95       	ret
- 170:	08 95       	ret
+00000116 <_Z14i2c_start_waith>:
+ 116:	24 ea       	ldi	r18, 0xA4	; 164
+ 118:	34 e8       	ldi	r19, 0x84	; 132
+ 11a:	44 e9       	ldi	r20, 0x94	; 148
+ 11c:	26 bf       	out	0x36, r18	; 54
+ 11e:	06 b6       	in	r0, 0x36	; 54
+ 120:	07 fe       	sbrs	r0, 7
+ 122:	fd cf       	rjmp	.-6      	; 0x11e <_Z14i2c_start_waith+0x8>
+ 124:	91 b1       	in	r25, 0x01	; 1
+ 126:	98 7f       	andi	r25, 0xF8	; 248
+ 128:	98 30       	cpi	r25, 0x08	; 8
+ 12a:	11 f0       	breq	.+4      	; 0x130 <_Z14i2c_start_waith+0x1a>
+ 12c:	90 31       	cpi	r25, 0x10	; 16
+ 12e:	b1 f7       	brne	.-20     	; 0x11c <_Z14i2c_start_waith+0x6>
+ 130:	83 b9       	out	0x03, r24	; 3
+ 132:	36 bf       	out	0x36, r19	; 54
+ 134:	06 b6       	in	r0, 0x36	; 54
+ 136:	07 fe       	sbrs	r0, 7
+ 138:	fd cf       	rjmp	.-6      	; 0x134 <_Z14i2c_start_waith+0x1e>
+ 13a:	91 b1       	in	r25, 0x01	; 1
+ 13c:	98 7f       	andi	r25, 0xF8	; 248
+ 13e:	90 32       	cpi	r25, 0x20	; 32
+ 140:	11 f0       	breq	.+4      	; 0x146 <_Z14i2c_start_waith+0x30>
+ 142:	98 35       	cpi	r25, 0x58	; 88
+ 144:	29 f4       	brne	.+10     	; 0x150 <_Z14i2c_start_waith+0x3a>
+ 146:	46 bf       	out	0x36, r20	; 54
+ 148:	06 b6       	in	r0, 0x36	; 54
+ 14a:	04 fc       	sbrc	r0, 4
+ 14c:	fd cf       	rjmp	.-6      	; 0x148 <_Z14i2c_start_waith+0x32>
+ 14e:	e6 cf       	rjmp	.-52     	; 0x11c <_Z14i2c_start_waith+0x6>
+ 150:	98 31       	cpi	r25, 0x18	; 24
+ 152:	11 f0       	breq	.+4      	; 0x158 <_Z14i2c_start_waith+0x42>
+ 154:	81 e0       	ldi	r24, 0x01	; 1
+ 156:	08 95       	ret
+ 158:	08 95       	ret
 
-00000172 <_Z13i2c_rep_starth>:
- 172:	0e 94 79 00 	call	0xf2	; 0xf2 <_Z9i2c_starth>
- 176:	08 95       	ret
+0000015a <_Z8i2c_stopv>:
+ 15a:	84 e9       	ldi	r24, 0x94	; 148
+ 15c:	86 bf       	out	0x36, r24	; 54
+ 15e:	06 b6       	in	r0, 0x36	; 54
+ 160:	04 fc       	sbrc	r0, 4
+ 162:	fd cf       	rjmp	.-6      	; 0x15e <_Z8i2c_stopv+0x4>
+ 164:	08 95       	ret
 
-00000178 <_Z8i2c_stopv>:
- 178:	84 e9       	ldi	r24, 0x94	; 148
- 17a:	86 bf       	out	0x36, r24	; 54
- 17c:	06 b6       	in	r0, 0x36	; 54
- 17e:	04 fc       	sbrc	r0, 4
- 180:	fd cf       	rjmp	.-6      	; 0x17c <_Z8i2c_stopv+0x4>
- 182:	08 95       	ret
+00000166 <_Z9i2c_writeh>:
+ 166:	83 b9       	out	0x03, r24	; 3
+ 168:	84 e8       	ldi	r24, 0x84	; 132
+ 16a:	86 bf       	out	0x36, r24	; 54
+ 16c:	06 b6       	in	r0, 0x36	; 54
+ 16e:	07 fe       	sbrs	r0, 7
+ 170:	fd cf       	rjmp	.-6      	; 0x16c <_Z9i2c_writeh+0x6>
+ 172:	91 b1       	in	r25, 0x01	; 1
+ 174:	98 7f       	andi	r25, 0xF8	; 248
+ 176:	81 e0       	ldi	r24, 0x01	; 1
+ 178:	98 32       	cpi	r25, 0x28	; 40
+ 17a:	09 f4       	brne	.+2      	; 0x17e <_Z9i2c_writeh+0x18>
+ 17c:	80 e0       	ldi	r24, 0x00	; 0
+ 17e:	08 95       	ret
 
-00000184 <_Z9i2c_writeh>:
- 184:	83 b9       	out	0x03, r24	; 3
- 186:	84 e8       	ldi	r24, 0x84	; 132
- 188:	86 bf       	out	0x36, r24	; 54
- 18a:	06 b6       	in	r0, 0x36	; 54
- 18c:	07 fe       	sbrs	r0, 7
- 18e:	fd cf       	rjmp	.-6      	; 0x18a <_Z9i2c_writeh+0x6>
- 190:	91 b1       	in	r25, 0x01	; 1
- 192:	98 7f       	andi	r25, 0xF8	; 248
- 194:	81 e0       	ldi	r24, 0x01	; 1
- 196:	98 32       	cpi	r25, 0x28	; 40
- 198:	09 f4       	brne	.+2      	; 0x19c <_Z9i2c_writeh+0x18>
- 19a:	80 e0       	ldi	r24, 0x00	; 0
- 19c:	08 95       	ret
-
-0000019e <_Z11i2c_readNakv>:
+00000180 <_Z11i2c_readNakv>:
  
  Return:  byte read from I2C device
 *************************************************************************/
 unsigned char i2c_readNak(void)
 {
 	TWCR = (1<<TWINT) | (1<<TWEN);
- 19e:	84 e8       	ldi	r24, 0x84	; 132
- 1a0:	86 bf       	out	0x36, r24	; 54
+ 180:	84 e8       	ldi	r24, 0x84	; 132
+ 182:	86 bf       	out	0x36, r24	; 54
 	while(!(TWCR & (1<<TWINT)));
- 1a2:	06 b6       	in	r0, 0x36	; 54
- 1a4:	07 fe       	sbrs	r0, 7
- 1a6:	fd cf       	rjmp	.-6      	; 0x1a2 <_Z11i2c_readNakv+0x4>
+ 184:	06 b6       	in	r0, 0x36	; 54
+ 186:	07 fe       	sbrs	r0, 7
+ 188:	fd cf       	rjmp	.-6      	; 0x184 <_Z11i2c_readNakv+0x4>
 	
     return TWDR;
- 1a8:	83 b1       	in	r24, 0x03	; 3
+ 18a:	83 b1       	in	r24, 0x03	; 3
 
 }/* i2c_readNak */
- 1aa:	08 95       	ret
+ 18c:	08 95       	ret
 
-000001ac <_exit>:
- 1ac:	f8 94       	cli
+0000018e <_Z21i2c_write_to_registerhhh>:
+write data to a register from a given address
 
-000001ae <__stop_program>:
- 1ae:	ff cf       	rjmp	.-2      	; 0x1ae <__stop_program>
+Return: 0 if unsuccessful, 1 if successful
+************************************************************************/
+bool i2c_write_to_register(unsigned char addr, unsigned char reg, unsigned char data)
+{
+ 18e:	1f 93       	push	r17
+ 190:	cf 93       	push	r28
+ 192:	df 93       	push	r29
+ 194:	d6 2f       	mov	r29, r22
+ 196:	14 2f       	mov	r17, r20
+	unsigned char ret;
+	ret = i2c_start((addr << 1) | I2C_WRITE);
+ 198:	c8 2f       	mov	r28, r24
+ 19a:	cc 0f       	add	r28, r28
+ 19c:	8c 2f       	mov	r24, r28
+ 19e:	0e 94 6d 00 	call	0xda	; 0xda <_Z9i2c_starth>
+	if(ret) {
+ 1a2:	88 23       	and	r24, r24
+ 1a4:	19 f0       	breq	.+6      	; 0x1ac <_Z21i2c_write_to_registerhhh+0x1e>
+		/* failed to issue start condition, possibly no device found */
+		i2c_stop();
+ 1a6:	0e 94 ad 00 	call	0x15a	; 0x15a <_Z8i2c_stopv>
+ 1aa:	11 c0       	rjmp	.+34     	; 0x1ce <_Z21i2c_write_to_registerhhh+0x40>
+	} else {
+	/* issuing start condition ok, device accessible */
+
+		if(i2c_start_wait((addr << 1) | I2C_WRITE)) {
+ 1ac:	8c 2f       	mov	r24, r28
+ 1ae:	0e 94 8b 00 	call	0x116	; 0x116 <_Z14i2c_start_waith>
+ 1b2:	88 23       	and	r24, r24
+ 1b4:	61 f0       	breq	.+24     	; 0x1ce <_Z21i2c_write_to_registerhhh+0x40>
+			if (!i2c_write(reg)){
+ 1b6:	8d 2f       	mov	r24, r29
+ 1b8:	0e 94 b3 00 	call	0x166	; 0x166 <_Z9i2c_writeh>
+ 1bc:	81 11       	cpse	r24, r1
+ 1be:	07 c0       	rjmp	.+14     	; 0x1ce <_Z21i2c_write_to_registerhhh+0x40>
+				// Write address was successful
+				i2c_write(data);
+ 1c0:	81 2f       	mov	r24, r17
+ 1c2:	0e 94 b3 00 	call	0x166	; 0x166 <_Z9i2c_writeh>
+				i2c_stop();
+ 1c6:	0e 94 ad 00 	call	0x15a	; 0x15a <_Z8i2c_stopv>
+				return true;
+ 1ca:	81 e0       	ldi	r24, 0x01	; 1
+ 1cc:	03 c0       	rjmp	.+6      	; 0x1d4 <_Z21i2c_write_to_registerhhh+0x46>
+			};
+		};
+	}
+i2c_stop();
+ 1ce:	0e 94 ad 00 	call	0x15a	; 0x15a <_Z8i2c_stopv>
+return false;
+ 1d2:	80 e0       	ldi	r24, 0x00	; 0
+		
+}
+ 1d4:	df 91       	pop	r29
+ 1d6:	cf 91       	pop	r28
+ 1d8:	1f 91       	pop	r17
+ 1da:	08 95       	ret
+
+000001dc <_Z22i2c_read_from_registerhh>:
+Read data from a register from a given address
+
+Return: byte read from I2C                                                                    
+************************************************************************/
+unsigned char i2c_read_from_register(unsigned char addr, unsigned char reg) 
+{
+ 1dc:	1f 93       	push	r17
+ 1de:	cf 93       	push	r28
+ 1e0:	df 93       	push	r29
+ 1e2:	d8 2f       	mov	r29, r24
+ 1e4:	16 2f       	mov	r17, r22
+	unsigned char ret;
+	
+	ret = i2c_start((addr << 1) | I2C_WRITE);
+ 1e6:	c8 2f       	mov	r28, r24
+ 1e8:	cc 0f       	add	r28, r28
+ 1ea:	8c 2f       	mov	r24, r28
+ 1ec:	0e 94 6d 00 	call	0xda	; 0xda <_Z9i2c_starth>
+	if(ret) {
+ 1f0:	88 23       	and	r24, r24
+ 1f2:	19 f0       	breq	.+6      	; 0x1fa <_Z22i2c_read_from_registerhh+0x1e>
+		/* failed to issue start condition, possibly no device found */
+		i2c_stop();
+ 1f4:	0e 94 ad 00 	call	0x15a	; 0x15a <_Z8i2c_stopv>
+ 1f8:	18 c0       	rjmp	.+48     	; 0x22a <_Z22i2c_read_from_registerhh+0x4e>
+	} else {
+		
+		if(i2c_start_wait((addr << 1) | I2C_WRITE)) {
+ 1fa:	8c 2f       	mov	r24, r28
+ 1fc:	0e 94 8b 00 	call	0x116	; 0x116 <_Z14i2c_start_waith>
+ 200:	88 23       	and	r24, r24
+ 202:	99 f0       	breq	.+38     	; 0x22a <_Z22i2c_read_from_registerhh+0x4e>
+			if (!i2c_write(reg)){
+ 204:	81 2f       	mov	r24, r17
+ 206:	0e 94 b3 00 	call	0x166	; 0x166 <_Z9i2c_writeh>
+ 20a:	81 11       	cpse	r24, r1
+ 20c:	0e c0       	rjmp	.+28     	; 0x22a <_Z22i2c_read_from_registerhh+0x4e>
+ Return:  0 device accessible
+          1 failed to access device
+*************************************************************************/
+unsigned char i2c_rep_start(unsigned char address)
+{
+    return i2c_start( address );
+ 20e:	8d 2f       	mov	r24, r29
+ 210:	88 0f       	add	r24, r24
+ 212:	81 60       	ori	r24, 0x01	; 1
+ 214:	0e 94 6d 00 	call	0xda	; 0xda <_Z9i2c_starth>
+	} else {
+		
+		if(i2c_start_wait((addr << 1) | I2C_WRITE)) {
+			if (!i2c_write(reg)){
+			// Write address was successful
+				if (!i2c_rep_start((addr << 1 ) | I2C_READ)) {
+ 218:	81 11       	cpse	r24, r1
+ 21a:	07 c0       	rjmp	.+14     	; 0x22a <_Z22i2c_read_from_registerhh+0x4e>
+					// Device is accessible
+					ret = i2c_readNak();
+ 21c:	0e 94 c0 00 	call	0x180	; 0x180 <_Z11i2c_readNakv>
+ 220:	c8 2f       	mov	r28, r24
+					i2c_stop();	
+ 222:	0e 94 ad 00 	call	0x15a	; 0x15a <_Z8i2c_stopv>
+					return ret;
+ 226:	8c 2f       	mov	r24, r28
+ 228:	03 c0       	rjmp	.+6      	; 0x230 <_Z22i2c_read_from_registerhh+0x54>
+				};
+			};
+		};
+	}
+	i2c_stop();
+ 22a:	0e 94 ad 00 	call	0x15a	; 0x15a <_Z8i2c_stopv>
+	return 0;
+ 22e:	80 e0       	ldi	r24, 0x00	; 0
+				//return ret;
+			//};
+		//};
+	//};
+	//i2c_stop();
+ 230:	df 91       	pop	r29
+ 232:	cf 91       	pop	r28
+ 234:	1f 91       	pop	r17
+ 236:	08 95       	ret
+
+00000238 <_exit>:
+ 238:	f8 94       	cli
+
+0000023a <__stop_program>:
+ 23a:	ff cf       	rjmp	.-2      	; 0x23a <__stop_program>
