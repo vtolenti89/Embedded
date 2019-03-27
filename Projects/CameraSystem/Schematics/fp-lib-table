@@ -1,5 +1,2 @@
 (fp_lib_table
-  (lib (name ATMEGA16A-AUR)(type Legacy)(uri C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/custom-library/custom-footprints.pretty/ATMEGA16A-AUR.mod)(options "")(descr ""))
-  (lib (name SOP65P640X120-14N)(type Legacy)(uri C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/custom-library/custom-footprints.pretty/SOP65P640X120-14N.mod)(options "")(descr ""))
-  (lib (name AT42QT1070-SSUR)(type Legacy)(uri C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/custom-library/custom-footprints.pretty/AT42QT1070-SSUR.mod)(options "")(descr ""))
 )

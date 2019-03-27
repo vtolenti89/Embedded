@@ -1,6 +1,3 @@
 (sym_lib_table
   (lib (name CameraSystem-rescue)(type Legacy)(uri ${KIPRJMOD}/CameraSystem-rescue.lib)(options "")(descr ""))
-  (lib (name cl-connectors)(type Legacy)(uri C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/custom-library/custom-symbols/cl-connectors.lib)(options "")(descr ""))
-  (lib (name cl-integrated_circuits)(type Legacy)(uri C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/custom-library/custom-symbols/cl-integrated_circuits.lib)(options "")(descr ""))
-  (lib (name cl-misc)(type Legacy)(uri C:/Users/vtolenti89/Documents/Projects/Kicad/MyLibraries/custom-library/custom-symbols/cl-misc.lib)(options "")(descr ""))
 )

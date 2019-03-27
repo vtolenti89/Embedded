@@ -137,7 +137,7 @@ Wire Wire Line
 	5250 2900 4700 2900
 Text Label 4700 2700 0    60   ~ 0
 SD_DATA_IN
-Text HLabel 4700 2600 0    60   Input ~ 0
+Text HLabel 4700 2600 0    60   Output ~ 0
 SD_MISO
 Text HLabel 4700 2900 0    60   Input ~ 0
 SD_SCK
@@ -197,7 +197,7 @@ Wire Wire Line
 	6300 3000 7050 3000
 Wire Wire Line
 	6300 3100 7050 3100
-Text HLabel 7050 3100 2    60   Output ~ 0
+Text HLabel 7050 3100 2    60   Input ~ 0
 SD_MOSI
 Text Label 7050 3000 2    60   ~ 0
 SD_DATA_OUT

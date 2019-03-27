@@ -28,12 +28,12 @@ $EndComp
 $Comp
 L cl-misc:TouchPad K3
 U 1 1 5BBEA57E
-P 7800 2750
-F 0 "K3" H 7800 2550 60  0000 C CNN
-F 1 "TouchPad" H 7800 2950 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 7850 2750 60  0001 C CNN
-F 3 "" H 7850 2750 60  0001 C CNN
-	1    7800 2750
+P 7650 2750
+F 0 "K3" H 7650 2550 60  0000 C CNN
+F 1 "TouchPad" H 7650 2950 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 7700 2750 60  0001 C CNN
+F 3 "" H 7700 2750 60  0001 C CNN
+	1    7650 2750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -128,56 +128,56 @@ Wire Wire Line
 $Comp
 L cl-misc:TouchPad K5
 U 1 1 5BBEAA5F
-P 7800 3850
-F 0 "K5" H 7800 3650 60  0000 C CNN
-F 1 "TouchPad" H 7800 4050 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 7850 3850 60  0001 C CNN
-F 3 "" H 7850 3850 60  0001 C CNN
-	1    7800 3850
+P 7650 3850
+F 0 "K5" H 7650 3650 60  0000 C CNN
+F 1 "TouchPad" H 7650 4050 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 7700 3850 60  0001 C CNN
+F 3 "" H 7700 3850 60  0001 C CNN
+	1    7650 3850
 	1    0    0    -1  
 $EndComp
 $Comp
 L cl-misc:TouchPad K4
 U 1 1 5BBEAAB3
-P 7800 3300
-F 0 "K4" H 7800 3100 60  0000 C CNN
-F 1 "TouchPad" H 7800 3500 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 7850 3300 60  0001 C CNN
-F 3 "" H 7850 3300 60  0001 C CNN
-	1    7800 3300
+P 7650 3300
+F 0 "K4" H 7650 3100 60  0000 C CNN
+F 1 "TouchPad" H 7650 3500 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 7700 3300 60  0001 C CNN
+F 3 "" H 7700 3300 60  0001 C CNN
+	1    7650 3300
 	1    0    0    -1  
 $EndComp
 $Comp
 L cl-misc:TouchPad K2
 U 1 1 5BBEAAF6
-P 7800 2250
-F 0 "K2" H 7800 2050 60  0000 C CNN
-F 1 "TouchPad" H 7800 2450 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 7850 2250 60  0001 C CNN
-F 3 "" H 7850 2250 60  0001 C CNN
-	1    7800 2250
+P 7650 2250
+F 0 "K2" H 7650 2050 60  0000 C CNN
+F 1 "TouchPad" H 7650 2450 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 7700 2250 60  0001 C CNN
+F 3 "" H 7700 2250 60  0001 C CNN
+	1    7650 2250
 	1    0    0    -1  
 $EndComp
 $Comp
 L cl-misc:TouchPad K6
 U 1 1 5BBEAD74
-P 7800 4400
-F 0 "K6" H 7800 4200 60  0000 C CNN
-F 1 "TouchPad" H 7800 4600 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 7850 4400 60  0001 C CNN
-F 3 "" H 7850 4400 60  0001 C CNN
-	1    7800 4400
+P 7650 4400
+F 0 "K6" H 7650 4200 60  0000 C CNN
+F 1 "TouchPad" H 7650 4600 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 7700 4400 60  0001 C CNN
+F 3 "" H 7700 4400 60  0001 C CNN
+	1    7650 4400
 	1    0    0    -1  
 $EndComp
 $Comp
 L cl-misc:TouchPad K7
 U 1 1 5BBEADBD
-P 7800 4950
-F 0 "K7" H 7800 4750 60  0000 C CNN
-F 1 "TouchPad" H 7800 5150 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 7850 4950 60  0001 C CNN
-F 3 "" H 7850 4950 60  0001 C CNN
-	1    7800 4950
+P 7650 4950
+F 0 "K7" H 7650 4750 60  0000 C CNN
+F 1 "TouchPad" H 7650 5150 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 7700 4950 60  0001 C CNN
+F 3 "" H 7700 4950 60  0001 C CNN
+	1    7650 4950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -382,7 +382,7 @@ F 3 "~" H 1750 3600 50  0001 C CNN
 $EndComp
 Text HLabel 1450 3800 0    60   Input ~ 0
 QT_RST_CON
-Text HLabel 1450 3700 0    60   Input ~ 0
+Text HLabel 1450 3700 0    60   Output ~ 0
 QT_CHN_CON
 Text HLabel 1450 3400 0    60   Input ~ 0
 SCL_3V3_CON

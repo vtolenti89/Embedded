@@ -14,14 +14,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1650 800  0    60   Input ~ 0
+Text HLabel 1900 800  0    60   Input ~ 0
 VDD_3V3
-Text HLabel 1650 1700 0    60   Input ~ 0
-SPI_RST
+Text HLabel 1900 1700 0    60   Input ~ 0
+U2_SPI_RST
 Text HLabel 6650 4500 2    60   Output ~ 0
-SPI_TX
+UC_SPI_TX
 Text HLabel 6650 4400 2    60   Input ~ 0
-SPI_RX
+UC_SPI_RX
 $Comp
 L CameraSystem-rescue:ATMEGA16A-AU U?
 U 1 1 5BB89FDE
@@ -49,34 +49,23 @@ $EndComp
 $Comp
 L Device:R R8
 U 1 1 5BB8AD84
-P 2000 1200
-F 0 "R8" V 2080 1200 50  0000 C CNN
-F 1 "10k" V 2000 1200 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 1930 1200 50  0001 C CNN
-F 3 "" H 2000 1200 50  0001 C CNN
-	1    2000 1200
+P 2250 1200
+F 0 "R8" V 2330 1200 50  0000 C CNN
+F 1 "10k" V 2250 1200 50  0000 C CNN
+F 2 "digikey-footprints:0603" V 2180 1200 50  0001 C CNN
+F 3 "" H 2250 1200 50  0001 C CNN
+	1    2250 1200
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D_Zener D5
-U 1 1 5BB8ADE9
-P 3000 1200
-F 0 "D5" H 3000 1300 50  0000 C CNN
-F 1 "BZX84C3V3LT1G" H 3000 1100 50  0000 C CNN
-F 2 "custom-footprints:SOT−23_(TO−236)" H 3000 1400 50  0001 C CNN
-F 3 "" H 3000 1200 50  0001 C CNN
-	1    3000 1200
-	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR0109
 U 1 1 5BB8B0A7
-P 2000 3100
-F 0 "#PWR0109" H 2000 2850 50  0001 C CNN
-F 1 "GND" H 2000 2950 50  0000 C CNN
-F 2 "" H 2000 3100 50  0001 C CNN
-F 3 "" H 2000 3100 50  0001 C CNN
-	1    2000 3100
+P 2250 3100
+F 0 "#PWR0109" H 2250 2850 50  0001 C CNN
+F 1 "GND" H 2250 2950 50  0000 C CNN
+F 2 "" H 2250 3100 50  0001 C CNN
+F 3 "" H 2250 3100 50  0001 C CNN
+	1    2250 3100
 	1    0    0    -1  
 $EndComp
 Text Label 3050 1700 0    60   ~ 0
@@ -161,34 +150,34 @@ $EndComp
 $Comp
 L Device:R R9
 U 1 1 5BB8C561
-P 2000 2050
-F 0 "R9" V 2080 2050 50  0000 C CNN
-F 1 "330" V 2000 2050 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 1930 2050 50  0001 C CNN
-F 3 "" H 2000 2050 50  0001 C CNN
-	1    2000 2050
+P 2250 2050
+F 0 "R9" V 2330 2050 50  0000 C CNN
+F 1 "330" V 2250 2050 50  0000 C CNN
+F 2 "digikey-footprints:0603" V 2180 2050 50  0001 C CNN
+F 3 "" H 2250 2050 50  0001 C CNN
+	1    2250 2050
 	1    0    0    -1  
 $EndComp
 $Comp
 L CameraSystem-rescue:KS-01Q-01 S?
 U 1 1 5BB8C7F1
-P 2000 2650
+P 2250 2650
 AR Path="/5BB8C7F1" Ref="S?"  Part="1" 
 AR Path="/5BB4D99F/5BB8C7F1" Ref="S1"  Part="1" 
-F 0 "S1" H 2000 2850 50  0000 C CNN
-F 1 "KS-01Q-01" H 2000 2475 50  0000 C CNN
-F 2 "digikey-footprints:PushButton_Round_D12mm_THT_KS-01Q-01" H 2200 2850 50  0001 L CNN
-F 3 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2200 2950 60  0001 L CNN
-F 4 "EG4791-ND" H 2200 3050 60  0001 L CNN "Digi-Key_PN"
-F 5 "KS-01Q-01" H 2200 3150 60  0001 L CNN "MPN"
-F 6 "Switches" H 2200 3250 60  0001 L CNN "Category"
-F 7 "Pushbutton Switches" H 2200 3350 60  0001 L CNN "Family"
-F 8 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2200 3450 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/e-switch/KS-01Q-01/EG4791-ND/2116270" H 2200 3550 60  0001 L CNN "DK_Detail_Page"
-F 10 "SWITCH PUSH SPST-NO 0.01A 35V" H 2200 3650 60  0001 L CNN "Description"
-F 11 "E-Switch" H 2200 3750 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 2200 3850 60  0001 L CNN "Status"
-	1    2000 2650
+F 0 "S1" H 2250 2850 50  0000 C CNN
+F 1 "KS-01Q-01" H 2250 2475 50  0000 C CNN
+F 2 "digikey-footprints:PushButton_Round_D12mm_THT_KS-01Q-01" H 2450 2850 50  0001 L CNN
+F 3 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2450 2950 60  0001 L CNN
+F 4 "EG4791-ND" H 2450 3050 60  0001 L CNN "Digi-Key_PN"
+F 5 "KS-01Q-01" H 2450 3150 60  0001 L CNN "MPN"
+F 6 "Switches" H 2450 3250 60  0001 L CNN "Category"
+F 7 "Pushbutton Switches" H 2450 3350 60  0001 L CNN "Family"
+F 8 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2450 3450 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/e-switch/KS-01Q-01/EG4791-ND/2116270" H 2450 3550 60  0001 L CNN "DK_Detail_Page"
+F 10 "SWITCH PUSH SPST-NO 0.01A 35V" H 2450 3650 60  0001 L CNN "Description"
+F 11 "E-Switch" H 2450 3750 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2450 3850 60  0001 L CNN "Status"
+	1    2250 2650
 	0    -1   -1   0   
 $EndComp
 Text Label 2850 4750 0    60   ~ 0
@@ -367,19 +356,9 @@ Wire Wire Line
 Wire Wire Line
 	6350 4400 6650 4400
 Wire Wire Line
-	1650 1700 2000 1700
+	1900 1700 2250 1700
 Wire Wire Line
-	2000 1700 2400 1700
-Wire Wire Line
-	2400 1700 3000 1700
-Wire Wire Line
-	3000 1700 4150 1700
-Wire Wire Line
-	1650 800  2000 800 
-Wire Wire Line
-	2000 800  3000 800 
-Wire Wire Line
-	3000 800  4050 800 
+	1900 800  2250 800 
 Wire Wire Line
 	4050 800  4350 800 
 Wire Wire Line
@@ -419,19 +398,13 @@ Wire Wire Line
 	5050 5400 5050 5500
 Connection ~ 5050 5500
 Wire Wire Line
-	2000 800  2000 1050
-Connection ~ 2000 800 
+	2250 800  2250 1050
+Connection ~ 2250 800 
 Wire Wire Line
-	2000 1350 2000 1700
+	2250 1350 2250 1700
 Wire Wire Line
-	2000 1700 2000 1900
-Connection ~ 2000 1700
-Wire Wire Line
-	3000 1050 3000 800 
-Connection ~ 3000 800 
-Wire Wire Line
-	3000 1350 3000 1700
-Connection ~ 3000 1700
+	2250 1700 2250 1900
+Connection ~ 2250 1700
 Wire Wire Line
 	2950 3500 2950 3400
 Wire Wire Line
@@ -464,27 +437,27 @@ Connection ~ 4050 800
 Wire Wire Line
 	4050 1200 4050 1250
 Wire Wire Line
-	1900 2450 1900 2400
+	2150 2450 2150 2400
 Wire Wire Line
-	1900 2400 2000 2400
+	2150 2400 2250 2400
 Wire Wire Line
-	2000 2400 2100 2400
+	2250 2400 2350 2400
 Wire Wire Line
-	2100 2400 2100 2450
+	2350 2400 2350 2450
 Wire Wire Line
-	1900 2850 1900 2900
+	2150 2850 2150 2900
 Wire Wire Line
-	1900 2900 2000 2900
+	2150 2900 2250 2900
 Wire Wire Line
-	2000 2900 2100 2900
+	2250 2900 2350 2900
 Wire Wire Line
-	2100 2900 2100 2850
+	2350 2900 2350 2850
 Wire Wire Line
-	2000 2200 2000 2400
-Connection ~ 2000 2400
+	2250 2200 2250 2400
+Connection ~ 2250 2400
 Wire Wire Line
-	2000 2900 2000 3100
-Connection ~ 2000 2900
+	2250 2900 2250 3100
+Connection ~ 2250 2900
 Wire Wire Line
 	1700 4850 1600 4850
 Wire Wire Line
@@ -652,33 +625,6 @@ Wire Wire Line
 	6350 5000 6650 5000
 Text HLabel 6650 5000 2    60   Output ~ 0
 CAM_XCLK_CTL
-$Comp
-L Device:C C10
-U 1 1 5BBE76EA
-P 2400 2700
-F 0 "C10" H 2425 2800 50  0000 L CNN
-F 1 "100n" H 2425 2600 50  0000 L CNN
-F 2 "digikey-footprints:0603" H 2438 2550 50  0001 C CNN
-F 3 "" H 2400 2700 50  0001 C CNN
-	1    2400 2700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 2550 2400 1700
-Connection ~ 2400 1700
-Wire Wire Line
-	2400 2850 2400 3100
-$Comp
-L power:GND #PWR0118
-U 1 1 5BBE788F
-P 2400 3100
-F 0 "#PWR0118" H 2400 2850 50  0001 C CNN
-F 1 "GND" H 2400 2950 50  0000 C CNN
-F 2 "" H 2400 3100 50  0001 C CNN
-F 3 "" H 2400 3100 50  0001 C CNN
-	1    2400 3100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6350 3700 6950 3700
 Wire Wire Line
@@ -851,4 +797,8 @@ Wire Wire Line
 	950  4950 1700 4950
 Wire Wire Line
 	2200 4950 2850 4950
+Wire Wire Line
+	2250 1700 4150 1700
+Wire Wire Line
+	2250 800  4050 800 
 $EndSCHEMATC

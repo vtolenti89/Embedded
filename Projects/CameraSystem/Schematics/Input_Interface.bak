@@ -124,15 +124,15 @@ F 3 "" H 2750 5200 50  0001 C CNN
 $EndComp
 Text Label 2100 5650 0    60   ~ 0
 VDD_3V3
-Text Label 1750 2150 0    60   ~ 0
+Text Label 2650 2150 0    60   ~ 0
 USB_DP
-Text Label 1750 2050 0    60   ~ 0
+Text Label 2650 2050 0    60   ~ 0
 USB_DN
 Text Label 2100 5750 0    60   ~ 0
 USB_DP
 Text Label 2100 5850 0    60   ~ 0
 USB_DN
-Text Label 5600 5350 0    60   ~ 0
+Text Label 5900 5350 0    60   ~ 0
 VDD_3V3
 $Comp
 L Device:Crystal Y1
@@ -203,23 +203,23 @@ $EndComp
 $Comp
 L Device:C C7
 U 1 1 5BB520D4
-P 5450 5600
-F 0 "C7" H 5475 5700 50  0000 L CNN
-F 1 "100n" H 5475 5500 50  0000 L CNN
-F 2 "digikey-footprints:0603" H 5488 5450 50  0001 C CNN
-F 3 "" H 5450 5600 50  0001 C CNN
-	1    5450 5600
+P 5750 5600
+F 0 "C7" H 5775 5700 50  0000 L CNN
+F 1 "100n" H 5775 5500 50  0000 L CNN
+F 2 "digikey-footprints:0603" H 5788 5450 50  0001 C CNN
+F 3 "" H 5750 5600 50  0001 C CNN
+	1    5750 5600
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0104
 U 1 1 5BB52260
-P 5450 5850
-F 0 "#PWR0104" H 5450 5600 50  0001 C CNN
-F 1 "GND" H 5450 5700 50  0000 C CNN
-F 2 "" H 5450 5850 50  0001 C CNN
-F 3 "" H 5450 5850 50  0001 C CNN
-	1    5450 5850
+P 5750 5850
+F 0 "#PWR0104" H 5750 5600 50  0001 C CNN
+F 1 "GND" H 5750 5700 50  0000 C CNN
+F 2 "" H 5750 5850 50  0001 C CNN
+F 3 "" H 5750 5850 50  0001 C CNN
+	1    5750 5850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -272,16 +272,16 @@ Text Notes 7650 1350 0    197  ~ 39
 PMIC
 Text Notes 4250 3600 0    197  ~ 39
 USB TO UART
-Text HLabel 4850 5650 2    60   Output ~ 0
-SPI_RST
+Text HLabel 4900 5650 2    60   Output ~ 0
+USB_SPI_RST
 Text HLabel 1350 5450 0    60   Output ~ 0
-U2U_SPI_TX
+USB_SPI_TX
 Text HLabel 1350 5550 0    60   Input ~ 0
-U2U_SPI_RX
+USB_SPI_RX
 Wire Wire Line
 	1550 2350 2050 2350
 Wire Wire Line
-	2050 2350 2050 2900
+	2050 2350 2050 2850
 Wire Wire Line
 	1550 2250 2050 2250
 Wire Wire Line
@@ -310,7 +310,7 @@ Wire Wire Line
 Wire Wire Line
 	3000 5850 2100 5850
 Wire Wire Line
-	4200 5350 5450 5350
+	4200 5350 5750 5350
 Wire Wire Line
 	2150 6950 2150 6850
 Wire Wire Line
@@ -330,25 +330,17 @@ Wire Wire Line
 	2400 6350 2150 6350
 Connection ~ 2150 6350
 Wire Wire Line
-	5450 5350 5450 5450
+	5750 5350 5750 5450
 Wire Wire Line
-	5450 5750 5450 5850
+	5750 5750 5750 5850
 Wire Wire Line
 	4400 5650 4200 5650
-Wire Wire Line
-	2400 2150 2400 2350
-Wire Wire Line
-	2400 2350 2500 2350
-Wire Wire Line
-	3100 2650 3100 2900
 Wire Wire Line
 	1550 1950 2400 1950
 Wire Wire Line
 	2400 1950 2400 1600
 Wire Wire Line
 	2400 1600 3100 1600
-Wire Wire Line
-	3100 1750 3100 1600
 Connection ~ 3100 1600
 Wire Wire Line
 	3450 1850 3450 1600
@@ -356,7 +348,7 @@ Connection ~ 3450 1600
 Wire Wire Line
 	3450 2150 3450 2900
 Wire Wire Line
-	4700 5650 4850 5650
+	4700 5650 4900 5650
 $Comp
 L Device:R R5
 U 1 1 5BB7F411
@@ -487,7 +479,7 @@ Text Label 2000 3550 0    60   ~ 0
 VDD_3V3
 Wire Wire Line
 	1900 3550 2000 3550
-Connection ~ 5450 5350
+Connection ~ 5750 5350
 $Comp
 L Device:CP C9
 U 1 1 5BB91E38
@@ -537,7 +529,7 @@ Wire Wire Line
 Wire Wire Line
 	3450 1600 3650 1600
 Wire Wire Line
-	5450 5350 5600 5350
+	5750 5350 5900 5350
 Wire Wire Line
 	9000 1900 9700 1900
 Wire Wire Line
@@ -580,49 +572,6 @@ Wire Wire Line
 Wire Wire Line
 	9700 1900 10300 1900
 Wire Wire Line
-	2400 2150 2250 2150
-Wire Wire Line
-	2250 2150 2250 2050
-Wire Wire Line
-	1550 2050 2250 2050
-Wire Wire Line
-	2500 2050 2300 2050
-Wire Wire Line
-	2300 2050 2300 2200
-Wire Wire Line
-	2300 2200 2150 2200
-Wire Wire Line
-	2150 2200 2150 2150
-Wire Wire Line
-	1550 2150 2150 2150
-$Comp
-L CameraSystem-rescue:TPD2E001DRLR D?
-U 1 1 5BB52C47
-P 2900 2150
-AR Path="/5BB52C47" Ref="D?"  Part="1" 
-AR Path="/5BB4C1AE/5BB52C47" Ref="D1"  Part="1" 
-F 0 "D1" H 2590 2465 60  0000 L CNN
-F 1 "TPD2E001DRLR" H 3030 1700 60  0000 R CNN
-F 2 "custom-footprints:TPD2E001DRLR_no_stencil" H 3100 2350 60  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2450 60  0001 L CNN
-F 4 "296-21883-1-ND" H 3100 2550 60  0001 L CNN "Digi-Key_PN"
-F 5 "TPD2E001DRLR" H 3100 2650 60  0001 L CNN "MPN"
-F 6 "Circuit Protection" H 3100 2750 60  0001 L CNN "Category"
-F 7 "TVS - Diodes" H 3100 2850 60  0001 L CNN "Family"
-F 8 "http://www.ti.com/lit/ds/symlink/tpd2e001.pdf" H 3100 2950 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/texas-instruments/TPD2E001DRLR/296-21883-1-ND/1629242" H 3100 3050 60  0001 L CNN "DK_Detail_Page"
-F 10 "TVS DIODE 5.5V SOT5" H 3100 3150 60  0001 L CNN "Description"
-F 11 "Texas Instruments" H 3100 3250 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 3100 3350 60  0001 L CNN "Status"
-	1    2900 2150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2800 2550 2400 2550
-Wire Wire Line
-	2400 2550 2400 2350
-Connection ~ 2400 2350
-Wire Wire Line
 	1450 3800 1450 3700
 Wire Wire Line
 	1450 3700 1900 3700
@@ -641,4 +590,67 @@ Wire Wire Line
 Connection ~ 1450 5550
 Wire Wire Line
 	1450 5550 1500 5550
+Wire Wire Line
+	1550 2050 2500 2050
+Wire Wire Line
+	1550 2150 2300 2150
+$Comp
+L cl-semiconductors:UD_TVS D?
+U 1 1 5C9E1EC0
+P 2300 2350
+F 0 "D?" V 2304 2438 50  0000 L CNN
+F 1 "SMBJ5.0A" V 2395 2438 50  0000 L CNN
+F 2 "" H 2300 2350 50  0001 C CNN
+F 3 "" H 2300 2350 50  0001 C CNN
+	1    2300 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L cl-semiconductors:UD_TVS D?
+U 1 1 5C9E1F5C
+P 2500 2500
+F 0 "D?" V 2504 2588 50  0000 L CNN
+F 1 "SMBJ5.0A" V 2595 2588 50  0000 L CNN
+F 2 "" H 2500 2500 50  0001 C CNN
+F 3 "" H 2500 2500 50  0001 C CNN
+	1    2500 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2300 2850 2050 2850
+Wire Wire Line
+	2300 2150 2300 2250
+Connection ~ 2300 2150
+Wire Wire Line
+	2300 2150 2650 2150
+Wire Wire Line
+	2300 2550 2300 2850
+Connection ~ 2050 2850
+Wire Wire Line
+	2050 2850 2050 2900
+Wire Wire Line
+	2500 2050 2500 2400
+Connection ~ 2500 2050
+Wire Wire Line
+	2500 2050 2650 2050
+Wire Wire Line
+	2500 2700 2500 2850
+Wire Wire Line
+	2500 2850 2300 2850
+Connection ~ 2300 2850
+$Comp
+L cl-semiconductors:UD_TVS D?
+U 1 1 5C9F1686
+P 3100 2500
+F 0 "D?" V 3104 2588 50  0000 L CNN
+F 1 "SMBJ5.0A" V 3195 2588 50  0000 L CNN
+F 2 "" H 3100 2500 50  0001 C CNN
+F 3 "" H 3100 2500 50  0001 C CNN
+	1    3100 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3100 1600 3100 2400
+Wire Wire Line
+	3100 2700 3100 2900
 $EndSCHEMATC
