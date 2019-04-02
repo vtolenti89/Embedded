@@ -15,9 +15,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L cl-integrated_circuits:OV7670 U6
+L CameraSystem-rescue:OV7670-cl-integrated_circuits U6
 U 1 1 5BBB684E
 P 5350 3050
+AR Path="/5BBB684E" Ref="U6"  Part="1" 
+AR Path="/5BB4DA63/5BBB684E" Ref="U6"  Part="1" 
 F 0 "U6" H 5350 2550 60  0000 C CNN
 F 1 "OV7670" H 5350 3550 60  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x08_Pitch2.54mm" H 5350 3050 60  0001 C CNN
@@ -163,9 +165,11 @@ Wire Wire Line
 Text HLabel 8600 2950 2    60   Input ~ 0
 CAM_CLK
 $Comp
-L cl-integrated_circuits:SIT2001BI-S2-33E-24.000000G U7
+L CameraSystem-rescue:SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits U7
 U 1 1 5BBBA2DE
 P 7700 4050
+AR Path="/5BBBA2DE" Ref="U7"  Part="1" 
+AR Path="/5BB4DA63/5BBBA2DE" Ref="U7"  Part="1" 
 F 0 "U7" H 7700 3700 60  0000 C CNN
 F 1 "SIT2001BI-S2-33E-24.000000G" H 7700 4550 60  0000 C CNN
 F 2 "custom-footprints:SiT2001B_SOT23" H 7700 4050 60  0001 C CNN

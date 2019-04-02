@@ -165,18 +165,9 @@ P 2250 2650
 AR Path="/5BB8C7F1" Ref="S?"  Part="1" 
 AR Path="/5BB4D99F/5BB8C7F1" Ref="S1"  Part="1" 
 F 0 "S1" H 2250 2850 50  0000 C CNN
-F 1 "KS-01Q-01" H 2250 2475 50  0000 C CNN
-F 2 "digikey-footprints:PushButton_Round_D12mm_THT_KS-01Q-01" H 2450 2850 50  0001 L CNN
-F 3 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2450 2950 60  0001 L CNN
-F 4 "EG4791-ND" H 2450 3050 60  0001 L CNN "Digi-Key_PN"
-F 5 "KS-01Q-01" H 2450 3150 60  0001 L CNN "MPN"
-F 6 "Switches" H 2450 3250 60  0001 L CNN "Category"
-F 7 "Pushbutton Switches" H 2450 3350 60  0001 L CNN "Family"
-F 8 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" H 2450 3450 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/e-switch/KS-01Q-01/EG4791-ND/2116270" H 2450 3550 60  0001 L CNN "DK_Detail_Page"
-F 10 "SWITCH PUSH SPST-NO 0.01A 35V" H 2450 3650 60  0001 L CNN "Description"
-F 11 "E-Switch" H 2450 3750 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 2450 3850 60  0001 L CNN "Status"
+F 1 "S" H 2250 2475 50  0000 C CNN
+F 2 "" H 2450 2850 50  0001 L CNN
+F 3 "" H 2450 2950 60  0001 L CNN
 	1    2250 2650
 	0    -1   -1   0   
 $EndComp
@@ -316,17 +307,6 @@ Text HLabel 7750 3500 2    60   Output ~ 0
 SCL_3V3
 Text HLabel 7750 3600 2    60   BiDi ~ 0
 SDA_3V3
-$Comp
-L Device:LED D6
-U 1 1 5BBA7F65
-P 8400 4000
-F 0 "D6" H 8400 4100 50  0000 C CNN
-F 1 "APG1608SYKC/T" H 8400 3900 50  0000 C CNN
-F 2 "custom-footprints:LED_APG1608" H 8400 4000 50  0001 C CNN
-F 3 "" H 8400 4000 50  0001 C CNN
-	1    8400 4000
-	0    -1   -1   0   
-$EndComp
 $Comp
 L Device:R R21
 U 1 1 5BBA823A
@@ -798,7 +778,41 @@ Wire Wire Line
 Wire Wire Line
 	2200 4950 2850 4950
 Wire Wire Line
-	2250 1700 4150 1700
+	2250 1700 2900 1700
 Wire Wire Line
-	2250 800  4050 800 
+	2250 800  2900 800 
+$Comp
+L Device:LED D6
+U 1 1 5CA538DC
+P 8400 4000
+F 0 "D6" V 8438 3883 50  0000 R CNN
+F 1 "LED" V 8347 3883 50  0000 R CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 8400 4000 50  0001 C CNN
+F 3 "~" H 8400 4000 50  0001 C CNN
+	1    8400 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D_TVS D?
+U 1 1 5CA48BC2
+P 2900 1200
+F 0 "D?" V 2854 1279 50  0000 L CNN
+F 1 "SMBJ5.0CA" V 2945 1279 50  0000 L CNN
+F 2 "" H 2900 1200 50  0001 C CNN
+F 3 "~" H 2900 1200 50  0001 C CNN
+	1    2900 1200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2900 1050 2900 800 
+Connection ~ 2900 800 
+Wire Wire Line
+	2900 800  4050 800 
+Wire Wire Line
+	2900 1350 2900 1700
+Connection ~ 2900 1700
+Wire Wire Line
+	2900 1700 4150 1700
+Text Notes 7850 2750 0    50   ~ 0
+i2c pull up resistors might be adapted in order to match the level shifter
 $EndSCHEMATC

@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# CameraSystem-rescue:10118192-0001LF
+# CameraSystem-rescue_10118192-0001LF
 #
-DEF CameraSystem-rescue:10118192-0001LF J 0 40 Y Y 1 F N
+DEF CameraSystem-rescue_10118192-0001LF J 0 40 Y Y 1 F N
 F0 "J" -148 598 60 H V C CNN
-F1 "CameraSystem-rescue:10118192-0001LF" -248 -252 60 V V C CNN
+F1 "CameraSystem-rescue_10118192-0001LF" -248 -252 60 V V C CNN
 F2 "digikey-footprints:USB_Micro_B_Female_10118192" 200 200 60 H I L CNN
 F3 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118192.pdf" 200 300 60 H I L CNN
 F4 "609-4613-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
@@ -42,11 +42,37 @@ X ~ SH -100 -600 80 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CameraSystem-rescue:ATMEGA16A-AU
+# CameraSystem-rescue_AT42QT1070-SSUR-cl-integrated_circuits
 #
-DEF CameraSystem-rescue:ATMEGA16A-AU U 0 40 Y Y 1 F N
+DEF CameraSystem-rescue_AT42QT1070-SSUR-cl-integrated_circuits U 0 40 Y Y 1 F N
+F0 "U" 0 -500 60 H V C CNN
+F1 "CameraSystem-rescue_AT42QT1070-SSUR-cl-integrated_circuits" 0 500 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -450 400 450 -400 0 1 0 N
+X VDD 1 -650 300 200 R 50 50 1 1 W
+X KEY3 10 650 -100 200 L 50 50 1 1 I
+X KEY2 11 650 0 200 L 50 50 1 1 I
+X KEY1 12 650 100 200 L 50 50 1 1 I
+X KEY0 13 650 200 200 L 50 50 1 1 I
+X VSS 14 650 300 200 L 50 50 1 1 W
+X MODE(Vss) 2 -650 200 200 R 50 50 1 1 I
+X SDA 3 -650 100 200 R 50 50 1 1 B
+X ~RESET 4 -650 0 200 R 50 50 1 1 I
+X ~CHANGE 5 -650 -100 200 R 50 50 1 1 I
+X SCL 6 -650 -200 200 R 50 50 1 1 I
+X KEY6 7 -650 -300 200 R 50 50 1 1 I
+X KEY5 8 650 -300 200 L 50 50 1 1 I
+X KEY4 9 650 -200 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_ATMEGA16A-AU
+#
+DEF CameraSystem-rescue_ATMEGA16A-AU U 0 40 Y Y 1 F N
 F0 "U" -950 1880 50 H V L BNN
-F1 "CameraSystem-rescue:ATMEGA16A-AU" 550 -1950 50 H V L BNN
+F1 "CameraSystem-rescue_ATMEGA16A-AU" 550 -1950 50 H V L BNN
 F2 "TQFP44" 0 0 50 H I C CIN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -101,11 +127,26 @@ X (RXD)PD0 9 1100 -1000 150 L 40 40 1 1 B
 ENDDRAW
 ENDDEF
 #
-# CameraSystem-rescue:BC846B_215
+# CameraSystem-rescue_AZ1117CD-3.3TRG1DICT-ND-cl-integrated_circuits
 #
-DEF CameraSystem-rescue:BC846B_215 Q 0 0 Y Y 1 F N
+DEF CameraSystem-rescue_AZ1117CD-3.3TRG1DICT-ND-cl-integrated_circuits U 0 40 Y Y 1 F N
+F0 "U" 200 -550 50 H V C CNN
+F1 "CameraSystem-rescue_AZ1117CD-3.3TRG1DICT-ND-cl-integrated_circuits" 0 250 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -350 150 400 -300 0 1 0 N
+X ADJ/GND 1 0 -400 100 U 50 50 1 1 W
+X OUT 2 500 0 100 L 50 50 1 1 w
+X IN 3 -450 0 100 R 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_BC846B_215
+#
+DEF CameraSystem-rescue_BC846B_215 Q 0 0 Y Y 1 F N
 F0 "Q" -126 166 60 H V L CNN
-F1 "CameraSystem-rescue:BC846B_215" 206 0 60 V V C CNN
+F1 "CameraSystem-rescue_BC846B_215" 206 0 60 V V C CNN
 F2 "digikey-footprints:SOT-23-3" 200 200 60 H I L CNN
 F3 "https://assets.nexperia.com/documents/data-sheet/BC846_SER.pdf" 200 300 60 H I L CNN
 F4 "1727-2920-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
@@ -131,11 +172,11 @@ X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CameraSystem-rescue:BLM18PG121SN1D
+# CameraSystem-rescue_BLM18PG121SN1D
 #
-DEF CameraSystem-rescue:BLM18PG121SN1D FB 0 40 Y Y 1 F N
+DEF CameraSystem-rescue_BLM18PG121SN1D FB 0 40 Y Y 1 F N
 F0 "FB" -150 150 60 H V C CNN
-F1 "CameraSystem-rescue:BLM18PG121SN1D" 0 -150 60 H V L CNN
+F1 "CameraSystem-rescue_BLM18PG121SN1D" 0 -150 60 H V L CNN
 F2 "digikey-footprints:0603" 200 200 60 H I L CNN
 F3 "https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf" 200 300 60 H I L CNN
 F4 "490-1037-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
@@ -156,11 +197,39 @@ X ~ 2 200 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CameraSystem-rescue:KS-01Q-01
+# CameraSystem-rescue_CH340-cl-integrated_circuits
 #
-DEF CameraSystem-rescue:KS-01Q-01 S 0 40 Y Y 1 F N
+DEF CameraSystem-rescue_CH340-cl-integrated_circuits U 0 40 Y Y 1 L N
+F0 "U" 0 500 50 H V L BNN
+F1 "CameraSystem-rescue_CH340-cl-integrated_circuits" -100 -600 50 H V L BNN
+F2 "SO16" -100 -350 50 H I L BNN
+F3 "Fram" -50 -100 50 H I L BNN
+DRAW
+S -400 400 400 -500 0 1 10 N
+X GND 1 -600 300 200 R 40 40 0 0 W
+X DSR# 10 600 -300 200 L 40 40 0 0 B
+X RI# 11 600 -200 200 L 40 40 0 0 B
+X DCD# 12 600 -100 200 L 40 40 0 0 B
+X DTR# 13 600 0 200 L 40 40 0 0 B
+X RTS# 14 600 100 200 L 40 40 0 0 B
+X R232 15 600 200 200 L 40 40 0 0 B
+X VCC 16 600 300 200 L 40 40 0 0 W
+X TXD 2 -600 200 200 R 40 40 0 0 B
+X RXD 3 -600 100 200 R 40 40 0 0 B
+X V3 4 -600 0 200 R 40 40 0 0 W
+X UD+ 5 -600 -100 200 R 40 40 0 0 B
+X UD- 6 -600 -200 200 R 40 40 0 0 B
+X XI 7 -600 -300 200 R 40 40 0 0 B
+X XO 8 -600 -400 200 R 40 40 0 0 B
+X CTS# 9 600 -400 200 L 40 40 0 0 B
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_KS-01Q-01
+#
+DEF CameraSystem-rescue_KS-01Q-01 S 0 40 Y Y 1 F N
 F0 "S" 0 200 50 H V C CNN
-F1 "CameraSystem-rescue:KS-01Q-01" 0 -175 50 H V C CNN
+F1 "CameraSystem-rescue_KS-01Q-01" 0 -175 50 H V C CNN
 F2 "digikey-footprints:PushButton_Round_D12mm_THT_KS-01Q-01" 200 200 50 H I L CNN
 F3 "http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf" 200 300 60 H I L CNN
 F4 "EG4791-ND" 200 400 60 H I L CNN "Digi-Key_PN"
@@ -189,11 +258,81 @@ X ~ 4 200 -100 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CameraSystem-rescue:PCA9306D_118
+# CameraSystem-rescue_LCD_2x16_w_i2c-cl-integrated_circuits
 #
-DEF CameraSystem-rescue:PCA9306D_118 U 0 20 Y Y 1 F N
+DEF CameraSystem-rescue_LCD_2x16_w_i2c-cl-integrated_circuits U 0 40 Y Y 1 F N
+F0 "U" 0 -350 60 H V C CNN
+F1 "CameraSystem-rescue_LCD_2x16_w_i2c-cl-integrated_circuits" 0 350 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -200 250 300 -250 0 1 0 N
+X 5.0V 1 -400 150 200 R 50 50 1 1 W
+X GND 2 -400 50 200 R 50 50 1 1 W
+X SDA 3 -400 -50 200 R 50 50 1 1 B
+X SCL 4 -400 -150 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_MC74HC125ADTR2G-cl-integrated_circuits
+#
+DEF CameraSystem-rescue_MC74HC125ADTR2G-cl-integrated_circuits U 0 40 Y Y 1 F N
+F0 "U" 0 -500 60 H V C CNN
+F1 "CameraSystem-rescue_MC74HC125ADTR2G-cl-integrated_circuits" 0 500 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -300 400 350 -400 0 1 0 N
+X OE1 1 -500 300 200 R 50 50 1 1 I
+X OE3 10 550 -100 200 L 50 50 1 1 I
+X Y4 11 550 0 200 L 50 50 1 1 O
+X A4 12 550 100 200 L 50 50 1 1 I
+X OE4 13 550 200 200 L 50 50 1 1 I
+X 3.3V 14 550 300 200 L 50 50 1 1 W
+X A1 2 -500 200 200 R 50 50 1 1 I
+X Y1 3 -500 100 200 R 50 50 1 1 O
+X OE2 4 -500 0 200 R 50 50 1 1 I
+X A2 5 -500 -100 200 R 50 50 1 1 I
+X Y2 6 -500 -200 200 R 50 50 1 1 O
+X GND 7 -500 -300 200 R 50 50 1 1 W
+X Y3 8 550 -300 200 L 50 50 1 1 O
+X A3 9 550 -200 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_OV7670-cl-integrated_circuits
+#
+DEF CameraSystem-rescue_OV7670-cl-integrated_circuits U 0 40 Y Y 1 F N
+F0 "U" 0 -500 60 H V C CNN
+F1 "CameraSystem-rescue_OV7670-cl-integrated_circuits" 0 500 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -300 450 300 -450 0 1 0 N
+X 3V3 1 -500 350 200 R 50 50 1 1 W
+X D6 10 500 -50 200 L 50 50 1 1 I
+X D5 11 -500 -150 200 R 50 50 1 1 I
+X D4 12 500 -150 200 L 50 50 1 1 I
+X D3 13 -500 -250 200 R 50 50 1 1 I
+X D2 14 500 -250 200 L 50 50 1 1 I
+X D1 15 -500 -350 200 R 50 50 1 1 I
+X D0 16 500 -350 200 L 50 50 1 1 I
+X GND 2 500 350 200 L 50 50 1 1 W
+X SCL 3 -500 250 200 R 50 50 1 1 I
+X SDA 4 500 250 200 L 50 50 1 1 I
+X VS 5 -500 150 200 R 50 50 1 1 I
+X HS 6 500 150 200 L 50 50 1 1 I
+X PCK 7 -500 50 200 R 50 50 1 1 I
+X XCK 8 500 50 200 L 50 50 1 1 I
+X D7 9 -500 -50 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_PCA9306D_118
+#
+DEF CameraSystem-rescue_PCA9306D_118 U 0 20 Y Y 1 F N
 F0 "U" -200 450 60 H V C CNN
-F1 "CameraSystem-rescue:PCA9306D_118" -100 550 60 H V R CNN
+F1 "CameraSystem-rescue_PCA9306D_118" -100 550 60 H V R CNN
 F2 "digikey-footprints:SOIC-8_W3.9mm" 200 200 60 H I L CNN
 F3 "http://www.nxp.com/documents/data_sheet/PCA9306.pdf" 200 300 60 H I L CNN
 F4 "568-4215-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
@@ -218,11 +357,193 @@ X EN 8 -400 300 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Connector:Micro_SD_Card_Det
+# CameraSystem-rescue_SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits
 #
-DEF Connector:Micro_SD_Card_Det J 0 40 Y Y 1 F N
+DEF CameraSystem-rescue_SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits U 0 40 Y Y 1 F N
+F0 "U" 0 -350 60 H V C CNN
+F1 "CameraSystem-rescue_SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits" 0 500 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -400 200 400 -250 0 1 0 N
+X GND 1 -150 -450 200 U 50 50 1 1 W
+X NC 2 0 400 200 D 50 50 1 1 I
+X OE 3 150 -450 200 U 50 50 1 1 I
+X VDD 4 -600 0 200 R 50 50 1 1 W
+X OUT 5 600 0 200 L 50 50 1 1 O
+ENDDRAW
+ENDDEF
+#
+# CameraSystem-rescue_TouchPad-cl-misc
+#
+DEF CameraSystem-rescue_TouchPad-cl-misc K 0 40 Y Y 1 F N
+F0 "K" 0 150 50 H V C CNN
+F1 "CameraSystem-rescue_TouchPad-cl-misc" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 100 100 -100 0 1 0 N
+X ~ 1 -200 0 100 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x02
+#
+DEF Connector_Generic_Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Generic_Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x03
+#
+DEF Connector_Generic_Conn_01x03 J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Generic_Conn_01x03" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 50 -150 1 1 10 f
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x06
+#
+DEF Connector_Generic_Conn_01x06 J 0 40 Y N 1 F N
+F0 "J" 0 300 50 H V C CNN
+F1 "Connector_Generic_Conn_01x06" 0 -400 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -295 0 -305 1 1 6 N
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 250 50 -350 1 1 10 f
+X Pin_1 1 -200 200 150 R 50 50 1 1 P
+X Pin_2 2 -200 100 150 R 50 50 1 1 P
+X Pin_3 3 -200 0 150 R 50 50 1 1 P
+X Pin_4 4 -200 -100 150 R 50 50 1 1 P
+X Pin_5 5 -200 -200 150 R 50 50 1 1 P
+X Pin_6 6 -200 -300 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_02x02_Odd_Even
+#
+DEF Connector_Generic_Conn_02x02_Odd_Even J 0 40 Y N 1 F N
+F0 "J" 50 100 50 H V C CNN
+F1 "Connector_Generic_Conn_02x02_Odd_Even" 50 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 150 -150 1 1 10 f
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 300 0 150 L 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+X Pin_4 4 300 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_02x03_Odd_Even
+#
+DEF Connector_Generic_Conn_02x03_Odd_Even J 0 40 Y N 1 F N
+F0 "J" 50 200 50 H V C CNN
+F1 "Connector_Generic_Conn_02x03_Odd_Even" 50 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 150 -150 1 1 10 f
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+S 150 105 100 95 1 1 6 N
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 300 100 150 L 50 50 1 1 P
+X Pin_3 3 -200 0 150 R 50 50 1 1 P
+X Pin_4 4 300 0 150 L 50 50 1 1 P
+X Pin_5 5 -200 -100 150 R 50 50 1 1 P
+X Pin_6 6 300 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_02x05_Odd_Even
+#
+DEF Connector_Generic_Conn_02x05_Odd_Even J 0 40 Y N 1 F N
+F0 "J" 50 300 50 H V C CNN
+F1 "Connector_Generic_Conn_02x05_Odd_Even" 50 -300 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 250 150 -250 1 1 10 f
+S 150 -195 100 -205 1 1 6 N
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+S 150 105 100 95 1 1 6 N
+S 150 205 100 195 1 1 6 N
+X Pin_1 1 -200 200 150 R 50 50 1 1 P
+X Pin_10 10 300 -200 150 L 50 50 1 1 P
+X Pin_2 2 300 200 150 L 50 50 1 1 P
+X Pin_3 3 -200 100 150 R 50 50 1 1 P
+X Pin_4 4 300 100 150 L 50 50 1 1 P
+X Pin_5 5 -200 0 150 R 50 50 1 1 P
+X Pin_6 6 300 0 150 L 50 50 1 1 P
+X Pin_7 7 -200 -100 150 R 50 50 1 1 P
+X Pin_8 8 300 -100 150 L 50 50 1 1 P
+X Pin_9 9 -200 -200 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Micro_SD_Card_Det
+#
+DEF Connector_Micro_SD_Card_Det J 0 40 Y Y 1 F N
 F0 "J" -650 700 50 H V C CNN
-F1 "Connector:Micro_SD_Card_Det" 650 700 50 H V R CNN
+F1 "Connector_Micro_SD_Card_Det" 650 700 50 H V R CNN
 F2 "" 2050 700 50 H I C CNN
 F3 "" 0 100 50 H I C CNN
 ALIAS Micro_SD_Card_Det_Hirose_DM3AT
@@ -254,163 +575,11 @@ X DET_B 9 -900 -500 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Generic:Conn_01x02
+# Device_C
 #
-DEF Connector_Generic:Conn_01x02 J 0 40 Y N 1 F N
-F0 "J" 0 100 50 H V C CNN
-F1 "Connector_Generic:Conn_01x02" 0 -200 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_1x??_*
-$ENDFPLIST
-DRAW
-S -50 -95 0 -105 1 1 6 N
-S -50 5 0 -5 1 1 6 N
-S -50 50 50 -150 1 1 10 f
-X Pin_1 1 -200 0 150 R 50 50 1 1 P
-X Pin_2 2 -200 -100 150 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Connector_Generic:Conn_01x03
-#
-DEF Connector_Generic:Conn_01x03 J 0 40 Y N 1 F N
-F0 "J" 0 200 50 H V C CNN
-F1 "Connector_Generic:Conn_01x03" 0 -200 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_1x??_*
-$ENDFPLIST
-DRAW
-S -50 -95 0 -105 1 1 6 N
-S -50 5 0 -5 1 1 6 N
-S -50 105 0 95 1 1 6 N
-S -50 150 50 -150 1 1 10 f
-X Pin_1 1 -200 100 150 R 50 50 1 1 P
-X Pin_2 2 -200 0 150 R 50 50 1 1 P
-X Pin_3 3 -200 -100 150 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Connector_Generic:Conn_01x06
-#
-DEF Connector_Generic:Conn_01x06 J 0 40 Y N 1 F N
-F0 "J" 0 300 50 H V C CNN
-F1 "Connector_Generic:Conn_01x06" 0 -400 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_1x??_*
-$ENDFPLIST
-DRAW
-S -50 -295 0 -305 1 1 6 N
-S -50 -195 0 -205 1 1 6 N
-S -50 -95 0 -105 1 1 6 N
-S -50 5 0 -5 1 1 6 N
-S -50 105 0 95 1 1 6 N
-S -50 205 0 195 1 1 6 N
-S -50 250 50 -350 1 1 10 f
-X Pin_1 1 -200 200 150 R 50 50 1 1 P
-X Pin_2 2 -200 100 150 R 50 50 1 1 P
-X Pin_3 3 -200 0 150 R 50 50 1 1 P
-X Pin_4 4 -200 -100 150 R 50 50 1 1 P
-X Pin_5 5 -200 -200 150 R 50 50 1 1 P
-X Pin_6 6 -200 -300 150 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Connector_Generic:Conn_02x02_Odd_Even
-#
-DEF Connector_Generic:Conn_02x02_Odd_Even J 0 40 Y N 1 F N
-F0 "J" 50 100 50 H V C CNN
-F1 "Connector_Generic:Conn_02x02_Odd_Even" 50 -200 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_2x??_*
-$ENDFPLIST
-DRAW
-S -50 -95 0 -105 1 1 6 N
-S -50 5 0 -5 1 1 6 N
-S -50 50 150 -150 1 1 10 f
-S 150 -95 100 -105 1 1 6 N
-S 150 5 100 -5 1 1 6 N
-X Pin_1 1 -200 0 150 R 50 50 1 1 P
-X Pin_2 2 300 0 150 L 50 50 1 1 P
-X Pin_3 3 -200 -100 150 R 50 50 1 1 P
-X Pin_4 4 300 -100 150 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Connector_Generic:Conn_02x03_Odd_Even
-#
-DEF Connector_Generic:Conn_02x03_Odd_Even J 0 40 Y N 1 F N
-F0 "J" 50 200 50 H V C CNN
-F1 "Connector_Generic:Conn_02x03_Odd_Even" 50 -200 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_2x??_*
-$ENDFPLIST
-DRAW
-S -50 -95 0 -105 1 1 6 N
-S -50 5 0 -5 1 1 6 N
-S -50 105 0 95 1 1 6 N
-S -50 150 150 -150 1 1 10 f
-S 150 -95 100 -105 1 1 6 N
-S 150 5 100 -5 1 1 6 N
-S 150 105 100 95 1 1 6 N
-X Pin_1 1 -200 100 150 R 50 50 1 1 P
-X Pin_2 2 300 100 150 L 50 50 1 1 P
-X Pin_3 3 -200 0 150 R 50 50 1 1 P
-X Pin_4 4 300 0 150 L 50 50 1 1 P
-X Pin_5 5 -200 -100 150 R 50 50 1 1 P
-X Pin_6 6 300 -100 150 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Connector_Generic:Conn_02x05_Odd_Even
-#
-DEF Connector_Generic:Conn_02x05_Odd_Even J 0 40 Y N 1 F N
-F0 "J" 50 300 50 H V C CNN
-F1 "Connector_Generic:Conn_02x05_Odd_Even" 50 -300 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_2x??_*
-$ENDFPLIST
-DRAW
-S -50 -195 0 -205 1 1 6 N
-S -50 -95 0 -105 1 1 6 N
-S -50 5 0 -5 1 1 6 N
-S -50 105 0 95 1 1 6 N
-S -50 205 0 195 1 1 6 N
-S -50 250 150 -250 1 1 10 f
-S 150 -195 100 -205 1 1 6 N
-S 150 -95 100 -105 1 1 6 N
-S 150 5 100 -5 1 1 6 N
-S 150 105 100 95 1 1 6 N
-S 150 205 100 195 1 1 6 N
-X Pin_1 1 -200 200 150 R 50 50 1 1 P
-X Pin_10 10 300 -200 150 L 50 50 1 1 P
-X Pin_2 2 300 200 150 L 50 50 1 1 P
-X Pin_3 3 -200 100 150 R 50 50 1 1 P
-X Pin_4 4 300 100 150 L 50 50 1 1 P
-X Pin_5 5 -200 0 150 R 50 50 1 1 P
-X Pin_6 6 300 0 150 L 50 50 1 1 P
-X Pin_7 7 -200 -100 150 R 50 50 1 1 P
-X Pin_8 8 300 -100 150 L 50 50 1 1 P
-X Pin_9 9 -200 -200 150 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Device:C
-#
-DEF Device:C C 0 10 N Y 1 F N
+DEF Device_C C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "Device:C" 25 -100 50 H V L CNN
+F1 "Device_C" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -424,11 +593,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:CP
+# Device_CP
 #
-DEF Device:CP C 0 10 N Y 1 F N
+DEF Device_CP C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "Device:CP" 25 -100 50 H V L CNN
+F1 "Device_CP" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -447,11 +616,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:Crystal
+# Device_Crystal
 #
-DEF Device:Crystal Y 0 40 N N 1 F N
+DEF Device_Crystal Y 0 40 N N 1 F N
 F0 "Y" 0 150 50 H V C CNN
-F1 "Device:Crystal" 0 -150 50 H V C CNN
+F1 "Device_Crystal" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -468,11 +637,34 @@ X 2 2 150 0 50 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:Fuse
+# Device_D_TVS
 #
-DEF Device:Fuse F 0 0 N Y 1 F N
+DEF Device_D_TVS D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "Device_D_TVS" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TO-???*
+ *_Diode_*
+ *SingleDiode*
+ D_*
+$ENDFPLIST
+DRAW
+P 2 0 1 0 50 0 -50 0 N
+P 4 0 1 8 -100 -50 0 0 -100 50 -100 -50 N
+P 4 0 1 8 20 50 0 50 0 -50 -20 -50 N
+P 4 0 1 8 100 50 100 -50 0 0 100 50 N
+X A1 1 -150 0 100 R 50 50 1 1 P
+X A2 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_Fuse
+#
+DEF Device_Fuse F 0 0 N Y 1 F N
 F0 "F" 80 0 50 V V C CNN
-F1 "Device:Fuse" -75 0 50 V V C CNN
+F1 "Device_Fuse" -75 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -486,11 +678,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:LED
+# Device_LED
 #
-DEF Device:LED D 0 40 N N 1 F N
+DEF Device_LED D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "Device:LED" 0 -100 50 H V C CNN
+F1 "Device_LED" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -509,11 +701,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:R
+# Device_R
 #
-DEF Device:R R 0 0 N Y 1 F N
+DEF Device_R R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
-F1 "Device:R" 0 0 50 V V C CNN
+F1 "Device_R" 0 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -526,215 +718,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# cl-integrated_circuits:AT42QT1070-SSUR
+# power_GND
 #
-DEF cl-integrated_circuits:AT42QT1070-SSUR U 0 40 Y Y 1 F N
-F0 "U" 0 -500 60 H V C CNN
-F1 "cl-integrated_circuits:AT42QT1070-SSUR" 0 500 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -450 400 450 -400 0 1 0 N
-X VDD 1 -650 300 200 R 50 50 1 1 W
-X KEY3 10 650 -100 200 L 50 50 1 1 I
-X KEY2 11 650 0 200 L 50 50 1 1 I
-X KEY1 12 650 100 200 L 50 50 1 1 I
-X KEY0 13 650 200 200 L 50 50 1 1 I
-X VSS 14 650 300 200 L 50 50 1 1 W
-X MODE(Vss) 2 -650 200 200 R 50 50 1 1 I
-X SDA 3 -650 100 200 R 50 50 1 1 B
-X ~RESET 4 -650 0 200 R 50 50 1 1 I
-X ~CHANGE 5 -650 -100 200 R 50 50 1 1 I
-X SCL 6 -650 -200 200 R 50 50 1 1 I
-X KEY6 7 -650 -300 200 R 50 50 1 1 I
-X KEY5 8 650 -300 200 L 50 50 1 1 I
-X KEY4 9 650 -200 200 L 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:AZ1117CD-3.3TRG1DICT-ND
-#
-DEF cl-integrated_circuits:AZ1117CD-3.3TRG1DICT-ND U 0 40 Y Y 1 F N
-F0 "U" 200 -550 50 H V C CNN
-F1 "cl-integrated_circuits:AZ1117CD-3.3TRG1DICT-ND" 0 250 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-S -350 150 400 -300 0 1 0 N
-X ADJ/GND 1 0 -400 100 U 50 50 1 1 W
-X OUT 2 500 0 100 L 50 50 1 1 w
-X IN 3 -450 0 100 R 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:CH340
-#
-DEF cl-integrated_circuits:CH340 U 0 40 Y Y 1 L N
-F0 "U" 0 500 50 H V L BNN
-F1 "cl-integrated_circuits:CH340" -100 -600 50 H V L BNN
-F2 "SO16" -100 -350 50 H I L BNN
-F3 "Fram" -50 -100 50 H I L BNN
-DRAW
-S -400 400 400 -500 0 1 10 N
-X GND 1 -600 300 200 R 40 40 0 0 W
-X DSR# 10 600 -300 200 L 40 40 0 0 B
-X RI# 11 600 -200 200 L 40 40 0 0 B
-X DCD# 12 600 -100 200 L 40 40 0 0 B
-X DTR# 13 600 0 200 L 40 40 0 0 B
-X RTS# 14 600 100 200 L 40 40 0 0 B
-X R232 15 600 200 200 L 40 40 0 0 B
-X VCC 16 600 300 200 L 40 40 0 0 W
-X TXD 2 -600 200 200 R 40 40 0 0 B
-X RXD 3 -600 100 200 R 40 40 0 0 B
-X V3 4 -600 0 200 R 40 40 0 0 W
-X UD+ 5 -600 -100 200 R 40 40 0 0 B
-X UD- 6 -600 -200 200 R 40 40 0 0 B
-X XI 7 -600 -300 200 R 40 40 0 0 B
-X XO 8 -600 -400 200 R 40 40 0 0 B
-X CTS# 9 600 -400 200 L 40 40 0 0 B
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:ESP8266
-#
-DEF cl-integrated_circuits:ESP8266 U 0 40 Y Y 1 F N
-F0 "U" 0 -300 60 H V C CNN
-F1 "cl-integrated_circuits:ESP8266" 0 300 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -300 250 300 -250 0 1 0 N
-X GND 1 500 150 200 L 50 50 1 1 W
-X TXO 2 -500 150 200 R 50 50 1 1 O
-X GPIO2 3 500 50 200 L 50 50 1 1 B
-X CHEN 4 -500 50 200 R 50 50 1 1 I
-X GPIO0 5 500 -50 200 L 50 50 1 1 B
-X RST 6 -500 -50 200 R 50 50 1 1 I
-X RXI 7 500 -150 200 L 50 50 1 1 I
-X 3.3V 8 -500 -150 200 R 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:LCD_2x16_w_i2c
-#
-DEF cl-integrated_circuits:LCD_2x16_w_i2c U 0 40 Y Y 1 F N
-F0 "U" 0 -350 60 H V C CNN
-F1 "cl-integrated_circuits:LCD_2x16_w_i2c" 0 350 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -200 250 300 -250 0 1 0 N
-X 5.0V 1 -400 150 200 R 50 50 1 1 W
-X GND 2 -400 50 200 R 50 50 1 1 W
-X SDA 3 -400 -50 200 R 50 50 1 1 B
-X SCL 4 -400 -150 200 R 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:MC74HC125ADTR2G
-#
-DEF cl-integrated_circuits:MC74HC125ADTR2G U 0 40 Y Y 1 F N
-F0 "U" 0 -500 60 H V C CNN
-F1 "cl-integrated_circuits:MC74HC125ADTR2G" 0 500 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -300 400 350 -400 0 1 0 N
-X OE1 1 -500 300 200 R 50 50 1 1 I
-X OE3 10 550 -100 200 L 50 50 1 1 I
-X Y4 11 550 0 200 L 50 50 1 1 O
-X A4 12 550 100 200 L 50 50 1 1 I
-X OE4 13 550 200 200 L 50 50 1 1 I
-X 3.3V 14 550 300 200 L 50 50 1 1 W
-X A1 2 -500 200 200 R 50 50 1 1 I
-X Y1 3 -500 100 200 R 50 50 1 1 O
-X OE2 4 -500 0 200 R 50 50 1 1 I
-X A2 5 -500 -100 200 R 50 50 1 1 I
-X Y2 6 -500 -200 200 R 50 50 1 1 O
-X GND 7 -500 -300 200 R 50 50 1 1 W
-X Y3 8 550 -300 200 L 50 50 1 1 O
-X A3 9 550 -200 200 L 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:OV7670
-#
-DEF cl-integrated_circuits:OV7670 U 0 40 Y Y 1 F N
-F0 "U" 0 -500 60 H V C CNN
-F1 "cl-integrated_circuits:OV7670" 0 500 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -300 450 300 -450 0 1 0 N
-X 3V3 1 -500 350 200 R 50 50 1 1 W
-X D6 10 500 -50 200 L 50 50 1 1 I
-X D5 11 -500 -150 200 R 50 50 1 1 I
-X D4 12 500 -150 200 L 50 50 1 1 I
-X D3 13 -500 -250 200 R 50 50 1 1 I
-X D2 14 500 -250 200 L 50 50 1 1 I
-X D1 15 -500 -350 200 R 50 50 1 1 I
-X D0 16 500 -350 200 L 50 50 1 1 I
-X GND 2 500 350 200 L 50 50 1 1 W
-X SCL 3 -500 250 200 R 50 50 1 1 I
-X SDA 4 500 250 200 L 50 50 1 1 I
-X VS 5 -500 150 200 R 50 50 1 1 I
-X HS 6 500 150 200 L 50 50 1 1 I
-X PCK 7 -500 50 200 R 50 50 1 1 I
-X XCK 8 500 50 200 L 50 50 1 1 I
-X D7 9 -500 -50 200 R 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# cl-integrated_circuits:SIT2001BI-S2-33E-24.000000G
-#
-DEF cl-integrated_circuits:SIT2001BI-S2-33E-24.000000G U 0 40 Y Y 1 F N
-F0 "U" 0 -350 60 H V C CNN
-F1 "cl-integrated_circuits:SIT2001BI-S2-33E-24.000000G" 0 500 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -400 200 400 -250 0 1 0 N
-X GND 1 -150 -450 200 U 50 50 1 1 W
-X NC 2 0 400 200 D 50 50 1 1 I
-X OE 3 150 -450 200 U 50 50 1 1 I
-X VDD 4 -600 0 200 R 50 50 1 1 W
-X OUT 5 600 0 200 L 50 50 1 1 O
-ENDDRAW
-ENDDEF
-#
-# cl-misc:TouchPad
-#
-DEF cl-misc:TouchPad K 0 40 Y Y 1 F N
-F0 "K" 0 150 50 H V C CNN
-F1 "cl-misc:TouchPad" 0 -150 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-S -100 100 100 -100 0 1 0 N
-X ~ 1 -200 0 100 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# cl-semiconductors:UD_TVS
-#
-DEF cl-semiconductors:UD_TVS D 0 40 Y Y 1 F N
-F0 "D" 0 150 50 H V C CNN
-F1 "cl-semiconductors:UD_TVS" 0 -150 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 3 0 1 0 0 -50 0 50 50 50 N
-P 4 1 1 8 100 50 100 -50 0 0 100 50 N
-X ~ 1 -100 0 100 R 50 50 1 1 P
-X ~ 2 200 0 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# power:GND
-#
-DEF power:GND #PWR 0 0 Y Y 1 F P
+DEF power_GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "power:GND" 0 -150 50 H V C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

@@ -23,9 +23,11 @@ SDA_3V3
 Text HLabel 4300 4650 0    60   Input ~ 0
 SCL_3V3
 $Comp
-L cl-integrated_circuits:LCD_2x16_w_i2c U9
+L CameraSystem-rescue:LCD_2x16_w_i2c-cl-integrated_circuits U9
 U 1 1 5BB9D5E3
 P 6350 2300
+AR Path="/5BB9D5E3" Ref="U9"  Part="1" 
+AR Path="/5BB9CC6E/5BB9D5E3" Ref="U9"  Part="1" 
 F 0 "U9" H 6350 1950 60  0000 C CNN
 F 1 "LCD_2x16_w_i2c" H 6350 2650 60  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 6350 2300 60  0001 C CNN
@@ -141,7 +143,7 @@ F 3 "" H 6500 4700 50  0001 C CNN
 	1    6500 4700
 	1    0    0    -1  
 $EndComp
-Text Label 6700 4150 0    60   ~ 0
+Text Label 7300 4150 0    60   ~ 0
 VDD_5V0
 Wire Wire Line
 	6100 3350 6100 4350
@@ -251,4 +253,17 @@ Wire Wire Line
 	4300 4650 5700 4650
 Wire Wire Line
 	4300 4850 5700 4850
+$Comp
+L Device:R R?
+U 1 1 5CA52D89
+P 6850 4150
+F 0 "R?" V 6930 4150 50  0000 C CNN
+F 1 "200k" V 6850 4150 50  0000 C CNN
+F 2 "digikey-footprints:0603" V 6780 4150 50  0001 C CNN
+F 3 "" H 6850 4150 50  0001 C CNN
+	1    6850 4150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7000 4150 7300 4150
 $EndSCHEMATC

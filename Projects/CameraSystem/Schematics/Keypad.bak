@@ -15,9 +15,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L cl-integrated_circuits:AT42QT1070-SSUR U10
+L CameraSystem-rescue:AT42QT1070-SSUR-cl-integrated_circuits U10
 U 1 1 5BBEA4BE
 P 5100 3500
+AR Path="/5BBEA4BE" Ref="U10"  Part="1" 
+AR Path="/5BBB389E/5BBEA4BE" Ref="U10"  Part="1" 
 F 0 "U10" H 5100 3000 60  0000 C CNN
 F 1 "AT42QT1070-SSUR" H 5100 4000 60  0000 C CNN
 F 2 "custom-footprints:AT42QT1070-SSUR" H 5100 3500 60  0001 C CNN
@@ -26,9 +28,11 @@ F 3 "" H 5100 3500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L cl-misc:TouchPad K3
+L CameraSystem-rescue:TouchPad-cl-misc K3
 U 1 1 5BBEA57E
 P 7650 2750
+AR Path="/5BBEA57E" Ref="K3"  Part="1" 
+AR Path="/5BBB389E/5BBEA57E" Ref="K3"  Part="1" 
 F 0 "K3" H 7650 2550 60  0000 C CNN
 F 1 "TouchPad" H 7650 2950 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 7700 2750 60  0001 C CNN
@@ -126,9 +130,11 @@ Wire Wire Line
 Wire Wire Line
 	5750 3800 6250 3800
 $Comp
-L cl-misc:TouchPad K5
+L CameraSystem-rescue:TouchPad-cl-misc K5
 U 1 1 5BBEAA5F
 P 7650 3850
+AR Path="/5BBEAA5F" Ref="K5"  Part="1" 
+AR Path="/5BBB389E/5BBEAA5F" Ref="K5"  Part="1" 
 F 0 "K5" H 7650 3650 60  0000 C CNN
 F 1 "TouchPad" H 7650 4050 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 7700 3850 60  0001 C CNN
@@ -137,9 +143,11 @@ F 3 "" H 7700 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L cl-misc:TouchPad K4
+L CameraSystem-rescue:TouchPad-cl-misc K4
 U 1 1 5BBEAAB3
 P 7650 3300
+AR Path="/5BBEAAB3" Ref="K4"  Part="1" 
+AR Path="/5BBB389E/5BBEAAB3" Ref="K4"  Part="1" 
 F 0 "K4" H 7650 3100 60  0000 C CNN
 F 1 "TouchPad" H 7650 3500 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 7700 3300 60  0001 C CNN
@@ -148,9 +156,11 @@ F 3 "" H 7700 3300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L cl-misc:TouchPad K2
+L CameraSystem-rescue:TouchPad-cl-misc K2
 U 1 1 5BBEAAF6
 P 7650 2250
+AR Path="/5BBEAAF6" Ref="K2"  Part="1" 
+AR Path="/5BBB389E/5BBEAAF6" Ref="K2"  Part="1" 
 F 0 "K2" H 7650 2050 60  0000 C CNN
 F 1 "TouchPad" H 7650 2450 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 7700 2250 60  0001 C CNN
@@ -159,9 +169,11 @@ F 3 "" H 7700 2250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L cl-misc:TouchPad K6
+L CameraSystem-rescue:TouchPad-cl-misc K6
 U 1 1 5BBEAD74
 P 7650 4400
+AR Path="/5BBEAD74" Ref="K6"  Part="1" 
+AR Path="/5BBB389E/5BBEAD74" Ref="K6"  Part="1" 
 F 0 "K6" H 7650 4200 60  0000 C CNN
 F 1 "TouchPad" H 7650 4600 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 7700 4400 60  0001 C CNN
@@ -170,9 +182,11 @@ F 3 "" H 7700 4400 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L cl-misc:TouchPad K7
+L CameraSystem-rescue:TouchPad-cl-misc K7
 U 1 1 5BBEADBD
 P 7650 4950
+AR Path="/5BBEADBD" Ref="K7"  Part="1" 
+AR Path="/5BBB389E/5BBEADBD" Ref="K7"  Part="1" 
 F 0 "K7" H 7650 4750 60  0000 C CNN
 F 1 "TouchPad" H 7650 5150 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 7700 4950 60  0001 C CNN
@@ -181,9 +195,11 @@ F 3 "" H 7700 4950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L cl-misc:TouchPad K1
+L CameraSystem-rescue:TouchPad-cl-misc K1
 U 1 1 5BBEAF3D
 P 2800 3800
+AR Path="/5BBEAF3D" Ref="K1"  Part="1" 
+AR Path="/5BBB389E/5BBEAF3D" Ref="K1"  Part="1" 
 F 0 "K1" H 2850 4150 60  0000 C CNN
 F 1 "TouchPad" H 2800 4000 60  0000 C CNN
 F 2 "custom-footprints:QPad_Round_D10" H 2850 3800 60  0001 C CNN
