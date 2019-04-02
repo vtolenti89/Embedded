@@ -197,14 +197,14 @@ $EndComp
 $Comp
 L CameraSystem-rescue:TouchPad-cl-misc K1
 U 1 1 5BBEAF3D
-P 2800 3800
+P 2950 3800
 AR Path="/5BBEAF3D" Ref="K1"  Part="1" 
 AR Path="/5BBB389E/5BBEAF3D" Ref="K1"  Part="1" 
-F 0 "K1" H 2850 4150 60  0000 C CNN
-F 1 "TouchPad" H 2800 4000 60  0000 C CNN
-F 2 "custom-footprints:QPad_Round_D10" H 2850 3800 60  0001 C CNN
-F 3 "" H 2850 3800 60  0001 C CNN
-	1    2800 3800
+F 0 "K1" H 3000 4150 60  0000 C CNN
+F 1 "TouchPad" H 2950 4000 60  0000 C CNN
+F 2 "custom-footprints:QPad_Round_D10" H 3000 3800 60  0001 C CNN
+F 3 "" H 3000 3800 60  0001 C CNN
+	1    2950 3800
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
