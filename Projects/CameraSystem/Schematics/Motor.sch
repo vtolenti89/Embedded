@@ -41,12 +41,7 @@ Wire Wire Line
 Wire Wire Line
 	2100 1300 2150 1300
 Wire Wire Line
-	2150 1300 2150 1250
-Wire Wire Line
 	2150 1200 2100 1200
-Connection ~ 2150 1250
-Wire Wire Line
-	2150 1250 2150 1200
 Text Label 2300 1250 0    50   ~ 0
 VDD_3V3_CON_IN
 Wire Wire Line
@@ -112,4 +107,11 @@ Wire Wire Line
 	3850 1550 3650 1550
 Wire Wire Line
 	3150 1550 2900 1550
+Connection ~ 2150 1250
+Wire Wire Line
+	2150 1250 2150 1200
+Wire Wire Line
+	2150 1300 2150 1250
+Text Notes 1800 2100 0    50   ~ 0
+ADD IC drv8834 and switches
 $EndSCHEMATC
