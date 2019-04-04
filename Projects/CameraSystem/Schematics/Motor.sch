@@ -113,5 +113,16 @@ Wire Wire Line
 Wire Wire Line
 	2150 1300 2150 1250
 Text Notes 1800 2100 0    50   ~ 0
-ADD IC drv8834 and switches
+ADD IC drv8833 and switches
+$Comp
+L Driver_Motor:DRV8833PWP U?
+U 1 1 5CA61180
+P 4200 2450
+F 0 "U?" H 4200 3328 50  0000 C CNN
+F 1 "DRV8833PWP" H 4200 3237 50  0000 C CNN
+F 2 "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias" H 4650 2900 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 4050 3000 50  0001 C CNN
+	1    4200 2450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
