@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 9
+Sheet 8 9
 Title ""
 Date ""
 Rev ""
@@ -292,7 +292,7 @@ AR Path="/5BC308F6" Ref="J?"  Part="1"
 AR Path="/5BB4DA56/5BC308F6" Ref="J13"  Part="1" 
 F 0 "J13" H 6400 5617 50  0000 C CNN
 F 1 "DM3D-SF" H 6400 5526 50  0000 C CNN
-F 2 "custom-footprints:DM3D-SF" H 8500 5500 50  0001 C CNN
+F 2 "Connector_Card:microSD_HC_Hirose_DM3D-SF" H 8500 5500 50  0001 C CNN
 F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 6450 4900 50  0001 C CNN
 	1    6450 4800
 	1    0    0    -1  
