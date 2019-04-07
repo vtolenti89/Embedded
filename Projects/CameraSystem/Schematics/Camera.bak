@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:CameraSystem-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,14 +15,14 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L CameraSystem-rescue:OV7670-cl-integrated_circuits U6
+L CameraSystem-rescue:OV7670-cl-integrated_circuits U?
 U 1 1 5BBB684E
 P 5350 3050
-AR Path="/5BBB684E" Ref="U6"  Part="1" 
-AR Path="/5BB4DA63/5BBB684E" Ref="U6"  Part="1" 
-F 0 "U6" H 5350 2550 60  0000 C CNN
+AR Path="/5BBB684E" Ref="U?"  Part="1" 
+AR Path="/5BB4DA63/5BBB684E" Ref="U5"  Part="1" 
+F 0 "U5" H 5350 2550 60  0000 C CNN
 F 1 "OV7670" H 5350 3550 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x08_Pitch2.54mm" H 5350 3050 60  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical" H 5350 3050 60  0001 C CNN
 F 3 "" H 5350 3050 60  0001 C CNN
 	1    5350 3050
 	1    0    0    -1  
@@ -54,21 +54,21 @@ Wire Wire Line
 Text Label 3750 2700 0    60   ~ 0
 VDD_3V3_IN
 $Comp
-L Device:C C21
+L Device:C C18
 U 1 1 5BBB6CC1
 P 4800 2200
-F 0 "C21" H 4825 2300 50  0000 L CNN
+F 0 "C18" H 4825 2300 50  0000 L CNN
 F 1 "100n" H 4825 2100 50  0000 L CNN
-F 2 "digikey-footprints:0603" H 4838 2050 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4838 2050 50  0001 C CNN
 F 3 "" H 4800 2200 50  0001 C CNN
 	1    4800 2200
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0131
+L power:GND #PWR025
 U 1 1 5BBB6D0A
 P 4800 2400
-F 0 "#PWR0131" H 4800 2150 50  0001 C CNN
+F 0 "#PWR025" H 4800 2150 50  0001 C CNN
 F 1 "GND" H 4800 2250 50  0000 C CNN
 F 2 "" H 4800 2400 50  0001 C CNN
 F 3 "" H 4800 2400 50  0001 C CNN
@@ -117,10 +117,10 @@ Wire Wire Line
 Wire Wire Line
 	7150 2700 7150 2750
 $Comp
-L power:GND #PWR0132
+L power:GND #PWR027
 U 1 1 5BBB6FDB
 P 7150 2750
-F 0 "#PWR0132" H 7150 2500 50  0001 C CNN
+F 0 "#PWR027" H 7150 2500 50  0001 C CNN
 F 1 "GND" H 7150 2600 50  0000 C CNN
 F 2 "" H 7150 2750 50  0001 C CNN
 F 3 "" H 7150 2750 50  0001 C CNN
@@ -165,12 +165,12 @@ Wire Wire Line
 Text HLabel 8600 2950 2    60   Input ~ 0
 CAM_CLK
 $Comp
-L CameraSystem-rescue:SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits U7
+L CameraSystem-rescue:SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits U?
 U 1 1 5BBBA2DE
 P 7700 4050
-AR Path="/5BBBA2DE" Ref="U7"  Part="1" 
-AR Path="/5BB4DA63/5BBBA2DE" Ref="U7"  Part="1" 
-F 0 "U7" H 7700 3700 60  0000 C CNN
+AR Path="/5BBBA2DE" Ref="U?"  Part="1" 
+AR Path="/5BB4DA63/5BBBA2DE" Ref="U6"  Part="1" 
+F 0 "U6" H 7700 3700 60  0000 C CNN
 F 1 "SIT2001BI-S2-33E-24.000000G" H 7700 4550 60  0000 C CNN
 F 2 "custom-footprints:SiT2001B_SOT23" H 7700 4050 60  0001 C CNN
 F 3 "" H 7700 4050 60  0001 C CNN
@@ -178,10 +178,10 @@ F 3 "" H 7700 4050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0133
+L power:GND #PWR028
 U 1 1 5BBBA416
 P 7550 4650
-F 0 "#PWR0133" H 7550 4400 50  0001 C CNN
+F 0 "#PWR028" H 7550 4400 50  0001 C CNN
 F 1 "GND" H 7550 4500 50  0000 C CNN
 F 2 "" H 7550 4650 50  0001 C CNN
 F 3 "" H 7550 4650 50  0001 C CNN
@@ -195,12 +195,12 @@ Wire Wire Line
 Text Label 6200 4050 0    60   ~ 0
 VDD_3V3_IN
 $Comp
-L Device:C C22
+L Device:C C19
 U 1 1 5BBBA5A8
 P 6500 4350
-F 0 "C22" H 6525 4450 50  0000 L CNN
+F 0 "C19" H 6525 4450 50  0000 L CNN
 F 1 "100n" H 6525 4250 50  0000 L CNN
-F 2 "digikey-footprints:0603" H 6538 4200 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6538 4200 50  0001 C CNN
 F 3 "" H 6500 4350 50  0001 C CNN
 	1    6500 4350
 	1    0    0    -1  
@@ -209,10 +209,10 @@ Wire Wire Line
 	6500 4200 6500 4050
 Connection ~ 6500 4050
 $Comp
-L power:GND #PWR0134
+L power:GND #PWR026
 U 1 1 5BBBA64E
 P 6500 4650
-F 0 "#PWR0134" H 6500 4400 50  0001 C CNN
+F 0 "#PWR026" H 6500 4400 50  0001 C CNN
 F 1 "GND" H 6500 4500 50  0000 C CNN
 F 2 "" H 6500 4650 50  0001 C CNN
 F 3 "" H 6500 4650 50  0001 C CNN
@@ -223,12 +223,12 @@ Wire Wire Line
 	6500 4500 6500 4650
 NoConn ~ 7700 3650
 $Comp
-L Device:R R26
+L Device:R R14
 U 1 1 5BBBA862
 P 8250 4700
-F 0 "R26" V 8330 4700 50  0000 C CNN
+F 0 "R14" V 8330 4700 50  0000 C CNN
 F 1 "10k" V 8250 4700 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 8180 4700 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8180 4700 50  0001 C CNN
 F 3 "" H 8250 4700 50  0001 C CNN
 	1    8250 4700
 	1    0    0    -1  
@@ -236,43 +236,21 @@ $EndComp
 Wire Wire Line
 	8250 4850 8250 4950
 $Comp
-L CameraSystem-rescue:BC846B_215 Q?
-U 1 1 5BBBB096
-P 8350 5250
-AR Path="/5BBBB096" Ref="Q?"  Part="1" 
-AR Path="/5BB4DA63/5BBBB096" Ref="Q2"  Part="1" 
-F 0 "Q2" H 8224 5416 60  0000 L CNN
-F 1 "BC846B_215" V 8556 5250 60  0000 C CNN
-F 2 "digikey-footprints:SOT-23-3" H 8550 5450 60  0001 L CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BC846_SER.pdf" H 8550 5550 60  0001 L CNN
-F 4 "1727-2920-1-ND" H 8550 5650 60  0001 L CNN "Digi-Key_PN"
-F 5 "BC846B,215" H 8550 5750 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 8550 5850 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 8550 5950 60  0001 L CNN "Family"
-F 8 "https://assets.nexperia.com/documents/data-sheet/BC846_SER.pdf" H 8550 6050 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/nexperia-usa-inc/BC846B,215/1727-2920-1-ND/763459" H 8550 6150 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 65V 0.1A SOT23" H 8550 6250 60  0001 L CNN "Description"
-F 11 "Nexperia USA Inc." H 8550 6350 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 8550 6450 60  0001 L CNN "Status"
-	1    8350 5250
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Device:R R27
+L Device:R R15
 U 1 1 5BBBB16C
 P 8750 5500
-F 0 "R27" V 8830 5500 50  0000 C CNN
+F 0 "R15" V 8830 5500 50  0000 C CNN
 F 1 "10k" V 8750 5500 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 8680 5500 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8680 5500 50  0001 C CNN
 F 3 "" H 8750 5500 50  0001 C CNN
 	1    8750 5500
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0135
+L power:GND #PWR029
 U 1 1 5BBBB1AD
 P 8250 5750
-F 0 "#PWR0135" H 8250 5500 50  0001 C CNN
+F 0 "#PWR029" H 8250 5500 50  0001 C CNN
 F 1 "GND" H 8250 5600 50  0000 C CNN
 F 2 "" H 8250 5750 50  0001 C CNN
 F 3 "" H 8250 5750 50  0001 C CNN
@@ -282,12 +260,12 @@ $EndComp
 Wire Wire Line
 	8250 5450 8250 5700
 $Comp
-L Device:R R28
+L Device:R R16
 U 1 1 5BBBB238
 P 9050 5250
-F 0 "R28" V 9130 5250 50  0000 C CNN
+F 0 "R16" V 9130 5250 50  0000 C CNN
 F 1 "4k7" V 9050 5250 50  0000 C CNN
-F 2 "digikey-footprints:0603" V 8980 5250 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8980 5250 50  0001 C CNN
 F 3 "" H 9050 5250 50  0001 C CNN
 	1    9050 5250
 	0    1    1    0   
@@ -342,25 +320,36 @@ Wire Wire Line
 Wire Wire Line
 	8250 4950 8250 5050
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J9
+L Connector_Generic:Conn_02x02_Odd_Even J6
 U 1 1 5BC287BF
 P 2650 1500
-F 0 "J9" H 2700 1717 50  0000 C CNN
+F 0 "J6" H 2700 1717 50  0000 C CNN
 F 1 "Conn_02x02_Odd_Even" H 2700 1626 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x02_Pitch2.54mm_SMD" H 2650 1500 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 2650 1500 50  0001 C CNN
 F 3 "~" H 2650 1500 50  0001 C CNN
 	1    2650 1500
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J10
+L Connector_Generic:Conn_02x02_Odd_Even J7
 U 1 1 5BC289B3
 P 7700 2950
-F 0 "J10" H 7750 3167 50  0000 C CNN
+F 0 "J7" H 7750 3167 50  0000 C CNN
 F 1 "Conn_02x02_Odd_Even" H 7750 3076 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x02_Pitch2.54mm_SMD" H 7700 2950 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 7700 2950 50  0001 C CNN
 F 3 "~" H 7700 2950 50  0001 C CNN
 	1    7700 2950
 	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:BC847 Q1
+U 1 1 5CAB30D3
+P 8350 5250
+F 0 "Q1" H 8541 5296 50  0000 L CNN
+F 1 "BC847" H 8541 5205 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8550 5175 50  0001 L CIN
+F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 8350 5250 50  0001 L CNN
+	1    8350 5250
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC
