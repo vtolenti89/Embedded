@@ -1,7 +1,7 @@
 Version 4
 SymbolType BLOCK
 RECTANGLE Normal 64 48 -64 -48
-TEXT -59 -30 Left 2 Boost 5V0
+TEXT -36 -30 Left 2 BAT CH
 PIN -64 0 LEFT 8
 PINATTR PinName in
 PINATTR SpiceOrder 1

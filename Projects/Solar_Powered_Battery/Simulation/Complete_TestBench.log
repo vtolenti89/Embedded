@@ -1,0 +1,63 @@
+Circuit: * C:\Users\vtolenti89\Documents\05_Electronics\Kicad\Projects\Solar_Powered_Battery\Simulation\Complete_TestBench.asc
+
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(x2:en)
+Ignoring empty pin current: Ix(x3:en)
+Ignoring empty pin current: Ix(x4:en)
+Heightened Def Con from 0.00072 to 0.00072
+Heightened Def Con from 0.000729131 +++++++++++++++++++++++++++++++++++++++to 0.000729137
+Heightened Def Con from 0.000729137 +++++++++++++++++++++++++++++++++++++++to 0.00072914
+Heightened Def Con from 0.00072914 +++++++++++++++++++++++++++++++++++++++to 0.000729143
+Heightened Def Con from 0.000729143 +++++++++++++++++++++++++++++++++++++++to 0.000729146
+Heightened Def Con from 0.000729146 +++++++++++++++++++++++++++++++++++++++to 0.000729149
+Heightened Def Con from 0.000729149 +++++++++++++++++++++++++++++++++++++++to 0.000729152
+Heightened Def Con from 0.000729152 +++++++++++++++++++++++++++++++++++++++to 0.000729155
+Heightened Def Con from 0.000729155 +++++++++++++++++++++++++++++++++++++++to 0.000729158
+Heightened Def Con from 0.000729158 +++++++++++++++++++++++++++++++++++++++to 0.000729161
+Heightened Def Con from 0.000729161 +++++++++++++++++++++++++++++++++++++++to 0.000729164
+Heightened Def Con from 0.000729164 +++++++++++++++++++++++++++++++++++++++to 0.000729166
+Heightened Def Con from 0.000729166 +++++++++++++++++++++++++++++++++++++++to 0.000729168
+Heightened Def Con from 0.000729168 +++++++++++++++++++++++++++++++++++++++to 0.00072917
+Heightened Def Con from 0.00072917 +++++++++++++++++++++++++++++++++++++++to 0.000729172
+Heightened Def Con from 0.000729172 +++++++++++++++++++++++++++++++++++++++to 0.000729174
+Heightened Def Con from 0.000729174 +++++++++++++++++++++++++++++++++++++++to 0.000729176
+Heightened Def Con from 0.000729176 +++++++++++++++++++++++++++++++++++++++to 0.000729178
+Heightened Def Con from 0.000729178 +++++++++++++++++++++++++++++++++++++++to 0.00072918
+Heightened Def Con from 0.00072918 +++++++++++++++++++++++++++++++++++++++to 0.000729182
+Heightened Def Con from 0.000729182 +++++++++++++++++++++++++++++++++++++++to 0.000729184
+Heightened Def Con from 0.000729184 +++++++++++++++++++++++++++++++++++++++to 0.000729186
+Heightened Def Con from 0.000729186 +++++++++++++++++++++++++++++++++++++++to 0.000729188
+Heightened Def Con from 0.000729188 +++++++++++++++++++++++++++++++++++++++to 0.00072919
+Heightened Def Con from 0.00072919 +++++++++++++++++++++++++++++++++++++++to 0.000729192
+Heightened Def Con from 0.000729192 +++++++++++++++++++++++++++++++++++++++to 0.000729194
+Heightened Def Con from 0.000729194 +++++++++++++++++++++++++++++++++++++++to 0.000729196
+Heightened Def Con from 0.000729196 +++++++++++++++++++++++++++++++++++++++to 0.000729198
+Heightened Def Con from 0.000729198 +++++++++++++++++++++++++++++++++++++++to 0.000729199
+Heightened Def Con from 0.000729199 +++++++++++++++++++++++++++++++++++++++to 0.0007292
+Heightened Def Con from 0.0007292 +++++++++++++++++++++++++++++++++++++++to 0.000729201
+Heightened Def Con from 0.000729201 +++++++++++++++++++++++++++++++++++++++to 0.000729202
+Heightened Def Con from 0.000729202 +++++++++++++++++++++++++++++++++++++++to 0.000729203
+Heightened Def Con from 0.000729203 +++++++++++++++++++++++++++++++++++++++to 0.000729204
+Heightened Def Con from 0.000729204 +++++++++++++++++++++++++++++++++++++++to 0.000729205
+Heightened Def Con from 0.000729205 +++++++++++++++++++++++++++++++++++++++to 0.000729206
+Heightened Def Con from 0.000729206 +++++++++++++++++++++++++++++++++++++++to 0.000729207
+Heightened Def Con from 0.000729207 +++++++++++++++++++++++++++++++++++++++to 0.000729208
+Heightened Def Con from 0.000729208 ++++++++++++++++to 0.000729208
+
+Date: Fri Apr 12 08:07:23 2019
+Total elapsed time: 1.832 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 286815
+traniter = 286815
+tranpoints = 45293
+accept = 22532
+rejected = 24259
+matrix size = 56
+fillins = 46
+solver = Normal
+Matrix Compiler1: 4.73 KB object code size  1.4/0.6/[0.4]
+Matrix Compiler2: 4.73 KB object code size  0.5/0.7/[0.3]
+

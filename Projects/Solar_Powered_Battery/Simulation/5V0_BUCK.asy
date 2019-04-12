@@ -8,3 +8,6 @@ PINATTR SpiceOrder 1
 PIN 64 0 RIGHT 8
 PINATTR PinName out
 PINATTR SpiceOrder 2
+PIN -64 32 LEFT 8
+PINATTR PinName EN
+PINATTR SpiceOrder 3

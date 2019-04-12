@@ -1,0 +1,30 @@
+Circuit: * C:\Users\vtolenti89\Documents\05_Electronics\Kicad\Projects\Solar_Powered_Battery\Simulation\5V0_BOOST_TestBench.asc
+
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(x1:en)
+Heightened Def Con from 0.0011 to 0.00110001
+
+
+Measurement "pout" FAIL'ed
+pin: AVG(-v(in)*i(v1))=30.1615 FROM 0 TO 0.0016
+
+Measurement "eff" FAIL'ed
+
+
+Date: Thu Apr 11 22:50:37 2019
+Total elapsed time: 118.582 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 19821655
+traniter = 19821655
+tranpoints = 4847756
+accept = 3403097
+rejected = 1444660
+matrix size = 25
+fillins = 5
+solver = Normal
+Matrix Compiler1:      76 opcodes  0.4/[0.3]/0.3
+Matrix Compiler2: 1.84 KB object code size  0.3/0.4/[0.2]
+
