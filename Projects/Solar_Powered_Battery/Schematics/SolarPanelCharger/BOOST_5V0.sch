@@ -1,0 +1,223 @@
+EESchema Schematic File Version 4
+LIBS:SolarPanelCharger-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L cl-integrated_circuits:MT3608 U5
+U 1 1 5CB538A6
+P 4900 3750
+F 0 "U5" H 4900 4115 50  0000 C CNN
+F 1 "MT3608" H 4900 4024 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 4900 3750 50  0001 C CNN
+F 3 "" H 4900 3750 50  0001 C CNN
+	1    4900 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C9
+U 1 1 5CB53D97
+P 6350 4100
+F 0 "C9" H 6465 4146 50  0000 L CNN
+F 1 "22u" H 6465 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6388 3950 50  0001 C CNN
+F 3 "~" H 6350 4100 50  0001 C CNN
+	1    6350 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR028
+U 1 1 5CB551FA
+P 6350 4400
+F 0 "#PWR028" H 6350 4150 50  0001 C CNN
+F 1 "GND" H 6355 4227 50  0000 C CNN
+F 2 "" H 6350 4400 50  0001 C CNN
+F 3 "" H 6350 4400 50  0001 C CNN
+	1    6350 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4250 6350 4400
+Wire Wire Line
+	5250 3750 5550 3750
+Wire Wire Line
+	6350 3750 6350 3950
+Wire Wire Line
+	6350 3750 6650 3750
+Connection ~ 6350 3750
+Text HLabel 6650 3750 2    50   Input ~ 0
+BOOST_IN
+NoConn ~ 5250 3650
+Text HLabel 5800 3850 2    50   Input ~ 0
+EN
+$Comp
+L power:GND #PWR027
+U 1 1 5CB55B55
+P 4400 3750
+F 0 "#PWR027" H 4400 3500 50  0001 C CNN
+F 1 "GND" V 4405 3622 50  0000 R CNN
+F 2 "" H 4400 3750 50  0001 C CNN
+F 3 "" H 4400 3750 50  0001 C CNN
+	1    4400 3750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4550 3750 4400 3750
+$Comp
+L Device:L L2
+U 1 1 5CB564B6
+P 4900 3200
+F 0 "L2" V 5090 3200 50  0000 C CNN
+F 1 "15u" V 4999 3200 50  0000 C CNN
+F 2 "custom-footprints:CD54" H 4900 3200 50  0001 C CNN
+F 3 "~" H 4900 3200 50  0001 C CNN
+	1    4900 3200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5550 3750 5550 3200
+Wire Wire Line
+	5550 3200 5050 3200
+Connection ~ 5550 3750
+Wire Wire Line
+	5550 3750 6350 3750
+Wire Wire Line
+	4750 3200 4450 3200
+Wire Wire Line
+	4450 3200 4450 3650
+Wire Wire Line
+	4450 3650 4550 3650
+Wire Wire Line
+	4450 3200 4300 3200
+Connection ~ 4450 3200
+$Comp
+L Device:D_Schottky D8
+U 1 1 5CB575F7
+P 4150 3200
+F 0 "D8" H 4150 3416 50  0000 C CNN
+F 1 "SS24" H 4150 3325 50  0000 C CNN
+F 2 "custom-footprints:SMB_DO-214AA" H 4150 3200 50  0001 C CNN
+F 3 "~" H 4150 3200 50  0001 C CNN
+	1    4150 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3200 3900 3200
+Text HLabel 3400 3200 0    50   Output ~ 0
+BOOST_OUT
+$Comp
+L Device:R R26
+U 1 1 5CB57E0E
+P 3900 3450
+F 0 "R26" H 3970 3496 50  0000 L CNN
+F 1 "7k5" H 3970 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3830 3450 50  0001 C CNN
+F 3 "~" H 3900 3450 50  0001 C CNN
+	1    3900 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R27
+U 1 1 5CB5865A
+P 3900 4150
+F 0 "R27" H 3970 4196 50  0000 L CNN
+F 1 "1k" H 3970 4105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3830 4150 50  0001 C CNN
+F 3 "~" H 3900 4150 50  0001 C CNN
+	1    3900 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 4000 3900 3850
+Wire Wire Line
+	3900 3300 3900 3200
+Connection ~ 3900 3200
+Wire Wire Line
+	3900 3200 3600 3200
+Wire Wire Line
+	4550 3850 3900 3850
+Connection ~ 3900 3850
+Wire Wire Line
+	3900 3850 3900 3600
+$Comp
+L Device:C C8
+U 1 1 5CB599C4
+P 3600 3650
+F 0 "C8" H 3715 3696 50  0000 L CNN
+F 1 "22u" H 3715 3605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3638 3500 50  0001 C CNN
+F 3 "~" H 3600 3650 50  0001 C CNN
+	1    3600 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3500 3600 3200
+Connection ~ 3600 3200
+Wire Wire Line
+	3600 3200 3400 3200
+Wire Wire Line
+	3600 3800 3600 4450
+$Comp
+L power:GND #PWR025
+U 1 1 5CB5A850
+P 3600 4450
+F 0 "#PWR025" H 3600 4200 50  0001 C CNN
+F 1 "GND" H 3605 4277 50  0000 C CNN
+F 2 "" H 3600 4450 50  0001 C CNN
+F 3 "" H 3600 4450 50  0001 C CNN
+	1    3600 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R28
+U 1 1 5CB5ABC4
+P 3900 4700
+F 0 "R28" H 3970 4746 50  0000 L CNN
+F 1 "22" H 3970 4655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3830 4700 50  0001 C CNN
+F 3 "~" H 3900 4700 50  0001 C CNN
+	1    3900 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR026
+U 1 1 5CB5B171
+P 3900 4950
+F 0 "#PWR026" H 3900 4700 50  0001 C CNN
+F 1 "GND" H 3905 4777 50  0000 C CNN
+F 2 "" H 3900 4950 50  0001 C CNN
+F 3 "" H 3900 4950 50  0001 C CNN
+	1    3900 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 4950 3900 4850
+Wire Wire Line
+	3900 4300 3900 4550
+$Comp
+L Device:R R29
+U 1 1 5CBE0635
+P 5550 3850
+F 0 "R29" V 5343 3850 50  0000 C CNN
+F 1 "1k" V 5434 3850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5480 3850 50  0001 C CNN
+F 3 "~" H 5550 3850 50  0001 C CNN
+	1    5550 3850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5250 3850 5400 3850
+Wire Wire Line
+	5700 3850 5800 3850
+$EndSCHEMATC

@@ -1,48 +1,37 @@
 Circuit: * C:\Users\vtolenti89\Documents\05_Electronics\Kicad\Projects\Solar_Powered_Battery\Simulation\Transition_Testbench.asc
 
-Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
-Starting Gmin stepping
-Gmin = 10
-Gmin = 1.07374
-Gmin = 0.115292
-Gmin = 0.0123794
-Gmin = 0.00132923
-Gmin = 0.000142725
-Gmin = 1.5325e-005
-Gmin = 1.6455e-006
-Gmin = 1.76685e-007
-Gmin = 1.89714e-008
-Gmin = 2.03704e-009
-Gmin = 2.18725e-010
-Gmin = 2.34854e-011
-Gmin = 2.52173e-012
-Gmin = 2.70769e-013
-Gmin = 0
-Gmin stepping succeeded in finding the operating point.
+WARNING: Less than two connections to node NC_01.  This node is used by Q1.
+Per .tran options, skipping operating point for transient analysis.
+Heightened Def Con from 4.47942e-006 +++++++++++++++++++++++++++++++++++++++++++to 4.49742e-006
+Heightened Def Con from 3.1609e-005 ++++++++++++++++++++++++++++++++++++++++++to 3.1632e-005
+Heightened Def Con from 0.00267655 +++++++++++++++++++++++++++++++++++++++++++to 0.00267656
+Heightened Def Con from 0.00268102 +++++++++++++++++++++++++++++++++++to 0.00268102
+Heightened Def Con from 0.00407209 +++++++++++++++++++++++++++++++++++++++++++to 0.00407209
+Heightened Def Con from 0.00410182 +++++++++++++++++++++++++++++++++++++++++to 0.00410183
+Heightened Def Con from 0.00410492 ++++++++++++++++++++++++++++++++++++to 0.00410492
+Heightened Def Con from 0.00410497 to 0.00410497
+Heightened Def Con from 0.00410497 +++++++++++++++++++++++++++++to 0.00410497
+Heightened Def Con from 0.00410497 +++++++++++++++++++++++++++++to 0.00410497
+Heightened Def Con from 0.00410497 ++++++++++++++++++++++++++++++to 0.00410497
+Heightened Def Con from 0.00410497 +++++++++++++++++++++++++++++++to 0.00410498
+Heightened Def Con from 0.00410499 to 0.00410499
+Heightened Def Con from 0.0055195 ++++++++++++++++++++++++++++++++++++++++++to 0.00551952
 
-Heightened Def Con from 3.96064e-006 ++++++++++++++++++++++++++++++++++++++++++++++to 3.96251e-006
-Heightened Def Con from 9.39242e-006 ++++++++++++++++++++++++++++++++++++++++++++++to 9.3938e-006
-Heightened Def Con from 9.98588e-006 ++++++++++++++++++++++++++++++++++++++++++++++to 9.98713e-006
-Heightened Def Con from 9.99925e-006 to 1.00022e-005
-Heightened Def Con from 0.00041022 ++++++++++++++++++++++++++++++++++++++++++++++to 0.000410222
-Heightened Def Con from 0.000410463 ++++++++++++++++++++++++++++++++++++++++++++++to 0.000410465
-Heightened Def Con from 0.000410493 ++++++++++++++++++++++++++++++++++++++++++++++to 0.000410495
-
-Date: Fri Apr 12 23:38:42 2019
-Total elapsed time: 0.680 seconds.
+Date: Sat Apr 13 22:05:25 2019
+Total elapsed time: 1.569 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 41868
-traniter = 41463
-tranpoints = 5263
-accept = 2171
-rejected = 3375
-matrix size = 71
-fillins = 86
+totiter = 87466
+traniter = 87466
+tranpoints = 13368
+accept = 7090
+rejected = 6736
+matrix size = 90
+fillins = 107
 solver = Normal
-Thread vector: 14.3/6.4[2] 2.8/3.5[1] 3.8/4.0[1] 0.4/1.7[1]  2592/500
-Matrix Compiler1: 9.30 KB object code size  1.8/1.1/[0.5]
-Matrix Compiler2: 7.27 KB object code size  1.5/1.3/[0.6]
+Thread vector: 11.8/8.0[2] 3.2/3.2[1] 1.8/2.1[1] 0.4/1.7[1]  2592/500
+Matrix Compiler1: 12.06 KB object code size  2.5/1.4/[0.8]
+Matrix Compiler2: 9.19 KB object code size  0.9/1.3/[0.5]
 
