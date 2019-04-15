@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:SolarPanelCharger-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -37,7 +37,7 @@ Connection ~ 4850 2900
 Wire Wire Line
 	4850 2900 4950 2900
 Wire Wire Line
-	4850 2900 4850 3200
+	4850 2900 4850 3150
 $Comp
 L Device:Q_PMOS_GSD Q4
 U 1 1 5CB62679
@@ -130,10 +130,8 @@ F 3 "" H 7700 5350 50  0001 C CNN
 	1    7700 5350
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7300 4700
-NoConn ~ 7300 4600
 Wire Wire Line
-	5900 4400 5900 2450
+	5900 4400 5900 3150
 Wire Wire Line
 	5900 2450 5400 2450
 $Comp
@@ -238,7 +236,7 @@ Connection ~ 4850 4850
 Wire Wire Line
 	4850 4850 5050 4850
 Wire Wire Line
-	4850 4850 4850 5150
+	4850 4850 4850 5050
 $Comp
 L Device:Q_PMOS_GSD Q5
 U 1 1 5CB82615
@@ -323,7 +321,7 @@ Wire Wire Line
 Text HLabel 4000 4400 0    50   Input ~ 0
 IN2
 Wire Wire Line
-	5600 4400 5900 4400
+	5600 4400 5700 4400
 Wire Wire Line
 	4500 4400 4650 4400
 $Comp
@@ -488,4 +486,74 @@ F 8 "WR-COM Series, Right Angle Type A USB Connector Socket, 30 V ac, 1.5A" H 80
 	1    8000 4500
 	1    0    0    1   
 $EndComp
+$Comp
+L Device:R R34
+U 1 1 5CB458A9
+P 5600 3150
+F 0 "R34" H 5670 3196 50  0000 L CNN
+F 1 "1k" H 5670 3105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5530 3150 50  0001 C CNN
+F 3 "~" H 5600 3150 50  0001 C CNN
+	1    5600 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D12
+U 1 1 5CB45951
+P 5200 3150
+F 0 "D12" H 5191 3366 50  0000 C CNN
+F 1 "WHITE" H 5191 3275 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5200 3150 50  0001 C CNN
+F 3 "~" H 5200 3150 50  0001 C CNN
+	1    5200 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 3150 5050 3150
+Connection ~ 4850 3150
+Wire Wire Line
+	4850 3150 4850 3200
+Wire Wire Line
+	5350 3150 5450 3150
+Wire Wire Line
+	5750 3150 5900 3150
+Connection ~ 5900 3150
+Wire Wire Line
+	5900 3150 5900 2450
+$Comp
+L Device:LED D11
+U 1 1 5CB4BA75
+P 5150 5050
+F 0 "D11" H 5141 5266 50  0000 C CNN
+F 1 "BLUE" H 5141 5175 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5150 5050 50  0001 C CNN
+F 3 "~" H 5150 5050 50  0001 C CNN
+	1    5150 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R35
+U 1 1 5CB4BAD7
+P 5700 4750
+F 0 "R35" H 5770 4796 50  0000 L CNN
+F 1 "1k" H 5770 4705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5630 4750 50  0001 C CNN
+F 3 "~" H 5700 4750 50  0001 C CNN
+	1    5700 4750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5700 4400 5700 4600
+Connection ~ 5700 4400
+Wire Wire Line
+	5700 4400 5900 4400
+Wire Wire Line
+	5700 4900 5700 5050
+Wire Wire Line
+	5700 5050 5300 5050
+Wire Wire Line
+	5000 5050 4850 5050
+Connection ~ 4850 5050
+Wire Wire Line
+	4850 5050 4850 5150
 $EndSCHEMATC

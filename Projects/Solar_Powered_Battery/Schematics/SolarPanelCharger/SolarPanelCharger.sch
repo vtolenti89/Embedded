@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:SolarPanelCharger-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -202,10 +202,8 @@ Wire Wire Line
 	5050 6800 5050 6750
 Wire Wire Line
 	5050 6050 5050 6000
-Text Label 6200 2650 2    50   ~ 0
-BAT
 Text Label 5050 5900 2    50   ~ 0
-BAT
+LOGIC_SUPPLY
 $Comp
 L Device:C C1
 U 1 1 5CBB0EE6
@@ -561,4 +559,6 @@ Wire Wire Line
 Wire Wire Line
 	8150 3850 8150 4650
 Connection ~ 6850 3850
+Text Label 7200 3850 0    50   ~ 0
+LOGIC_SUPPLY
 $EndSCHEMATC
