@@ -666,4 +666,6 @@ F 3 "~" H 2450 5450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2600 5450 3000 5450
+Text Label 2550 1600 0    50   ~ 0
+USB_VCC
 $EndSCHEMATC
