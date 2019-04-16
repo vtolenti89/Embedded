@@ -160,9 +160,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 3050 7500 3050
 Connection ~ 7400 3000
-Wire Wire Line
-	8000 2950 8600 2950
-Text HLabel 8600 2950 2    60   Input ~ 0
+Text HLabel 8150 3050 2    60   Input ~ 0
 CAM_CLK
 $Comp
 L CameraSystem-rescue:SIT2001BI-S2-33E-24.000000G-cl-integrated_circuits U?
@@ -296,10 +294,6 @@ VDD_3V3_IN
 Text HLabel 9550 5250 2    60   Input ~ 0
 CAM_XCLK_CTL
 Wire Wire Line
-	8000 3050 8650 3050
-Wire Wire Line
-	8650 3050 8650 4050
-Wire Wire Line
 	8650 4050 8300 4050
 Text Notes 7600 2650 0    60   ~ 0
 Clock can be generated either by uc (10MHz) or by external osc (24MHz)
@@ -352,4 +346,10 @@ F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_B
 	1    8350 5250
 	-1   0    0    -1  
 $EndComp
+Wire Wire Line
+	8000 3050 8150 3050
+Wire Wire Line
+	8000 2950 8650 2950
+Wire Wire Line
+	8650 2950 8650 4050
 $EndSCHEMATC

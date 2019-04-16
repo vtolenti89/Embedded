@@ -604,29 +604,6 @@ SCL_3V3
 Text Label 9400 3900 0    50   ~ 0
 SDA_3V3
 $Comp
-L Connector_Generic:Conn_01x03 J4
-U 1 1 5BBF43CB
-P 10050 4300
-F 0 "J4" H 10130 4342 50  0000 L CNN
-F 1 "Conn_01x03" H 10130 4251 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 10050 4300 50  0001 C CNN
-F 3 "~" H 10050 4300 50  0001 C CNN
-	1    10050 4300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9400 4200 9850 4200
-Wire Wire Line
-	9400 4300 9850 4300
-Wire Wire Line
-	9850 4400 9400 4400
-Text Label 9400 4200 0    50   ~ 0
-MOSI
-Text Label 9400 4300 0    50   ~ 0
-MISO
-Text Label 9400 4400 0    50   ~ 0
-SCK
-$Comp
 L Connector_Generic:Conn_01x02 J5
 U 1 1 5BC0C4D7
 P 10050 4700
@@ -642,9 +619,9 @@ Wire Wire Line
 Wire Wire Line
 	9850 4800 9400 4800
 Text Label 9400 4700 0    50   ~ 0
-SPI_RX
+UC_SPI_RX
 Text Label 9400 4800 0    50   ~ 0
-SPI_TX
+UC_SPI_TX
 Text Notes 9400 3600 0    50   ~ 0
 For debugging purposes
 Text Notes 6700 5350 0    50   ~ 0

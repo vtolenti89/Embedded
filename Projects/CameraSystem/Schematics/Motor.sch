@@ -268,13 +268,13 @@ Wire Wire Line
 	4250 1450 3950 1450
 Wire Wire Line
 	4250 1550 4150 1550
-Text Label 5050 1350 0    50   ~ 0
-M_PWM_OUT_1
-Text Label 3950 1350 2    50   ~ 0
-M_PWM_OUT_1
 Text Label 5050 1450 0    50   ~ 0
-M_PWM_OUT_2
+M_PWM_OUT_1
 Text Label 3950 1450 2    50   ~ 0
+M_PWM_OUT_1
+Text Label 5050 1350 0    50   ~ 0
+M_PWM_OUT_2
+Text Label 3950 1350 2    50   ~ 0
 M_PWM_OUT_2
 Text HLabel 3950 1550 0    50   Output ~ 0
 SENSOR1_CON
