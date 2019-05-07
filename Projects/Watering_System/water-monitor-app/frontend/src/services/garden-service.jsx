@@ -1,9 +1,8 @@
 import HttpService from './api-service';
 
-export const userService = {
+export const gardenService = {
     signin,
-    getUsers,
-    getGardenStatus,
+    getStatus,
 };
 
 const http = new HttpService();
@@ -12,10 +11,6 @@ function signin(email, password) {
     return http.post('/users/signin', {email, password});
 }
 
-function getUsers() {
-    return http.get('/users');
-}
-
-function getGardenStatus() {
+function getStatus() {
     return http.get('/garden');
 }

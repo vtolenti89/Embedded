@@ -21,12 +21,12 @@ var dbInit = [
   //Table for the garden system
   `CREATE TABLE IF NOT EXISTS garden_system (
     id int(5) NOT NULL AUTO_INCREMENT,
-    water_level varchar(300),
+    water_level int(5),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
   ) ENGINE=InnoDB  DEFAULT CHARSET=latin1`,
   //Mock data
-  `INSERT INTO garden_system (water_level) VALUES ('low')`
+  `INSERT INTO garden_system (water_level) VALUES ('50')`
 ];
 
 //initial database setup
@@ -57,7 +57,7 @@ pool.getConnection((err, connection) => {
   }
 
   console.log('connected as id ' + connection.threadId);
-  
+
   connection.on('error', function (err) {
     console.log("[mysql error]", err);
     res.json({ "code": 100, "status": "Error in connection database" });
