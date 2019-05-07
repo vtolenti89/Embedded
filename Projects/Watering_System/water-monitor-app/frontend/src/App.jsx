@@ -13,7 +13,7 @@ class App extends React.Component {
 
   getUsers = async () => {
     console.log("blah");
-    let tt = await userService.getUsers();
+    let tt = await userService.getGardenStatus();
     console.log(tt);
   }
 
