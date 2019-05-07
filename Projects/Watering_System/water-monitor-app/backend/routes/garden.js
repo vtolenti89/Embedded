@@ -5,6 +5,9 @@ var gardenController = require('../controllers/gardenController');
 /* GET water level. */
 router.get('/', gardenController.status);
 
+/* SET water level */
+router.put('/setwaterlevel', gardenController.setWaterLevel);
+
 module.exports = router;
 
 

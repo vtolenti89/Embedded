@@ -14,7 +14,7 @@ io.on('connection', function(socket) {
         console.log('CLIENT SENDS:', data)
             //broadcast to everyone but this user
             //socket.broadcast.emit("outgoingData", { num: data });
-        socket.emit("outgoingData", { num: data });
+        //socket.emit("outgoingData", { num: data });
     });
 
     //A special namespace "disconnect" for when a client disconnects
@@ -23,8 +23,9 @@ io.on('connection', function(socket) {
     });
 });
 
-socketApi.sendNotification = function() {
-    io.sockets.emit('hello', { msg: 'Hello World!' });
+socketApi.sendNotification = function(data) {
+    console.log('SENDINGGGGG')
+    io.sockets.emit('outgoingData', data);
 }
 
 module.exports = socketApi;

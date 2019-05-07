@@ -21,12 +21,19 @@ var dbInit = [
   //Table for the garden system
   `CREATE TABLE IF NOT EXISTS garden_system (
     id int(5) NOT NULL AUTO_INCREMENT,
-    water_level int(5),
+    waterLevel int(5),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
   ) ENGINE=InnoDB  DEFAULT CHARSET=latin1`,
   //Mock data
-  `INSERT INTO garden_system (water_level) VALUES ('50')`
+  `INSERT INTO garden_system (waterLevel) VALUES ('50')`,
+  // `DELIMITER //
+  //   CREATE TRIGGER garden_system_after_update AFTER UPDATE ON garden_system FOR EACH ROW
+  // BEGIN
+  //   DECLARE vUser varchar(50);
+  
+  // END; //
+  // DELIMITER ;`
 ];
 
 //initial database setup
@@ -35,7 +42,6 @@ var dbInit = [
     try {
       await pool.query(query);
     } catch (err) {
-      success = false;
       throw new Error(err)
     }
   }

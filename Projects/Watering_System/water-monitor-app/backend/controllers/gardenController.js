@@ -1,5 +1,6 @@
-const response = require('../helpers/response');
-var pool = require('./../database');
+const response = require("../helpers/response");
+var pool = require("./../database");
+var socketApi = require('../socket-server');
 let that = this;
 
 /**
@@ -8,29 +9,33 @@ let that = this;
  * @param res
  * @returns {Promise<void>}
  */
-exports.status = async function (req, res) {
+exports.status = async function(req, res) {
   try {
-    let water_level = await pool.query('SELECT water_level FROM garden_system limit 1');
-    console.log('WATER LEVEL:', water_level)
-    if (water_level && water_level.length > 0) {
-      response.sendResponse(water_level[0], res);
+    let waterLevel = await pool.query(
+      "SELECT waterLevel FROM garden_system limit 1"
+    );
+    console.log("WATER LEVEL:", waterLevel);
+    if (waterLevel && waterLevel.length > 0) {
+      response.sendResponse(waterLevel[0], res);
     }
   } catch (err) {
     response.sendError(501, "Water level could not be retrieved", res, err);
   }
 };
 
-
-// exports.waterLevel = async function (req, res) {
-//   if (validators.fieldsValid('signUp', req.body, res)) {
-//       let clientReq = req.body;
-//       let user = await userQuery.findUserByEmail(clientReq.email);
-//       clientReq.firstName = clientReq.email.split('@')[0];
-//       clientReq.lastName = '';
-//       if (user && user.length > 0) {
-//           response.sendError(401, errors.EMAIL_EXISTS, res);
-//       } else {
-//           await that.signUp(clientReq, USER_ORIGIN.STANDARD, res);
-//       }
-//   }
-// };
+exports.setWaterLevel = async function(req, res) {
+  let newWaterLevel = req.body.waterLevel;
+  console.log(req.body);
+  try {
+    let updateWaterLevel = await pool.query(
+      `UPDATE garden_system SET waterLevel = ${newWaterLevel}`
+    );
+    if (updateWaterLevel.affectedRows) {
+      let waterLevel = await pool.query(
+        "SELECT waterLevel FROM garden_system limit 1"
+      );
+      socketApi.sendNotification(waterLevel[0]);
+      response.sendResponse(waterLevel[0], res);
+    }
+  } catch (err) {}
+};

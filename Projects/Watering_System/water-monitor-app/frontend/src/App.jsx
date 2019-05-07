@@ -16,11 +16,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: 0,
+      data: {
+        waterLevel: 0
+      },
       endpoint: "http://localhost:3001"
   };
 
-    this.getUsers = this.getUsers.bind(this);
+    this.getGardenStatus = this.getGardenStatus.bind(this);
+    this.setWaterLevel = this.setWaterLevel.bind(this);
   }
 
   componentDidMount() {
@@ -37,16 +40,22 @@ class App extends React.Component {
     socket.emit('incomingData', { data: 'Subscribing to channel' });
   }
 
-  getUsers = async () => {
-    console.log("blah");
-    let tt = await gardenService.getStatus();
-    console.log(tt);
+  getGardenStatus = async () => {
+    let gardenStatus = await gardenService.getStatus();
+    console.log(gardenStatus);
   }
 
+  setWaterLevel = async (waterLevel) => {
+    let newWaterLevel = await gardenService.setWaterLevel(waterLevel);
+    console.log(newWaterLevel);
+  } 
+
   render() {
+    const {data} = this.state;
     return (
       <div className="app">
-        <WaterContainer waterLevel={75}/>
+        <WaterContainer waterLevel={data.waterLevel}/>
+        <button onClick={()=>this.setWaterLevel(50)}>Set Water</button>
       </div>
     );
   }
