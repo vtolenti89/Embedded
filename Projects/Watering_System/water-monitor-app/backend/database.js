@@ -1,23 +1,31 @@
 var mysql = require('mysql')
 var util = require('util')
 
+// var pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'root',
+//   database: 'iot',
+//   socketPath: process.platform === 'darwin' ? '/Applications/MAMP/tmp/mysql/mysql.sock' : ''
+// })
+
 var pool = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'iot',
+  user: 'votolent',
+  password: 'Torotciva21!',
+  database: 'votolent_iot',
   socketPath: process.platform === 'darwin' ? '/Applications/MAMP/tmp/mysql/mysql.sock' : ''
 })
-
 //convert queries into promises
 pool.query = util.promisify(pool.query)
 
 var dbInit = [
   'SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";',
   'SET time_zone = "+00:00";',
-  `CREATE DATABASE IF NOT EXISTS iot`,
-  `USE iot`,
+  `CREATE DATABASE IF NOT EXISTS votolent_iot`,
+  `USE votolent_iot`,
   //Table for the garden system
   `CREATE TABLE IF NOT EXISTS garden_system (
     id int(5) NOT NULL AUTO_INCREMENT,

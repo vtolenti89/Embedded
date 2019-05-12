@@ -16,6 +16,7 @@ var io = socketApi.io;
 
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
+console.log('listening on PORT:', port);
 
 /**
  * Create HTTP server.
