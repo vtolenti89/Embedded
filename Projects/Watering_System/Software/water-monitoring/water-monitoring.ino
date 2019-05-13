@@ -2,33 +2,16 @@
 #include "wifi.h"
 #define WIFI_RX PD2
 #define WIFI_TX PD3
-//#define WIFI_RX PE4
-//#define WIFI_TX PE5
 
-#define DEBUG true
-const int sRx = PD2;
-const int sTx = PD3;
+const String url = "jsonppplaceholder.typicode.com";
+const String endpoint = "/posts/42";
 const int yellowLed = PD6;
 const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevel = PC0;
 const int sWaterLevel = PC1;
-//const String url2 = "jsonplaceholder.typicode.com";
-//const String url = "mocky.io";
-//const String waterLevel2 = "/posts/42";
-//const String waterLevel = "/v2/5cd7fa20300000ab2474ccf1";
-const String ssid = "UPC6E2796A";
-const String password = "Jmre8szre4ez";
 unsigned long timerOne = 0;
-unsigned long timerTwo = 0;
 
-//variales
-boolean found = false; 
-int countTrueCommand = 0;
-int countTimeCommand = 0; 
-
-
-//SoftwareSerial ESP8266(sRx, sTx);
 Wifi wifi(WIFI_RX, WIFI_TX);
 
 void setup() {
@@ -49,22 +32,16 @@ void setup() {
   Serial.println("Serial communication started...");
   // set the data rate for the SoftwareSerial port
   wifi.init();
+  Serial.println("t:" + endpoint);
+  wifi.getRequest(url, endpoint);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   PORTD^=(1 << yellowLed);
-
   PORTD^=(1 << redLed);
 
-  delay(1000);
 
-  if (millis() - timerOne > 2000) {
-    timerOne = millis(); 
-    //wifi.connectionStatus();
-//    htmlRequest(url, waterLevel, "GET");
-//    readResponse();
-  }
 }
 /*
 void sendCommand(String command, int maxTime, char readReplay[]) {

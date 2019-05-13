@@ -17,7 +17,7 @@ class Wifi
     uint8_t rx;
     uint8_t tx;
     uint8_t countSendAttempts;
-    bool found;
+    bool successfulResponse;
     String response;
   public:
    void init();
@@ -29,6 +29,9 @@ class Wifi
    bool disconnect();
    void printResponse();
    String connectionStatus();
+   void htmlRequest(String url, String endpoint, String reqType, String data = "");
+   String getRequest(String url, String endpoint);
+   String postRequest(String url, String endpoint, String data);
    String getReq(String url, String endpoint);
    String postReq(String url, String endpoint, String data);
 
