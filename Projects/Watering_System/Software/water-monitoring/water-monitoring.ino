@@ -2,8 +2,8 @@
 #include "wifi.h"
 #define WIFI_RX PD2
 #define WIFI_TX PD3
-
-
+//#define WIFI_RX PE4
+//#define WIFI_TX PE5
 
 #define DEBUG true
 const int sRx = PD2;
@@ -49,9 +49,6 @@ void setup() {
   Serial.println("Serial communication started...");
   // set the data rate for the SoftwareSerial port
   wifi.init();
-  //ESP8266.begin(115200);
-  //sendCommand("AT",5,"OK");
-  //sendCommand("AT+CWMODE=1",5,"OK");
 }
 
 void loop() {
@@ -62,16 +59,12 @@ void loop() {
 
   delay(1000);
 
-
-//  connectWifi(ssid, password);
   if (millis() - timerOne > 2000) {
     timerOne = millis(); 
     //wifi.connectionStatus();
 //    htmlRequest(url, waterLevel, "GET");
 //    readResponse();
   }
-  
-  //Serial.println(wifi.getResponse());
 }
 /*
 void sendCommand(String command, int maxTime, char readReplay[]) {

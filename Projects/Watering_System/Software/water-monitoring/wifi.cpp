@@ -59,47 +59,44 @@ String Wifi::postReq(String url, String endpoint, String data) {
 
 bool Wifi::sendCommand(String command){
   //printing command in the debug window
-  delay(500);
+  delay(1000);
   Serial.print("=> ");
   Serial.print(command);
   Serial.print(" ");
   countSendAttempts = 0;
   found = false;
-  while(countSendAttempts < SEND_ATTEMPTS)
-  {
+  response = "";
+  
+  while(countSendAttempts < SEND_ATTEMPTS) {
+    countSendAttempts++;
     Serial.print(".");
     ESP8266.println(command);
-    //Serial.println(getResponse());
+    delay(100);
     if(ESP8266.find("OK")){
-      
+      Serial.print("OK");
+      Serial.println(" ");
       found = true;
-      break;
-    }
-    countSendAttempts++;
+      printResponse();
+      break;  
+    };
   }
-
-  if(found == true){
-    Serial.println("OK");
-    Serial.print(getResponse());
-    if(DEBUG) {
-      //Serial.println(getResponse());
-     }
+    
+  if(!found) {
+    Serial.print("Fail");  
   }
   
-  if(found == false)
-  {
-    Serial.println("Fail");
-    countSendAttempts = 0;
-  }
-  found = false;
+}
+
+
+
+void Wifi::printResponse() {
+  delay(50);
+  Serial.println(getResponse());
 }
 
 String Wifi::getResponse() {
   delay(50);
-  
   if (ESP8266.available()){
-     String inData = ESP8266.readStringUntil('\n');
-     return inData;
+     return ESP8266.readStringUntil('\n');
   }
-  
 }

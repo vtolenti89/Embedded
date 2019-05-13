@@ -3,10 +3,10 @@
 #include <Arduino.h>
 #include<SoftwareSerial.h>
  
-//#define WIFI_SSID UPC6E2796A
-//#define WIFI_PASS Jmre8szre4ez
-#define WIFI_SSID "FlixRouter"
-#define WIFI_PASS "12345678!"
+#define WIFI_SSID "UPC6E2796A"
+#define WIFI_PASS "Jmre8szre4ez"
+//#define WIFI_SSID "FlixRouter"
+//#define WIFI_PASS "12345678!"
 #define BAUD_RATE 9600
 #define SEND_ATTEMPTS 5
 #define DEBUG true
@@ -18,6 +18,7 @@ class Wifi
     uint8_t tx;
     uint8_t countSendAttempts;
     bool found;
+    String response;
   public:
    void init();
    bool sendCommand(String command);
@@ -26,6 +27,7 @@ class Wifi
    void checkFirmware();
    bool connect();
    bool disconnect();
+   void printResponse();
    String connectionStatus();
    String getReq(String url, String endpoint);
    String postReq(String url, String endpoint, String data);
@@ -33,7 +35,6 @@ class Wifi
    SoftwareSerial ESP8266;
    Wifi(uint8_t rx, uint8_t tx) : ESP8266 (rx, tx) {
      ESP8266.begin(BAUD_RATE);
-     //init();
    }
 };
  
