@@ -13,10 +13,10 @@ const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevel = PC0;
 const int sWaterLevel = PC1;
-const String url2 = "jsonplaceholder.typicode.com";
-const String url = "mocky.io";
-const String waterLevel2 = "/posts/42";
-const String waterLevel = "/v2/5cd7fa20300000ab2474ccf1";
+//const String url2 = "jsonplaceholder.typicode.com";
+//const String url = "mocky.io";
+//const String waterLevel2 = "/posts/42";
+//const String waterLevel = "/v2/5cd7fa20300000ab2474ccf1";
 const String ssid = "UPC6E2796A";
 const String password = "Jmre8szre4ez";
 unsigned long timerOne = 0;
@@ -29,6 +29,7 @@ int countTimeCommand = 0;
 
 
 //SoftwareSerial ESP8266(sRx, sTx);
+Wifi wifi(WIFI_RX, WIFI_TX);
 
 void setup() {
   //Setting up pin inputs and outputs
@@ -40,14 +41,14 @@ void setup() {
   DDRC&=~((1 << lWaterLevel) | (1 << sWaterLevel));
 
   // Open serial communications and wait for port to open:
-  Serial.begin(115200);
+  Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
   
-  Serial.println("Seria communication started...");
+  Serial.println("Serial communication started...");
   // set the data rate for the SoftwareSerial port
-  Wifi wifi(WIFI_RX, WIFI_TX);
+  wifi.init();
   //ESP8266.begin(115200);
   //sendCommand("AT",5,"OK");
   //sendCommand("AT+CWMODE=1",5,"OK");
@@ -63,11 +64,14 @@ void loop() {
 
 
 //  connectWifi(ssid, password);
-//  if (millis() - timerOne > 2000) {
-//    timerOne = millis(); 
+  if (millis() - timerOne > 2000) {
+    timerOne = millis(); 
+    //wifi.connectionStatus();
 //    htmlRequest(url, waterLevel, "GET");
 //    readResponse();
-//  }
+  }
+  
+  //Serial.println(wifi.getResponse());
 }
 /*
 void sendCommand(String command, int maxTime, char readReplay[]) {

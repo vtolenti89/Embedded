@@ -15,16 +15,17 @@
 
 const int ledYellow = PIND1;
 const int ledGreen = PIND0;
-
+const int ledRed = PINB5;
 
 
 int main(void)
 {
 	DDRD=0xFF;
 	DDRA=0xFF;
-	
+	DDRB=0xFF;	
 	PORTD|=0xFF;
 	PORTA|=0x00;
+	PORTB|=0xFF;
 	
 	//Initialiting modules
 	QTSensor qt;
@@ -32,7 +33,9 @@ int main(void)
 	while (1)
 	{
 		
-		PORTD^=(1 << ledGreen);
+		
+		//PORTD^=(1 << ledGreen);
+		
 		
 		
 		PORTA = qt.getKeyStatus();

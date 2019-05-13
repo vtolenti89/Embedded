@@ -8,22 +8,45 @@
 
 void Wifi::init() {
     //ESP8266.begin(BAUD_RATE);
-    Serial.println("INIT");
+    Serial.println("WIFI INIT");
+    
     sendCommand("AT");
+    sendCommand("AT+CWMODE=" + String(CWMODE));
+    checkFirmware();
+    connect();
+    connectionStatus();
 };
 
-bool Wifi::connect() {
-    
+void Wifi::setBaudRate() {
+  //set baud rate
+  sendCommand("AT+UART_DEF=9600,8,1,0,0");
+ }
+ 
+void Wifi::checkFirmware () {
+    //AT+GMR check firmware
+    sendCommand("AT+GMR");
+  };
 
+bool Wifi::connect() {
+  //AT+CIPSTATUS check whether it is connected
+  sendCommand("AT+CIPSTATUS");
+  
+  // AT+CWJAP connect to wifi
+  sendCommand("AT+CWJAP=\"" + String(WIFI_SSID) + "\",\"" + String(WIFI_PASS) + "\"");
+
+  // AT+CIFSR check ip of wifi module
+  sendCommand("AT+CIFSR");
 };
 
 bool Wifi::disconnect() {
-    
-
+  // AT+CWQAP disconnect from current WIFI
+  sendCommand("AT+CWQAP");  
 };
 
 String Wifi::connectionStatus () {
-  
+  // AT+CIPSTATUS status from the connection
+  sendCommand("AT+CIPSTATUS");
+  Serial.println(getResponse());
 };
 
 String Wifi::getReq(String url, String endpoint) {
@@ -37,27 +60,29 @@ String Wifi::postReq(String url, String endpoint, String data) {
 bool Wifi::sendCommand(String command){
   //printing command in the debug window
   delay(500);
-  Serial.print(". at command => ");
+  Serial.print("=> ");
   Serial.print(command);
   Serial.print(" ");
   countSendAttempts = 0;
   found = false;
-  Serial.println("Sending command");
-  while(countSendAttempts < _SEND_ATTEMPTS)
+  while(countSendAttempts < SEND_ATTEMPTS)
   {
-    Serial.println("waiting");
-    ESP8266.println(command);//at+cipsend
+    Serial.print(".");
+    ESP8266.println(command);
+    //Serial.println(getResponse());
     if(ESP8266.find("OK")){
+      
       found = true;
       break;
     }
     countSendAttempts++;
   }
-  
+
   if(found == true){
     Serial.println("OK");
-    if(_DEBUG) {
-      Serial.println(ESP8266.readStringUntil('\n'));
+    Serial.print(getResponse());
+    if(DEBUG) {
+      //Serial.println(getResponse());
      }
   }
   
@@ -67,4 +92,14 @@ bool Wifi::sendCommand(String command){
     countSendAttempts = 0;
   }
   found = false;
+}
+
+String Wifi::getResponse() {
+  delay(50);
+  
+  if (ESP8266.available()){
+     String inData = ESP8266.readStringUntil('\n');
+     return inData;
+  }
+  
 }
