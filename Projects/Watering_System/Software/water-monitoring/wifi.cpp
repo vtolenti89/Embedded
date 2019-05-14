@@ -2,16 +2,14 @@
 #include<SoftwareSerial.h>
 #include "wifi.h"
  
-//Wifi::Wifi(uint8_t rx, uint8_t tx){
-  //ESP8266(rx, tx);
-//}
-
 void Wifi::init() {
     //ESP8266.begin(BAUD_RATE);
     Serial.println("WIFI INIT");
     
     sendCommand("AT");
-    sendCommand("AT+CWMODE=" + String(CWMODE));
+    
+    // AT+CWMODE (1: Station mode (client), 2 = AP mode (host), 3 : AP + Station mode)
+    sendCommand("AT+CWMODE=1");
     checkFirmware();
     connect();
     connectionStatus();
@@ -57,10 +55,10 @@ String Wifi::postReq(String url, String endpoint, String data) {
 
 bool Wifi::sendCommand(String command){
   //printing command in the debug window
-  delay(1000);
+  delay(100);
+  Serial.println(" ");
   Serial.print("=> ");
   Serial.print(command);
-  Serial.print(" ");
   countSendAttempts = 0;
   successfulResponse = false;
   response = "";
@@ -69,12 +67,14 @@ bool Wifi::sendCommand(String command){
     countSendAttempts++;
     Serial.print(".");
     ESP8266.println(command);
-    delay(100);
-    if(ESP8266.find("OK")){
+    delay(1000);
+    response = getResponse();
+    Serial.println(" RES1:" + response);
+    if(response.indexOf("OK") >= 0){
       Serial.print("OK");
+      Serial.print(response);
       Serial.println(" ");
       successfulResponse = true;
-      printResponse();
       break;  
     };
   }
@@ -85,16 +85,16 @@ bool Wifi::sendCommand(String command){
 
 void Wifi::printResponse() {
   delay(50);
-  Serial.print("RES:");
+  Serial.print("RES2:");
   Serial.print(getResponse());
   Serial.print("\n");
 };
 
 String Wifi::getResponse() {
   delay(50);
-  if (ESP8266.available()){
+  //if (ESP8266.available()){
      return ESP8266.readStringUntil('\n');
-  }
+  //}
 };
 
 void Wifi::htmlRequest(String url, String endpoint, String reqType, String data = "") {
@@ -123,7 +123,7 @@ void Wifi::htmlRequest(String url, String endpoint, String reqType, String data 
  };
 
  String Wifi::getRequest(String url, String endpoint){
-    Serial.println("LOLO" + endpoint);
+    Serial.println("ENDPOINT:" + endpoint);
     htmlRequest(url, endpoint, "GET");
  };
 

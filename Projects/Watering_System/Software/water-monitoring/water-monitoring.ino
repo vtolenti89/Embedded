@@ -3,7 +3,7 @@
 #define WIFI_RX PD2
 #define WIFI_TX PD3
 
-const String url = "jsonppplaceholder.typicode.com";
+const String url = "jsonplaceholder.typicode.com";
 const String endpoint = "/posts/42";
 const int yellowLed = PD6;
 const int redLed = PD7;
@@ -32,7 +32,6 @@ void setup() {
   Serial.println("Serial communication started...");
   // set the data rate for the SoftwareSerial port
   wifi.init();
-  Serial.println("t:" + endpoint);
   wifi.getRequest(url, endpoint);
 }
 
@@ -40,8 +39,6 @@ void loop() {
   // put your main code here, to run repeatedly:
   PORTD^=(1 << yellowLed);
   PORTD^=(1 << redLed);
-
-
 }
 /*
 void sendCommand(String command, int maxTime, char readReplay[]) {

@@ -3,14 +3,13 @@
 #include <Arduino.h>
 #include<SoftwareSerial.h>
  
-#define WIFI_SSID "UPC6E2796A"
-#define WIFI_PASS "Jmre8szre4ez"
-//#define WIFI_SSID "FlixRouter"
-//#define WIFI_PASS "12345678!"
+//#define WIFI_SSID "UPC6E2796A"
+//#define WIFI_PASS "Jmre8szre4ez"
+#define WIFI_SSID "FlixRouter"
+#define WIFI_PASS "12345678!"
 #define BAUD_RATE 9600
 #define SEND_ATTEMPTS 5
 #define DEBUG true
-#define CWMODE "1" // AT+CWMODE (1: Station mode (client), 2 = AP mode (host), 3 : AP + Station mode)
  
 class Wifi
 {  private:
