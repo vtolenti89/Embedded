@@ -12,7 +12,6 @@ void Wifi::init() {
     sendCommand("AT+CWMODE=1");
     checkFirmware();
     connect();
-    connectionStatus();
 };
 
 void Wifi::setBaudRate() {
@@ -26,14 +25,14 @@ void Wifi::checkFirmware () {
   };
 
 bool Wifi::connect() {
-  //AT+CIPSTATUS check whether it is connected
-  sendCommand("AT+CIPSTATUS");
-  
+  Serial.println("...trying to connect to WIFI");
   // AT+CWJAP connect to wifi
   sendCommand("AT+CWJAP=\"" + String(WIFI_SSID) + "\",\"" + String(WIFI_PASS) + "\"");
 
   // AT+CIFSR check ip of wifi module
   sendCommand("AT+CIFSR");
+
+  connectionStatus ();
 };
 
 bool Wifi::disconnect() {
@@ -46,59 +45,41 @@ String Wifi::connectionStatus () {
   sendCommand("AT+CIPSTATUS");
 };
 
-String Wifi::getReq(String url, String endpoint) {
-  
-};
-
-String Wifi::postReq(String url, String endpoint, String data) {
-};
-
-bool Wifi::sendCommand(String command){
-  //printing command in the debug window
-  delay(100);
-  Serial.println(" ");
-  Serial.print("=> ");
-  Serial.print(command);
-  countSendAttempts = 0;
-  successfulResponse = false;
-  response = "";
-  
-  while(countSendAttempts < SEND_ATTEMPTS) {
-    countSendAttempts++;
-    Serial.print(".");
-    ESP8266.println(command);
-    delay(1000);
+bool Wifi::sendCommand(String command) {
+  sendTimeout = false;
+  Serial.println("SEND:" + command);
+  ESP8266.println(command);
+  while (true && !sendTimeout) {
     response = getResponse();
-    Serial.println(" RES1:" + response);
-    if(response.indexOf("OK") >= 0){
-      Serial.print("OK");
-      Serial.print(response);
-      Serial.println(" ");
-      successfulResponse = true;
-      break;  
-    };
+    
+    response.trim();
+    if (response.length() > 0) {
+      Serial.println("RES:" + response);
+      //intermediate response
+      if (response == "WIFI CONNECTED") {wifiIsConnected = true;}
+      if (response == "WIFI DISCONNECT") {wifiIsConnected = false;}    
+      
+      if (response == "OK" || response == "SEND OK" || response == "ALREADY CONNECTED")
+        return true;
+      if (response == "ERROR" || response == "FAIL" || response == "SEND FAIL")
+        return false;
+    }
   }
-  if(!successfulResponse) {
-    Serial.print("Fail");  
-  }
-};
+ }
 
 void Wifi::printResponse() {
-  delay(50);
-  Serial.print("RES2:");
-  Serial.print(getResponse());
-  Serial.print("\n");
+     
 };
 
+
 String Wifi::getResponse() {
-  delay(50);
-  //if (ESP8266.available()){
-     return ESP8266.readStringUntil('\n');
-  //}
+    return ESP8266.readStringUntil('\n');
 };
 
 void Wifi::htmlRequest(String url, String endpoint, String reqType, String data = "") {
-
+  if (!wifiIsConnected){
+      connect();
+    }
   // AT+CIPMUX (0: single connection, 1: multiple connection)
   sendCommand("AT+CIPMUX=1");
 
@@ -106,7 +87,10 @@ void Wifi::htmlRequest(String url, String endpoint, String reqType, String data 
   sendCommand("AT+CWMODE=1");
 
   // AT+CIPSTART establishes TCP connection
-  sendCommand("AT+CIPSTART=4,\"TCP\",\"" + url + "\",80");
+  //sendCommand("AT+CIPSTART=4,\"TCP\",\"" + url + "\",80");
+  
+  sendCommand("AT+CIPSTART=4,\"TCP\",\"jsonplaceholder.typicode.com\",80");
+  //sendCommand("AT+CIPSTART=4,\"TCP\",\"mocky.io\",80");
 
   String cmd = "";
   if(reqType == "GET") {
@@ -115,14 +99,19 @@ void Wifi::htmlRequest(String url, String endpoint, String reqType, String data 
     //TODO
     cmd = "POST " + endpoint +  " HTTP/1.1 \r\nHost: " + url + "\r\n\r\n";        
     }
+
+  //test
+  cmd = "GET /posts/42 HTTP/1.1\r\nHost: jsonplaceholder.typicode.com\r\n\r\n";     
+  //cmd = "GET /v2/5cdc13222d00005211f5a574 HTTP/1.1\r\nHost: mocky.io\r\n\r\n";     
   // AT+CIPSTART set the command size
-  sendCommand("AT+CIPSEND=4," + String(cmd.length() + 4));
+  sendCommand("AT+CIPSEND=4," + String(cmd.length() + 2));
 
   // Send the command
   sendCommand(cmd);
  };
 
  String Wifi::getRequest(String url, String endpoint){
+    Serial.println("URL:" + url);
     Serial.println("ENDPOINT:" + endpoint);
     htmlRequest(url, endpoint, "GET");
  };

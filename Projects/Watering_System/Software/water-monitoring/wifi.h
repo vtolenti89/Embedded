@@ -18,15 +18,19 @@ class Wifi
     uint8_t countSendAttempts;
     bool successfulResponse;
     String response;
+    
   public:
+   bool sendTimeout;
+   bool wifiIsConnected;
    void init();
+   bool sendCommandOld(String command);
    bool sendCommand(String command);
    String getResponse();
    void setBaudRate();
+   void printResponse();
    void checkFirmware();
    bool connect();
    bool disconnect();
-   void printResponse();
    String connectionStatus();
    void htmlRequest(String url, String endpoint, String reqType, String data = "");
    String getRequest(String url, String endpoint);

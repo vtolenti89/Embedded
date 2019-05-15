@@ -3,14 +3,17 @@
 #define WIFI_RX PD2
 #define WIFI_TX PD3
 
-const String url = "jsonplaceholder.typicode.com";
-const String endpoint = "/posts/42";
+const char url [] = "jsonplaceholder.typicode.com";
+const char endpoint [] = "/posts/42";
 const int yellowLed = PD6;
 const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevel = PC0;
 const int sWaterLevel = PC1;
-unsigned long timerOne = 0;
+bool timer1Flag = true;
+bool timer2Flag = true;
+unsigned long timer1Counter = 0;
+unsigned long timer2Counter = 0;
 
 Wifi wifi(WIFI_RX, WIFI_TX);
 
@@ -32,14 +35,47 @@ void setup() {
   Serial.println("Serial communication started...");
   // set the data rate for the SoftwareSerial port
   wifi.init();
-  wifi.getRequest(url, endpoint);
+  
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  PORTD^=(1 << yellowLed);
-  PORTD^=(1 << redLed);
+  
+    if(timer2Flag){
+      PORTD^=(1 << yellowLed);
+      PORTD^=(1 << redLed);
+      wifi.getRequest(url , endpoint);
+  }
+  updateTimer();
+  checkFlags();
 }
+
+void updateTimer() {
+  
+  if (millis() - timer1Counter >= 10) {
+    //timer 1 -> 10/10 ms clock
+    timer1Counter = millis();
+    timer1Flag=!timer1Flag;
+    
+    //timer 2 -> 100/100 ms clock
+    timer2Counter++;
+    if(timer2Counter >= 100) {
+      timer2Counter = 0;
+      timer2Flag=!timer2Flag;
+      }
+  }
+}
+
+void checkFlags() {
+  if(timer1Flag) {
+      if(!wifi.sendTimeout) {
+         wifi.sendTimeout = true;
+        }
+    }
+   if(timer2Flag) {
+    
+    }
+  }
 /*
 void sendCommand(String command, int maxTime, char readReplay[]) {
   //printing command in the debug window
