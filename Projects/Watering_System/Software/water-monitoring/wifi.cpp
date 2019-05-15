@@ -46,15 +46,18 @@ String Wifi::connectionStatus () {
 };
 
 bool Wifi::sendCommand(String command) {
-  sendTimeout = false;
+  sendTimeout = 0;
   Serial.println("SEND:" + command);
+  Serial.print("RECEIVE:");
   ESP8266.println(command);
-  while (true && !sendTimeout) {
+  while (true && sendTimeout < 50) {
+    Serial.print(".");
+    sendTimeout++;
     response = getResponse();
     
     response.trim();
     if (response.length() > 0) {
-      Serial.println("RES:" + response);
+      Serial.println(response);
       //intermediate response
       if (response == "WIFI CONNECTED") {wifiIsConnected = true;}
       if (response == "WIFI DISCONNECT") {wifiIsConnected = false;}    

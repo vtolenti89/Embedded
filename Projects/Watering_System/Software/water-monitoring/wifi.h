@@ -20,7 +20,7 @@ class Wifi
     String response;
     
   public:
-   bool sendTimeout;
+   long sendTimeout;
    bool wifiIsConnected;
    void init();
    bool sendCommandOld(String command);

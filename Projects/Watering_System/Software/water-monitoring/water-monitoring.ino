@@ -68,9 +68,6 @@ void updateTimer() {
 
 void checkFlags() {
   if(timer1Flag) {
-      if(!wifi.sendTimeout) {
-         wifi.sendTimeout = true;
-        }
     }
    if(timer2Flag) {
     
