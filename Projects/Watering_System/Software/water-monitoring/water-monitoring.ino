@@ -1,5 +1,6 @@
 #include<SoftwareSerial.h>
-#include "wifi.h"
+#include "esp8266.h"
+#include "helper.h"
 #define WIFI_RX PD2
 #define WIFI_TX PD3
 
@@ -10,12 +11,10 @@ const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevel = PC0;
 const int sWaterLevel = PC1;
-bool timer1Flag = true;
-bool timer2Flag = true;
-unsigned long timer1Counter = 0;
-unsigned long timer2Counter = 0;
+String response = "";
 
-Wifi wifi(WIFI_RX, WIFI_TX);
+ESP8266 esp8266(WIFI_RX, WIFI_TX);
+Helper helper;
 
 void setup() {
   //Setting up pin inputs and outputs
@@ -34,45 +33,37 @@ void setup() {
   
   Serial.println("Serial communication started...");
   // set the data rate for the SoftwareSerial port
-  wifi.init();
+  esp8266.init();
   
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   
-    if(timer2Flag){
-      PORTD^=(1 << yellowLed);
-      PORTD^=(1 << redLed);
-      wifi.getRequest(url , endpoint);
+  if(helper.getTimerFlag(2)){
+    
+    PORTD^=(1 << yellowLed);
+    //esp8266.getRequest(url , endpoint);
   }
-  updateTimer();
-  checkFlags();
+
+   if(helper.getTimerFlag(3)){
+    //esp8266.printPipe();
+    response = esp8266.watcher();
+    if(response) {
+      Serial.print("RESPONSE:");
+      Serial.println(response);
+      Serial.println("++++++");  
+    }
+   }
+
+   if(helper.getTimerFlag(4)){ 
+    PORTD^=(1 << redLed);
+    esp8266.getRequest(url, endpoint);
+   }
+
+  helper.updateTimer();
 }
 
-void updateTimer() {
-  
-  if (millis() - timer1Counter >= 10) {
-    //timer 1 -> 10/10 ms clock
-    timer1Counter = millis();
-    timer1Flag=!timer1Flag;
-    
-    //timer 2 -> 100/100 ms clock
-    timer2Counter++;
-    if(timer2Counter >= 100) {
-      timer2Counter = 0;
-      timer2Flag=!timer2Flag;
-      }
-  }
-}
-
-void checkFlags() {
-  if(timer1Flag) {
-    }
-   if(timer2Flag) {
-    
-    }
-  }
 /*
 void sendCommand(String command, int maxTime, char readReplay[]) {
   //printing command in the debug window
