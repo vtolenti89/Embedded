@@ -6,6 +6,8 @@
 
 const char url [] = "jsonplaceholder.typicode.com";
 const char endpoint [] = "/posts/42";
+//const char url [] = "2886795456-3000-cykoria03.environments.katacoda.com";
+//const char endpoint [] = "/data";
 const int yellowLed = PD6;
 const int redLed = PD7;
 const int motorPWM = PB1;
@@ -48,9 +50,11 @@ void loop() {
 
    if(helper.getTimerFlag(3)){
     //esp8266.printPipe();
+    //esp8266.printPipe();
+    
     response = esp8266.watcher();
-    if(response) {
-      Serial.print("RESPONSE:");
+    if(response.length() > 0) {
+      Serial.print("<<<<<RESPONSE:");
       Serial.println(response);
       Serial.println("++++++");  
     }

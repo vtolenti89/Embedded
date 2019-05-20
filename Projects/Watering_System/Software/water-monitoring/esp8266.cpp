@@ -8,7 +8,7 @@ void ESP8266::init() {
     connect();
 };
 
-bool ESP8266::addToPipe(String cmd) {
+void ESP8266::addToPipe(String & cmd) {
   //char command[cmd.length()+1]; 
   //cmd.toCharArray(command, cmd.length()+1);
   for(pipeSlot = 0; pipeSlot < PIPEMAXSIZE; pipeSlot++) {
@@ -19,9 +19,13 @@ bool ESP8266::addToPipe(String cmd) {
       //Serial.print("Slot is Empty. New data:");
       //Serial.println(cmd);
       pipe[pipeSlot] = cmd;
+      Serial.println("§§ADDED TO PIPE");
+      printPipe();
       return true;
     }
   }
+  Serial.println("§§NOT POSSIBLE TO ADD TO PIPE");
+  printPipe();
   return false;
 }
 
@@ -60,31 +64,64 @@ bool ESP8266::popItemFromPipe(int slot) {
   }
 }
 
-String ESP8266::watcher() {
-  //sending new commands if the channel is free
+bool ESP8266::popItemFromPipe(String & cmd) {
+  //Serial.println("Popping item from pipe");
   
+    for(pipeSlot = 0; pipeSlot < PIPEMAXSIZE - 1; pipeSlot++) {
+      if (pipe[pipeSlot].indexOf(cmd) > -1) {
+          pipe[pipeSlot] = pipe[pipeSlot + 1];
+        }
+    }
+    if (pipe[pipeSlot].indexOf(cmd) > -1) {
+          pipe[pipeSlot] = "";
+    }
+}
+
+String ESP8266::watcher() {
+  
+
+   if(isWifiConnected) {
+    popItemFromPipe("AT+CWJAP");
+   } 
+   
+  //sending new commands if the channel is free
+  Serial.println("::FLAGS BEFORE:");
+  printFlags();
+  if(!isChannelFree) {
+    sendAttempt++;
+      if(sendAttempt > 10) {
+        resetConnection();
+      }
+  } else {
+    sendAttempt = 0;
+    }
+ 
   if(getPipeSize() > 0 && isChannelFree) {
     //pipe has data
-    Serial.print("Pipe has data.:");
+    Serial.print("Pipe has data:");
     Serial.println(getPipeSize());
     sendCommand(pipe[0]);
   }
   
   //listening for responses
   readResponse();
+  Serial.println("::::::FLAGS AFTER:");
+  printFlags();
   if(isResponseBufferReady) {
     isResponseBufferReady = false;
     isChannelFree = true;
     // popping first item from buffer
     popItemFromPipe(0);
-    return responseBuffer; 
+    //return responseBuffer; 
   } else {
-    return "";
+    emptyResponseBuffer();
+    //return "";
     }
+    return responseBuffer;
 }
 
-void ESP8266::sendCommand(String cmd) {
-  Serial.print("Sending command:");
+void ESP8266::sendCommand(String & cmd) {
+  Serial.print(">>>Sending command:");
   Serial.println(cmd);
   currentCommand = cmd;
   isChannelFree = false;
@@ -93,7 +130,8 @@ void ESP8266::sendCommand(String cmd) {
 
 void ESP8266::readResponse() {
   if(SoftSerial.available()) {
-    responseBuffer = SoftSerial.readStringUntil('\n');
+    //responseBuffer = SoftSerial.readStringUntil('\n');
+    responseBuffer = SoftSerial.readString();
     responseBuffer.trim();
     //char ssid[ssidString.length()]; 
     //ssidString.toCharArray(ssid, ssidString.length());
@@ -102,105 +140,191 @@ void ESP8266::readResponse() {
 
 };
 
-bool ESP8266::checkResponse(String response) {
+bool ESP8266::checkResponse(String & response) {
     if (response.length() > 0) {
       Serial.print("Current command:");
       Serial.println(currentCommand);
+      Serial.print("->Response:");
+      Serial.println(response);
       //intermediate response
-      if (response == "WIFI CONNECTED") {isWifiConnected = true;}
-      if (response == "WIFI DISCONNECT") {isWifiConnected = false;}    
+
       
-      if (response == "OK" || response == "SEND OK" || response == "ALREADY CONNECTED"){
-        
-        if(currentCommand.substring(0) == "AT+CIPSEND" ) {
-            if(response == ">") {
+      
+      if (response.indexOf("WIFI CONNECTED") > - 1 
+          || response.indexOf("WIFI GOT IP") > - 1
+          || response.indexOf("STATUS:2") > -1) {
+            isWifiConnected = true;
+          }
+      if (response.indexOf("WIFI DISCONNECT") > -1
+          || response.indexOf("STATUS:4") > -1) {isWifiConnected = false;}
+  
+      if (currentCommand.indexOf("AT+CIPSEND") > -1  ) {
+          Serial.println("...............it is CIPSEND");
+            if(response.indexOf(">") > -1 ) {
+                Serial.println("...............has >");
                 return true;
               } else {
               return false;
             }
-        } else {
-          return true;
+
+            if(response.indexOf("ERROR") > -1 ) {
+                Serial.println("...............has ERROR");
+                return true;
+              } 
+        } 
+
+      //exception for bug with ip reader
+      if(currentCommand.indexOf("AT+CIFSR") > -1 ) {
+        if(response.indexOf("+CIFSR") > -1) {
+            return true;
           }
-          
-         //return true;
+      }
+      
+      //exception for bug with opening connection
+      if(currentCommand.indexOf("AT+CIPSTART") > -1 ) {
+          if(response.indexOf("CONN") > -1) {
+              return true;
+            }
+        }
+
+      
+
+      //handle correct messages
+      if (response.indexOf("OK") > -1  
+          //|| response.indexOf("SEND OK") > -1  
+          || response.indexOf("ALREADY CONNECTED") > -1)
+       {
+         return true;
        }
-      if (response == "ERROR" || response == "FAIL" || response == "SEND FAIL")
+
+      //handle general error messages
+      if (response.indexOf("ERROR") > -1 
+          || response.indexOf("FAIL" ) > -1
+          || response.indexOf("SEND FAIL") > -1
+          || response.indexOf("busy") > -1)
+        {
+          return false;
+        }
+
+        ///else what to do?
+        Serial.println("Message is SOMETHING ELSE!!");
         return false;
     }
+    return false;
   }
 
 void ESP8266::printResponse() {
      
 };
 
+void ESP8266::resetConnection() {
+    isWifiConnected = false;
+    isChannelFree = true;
+    sendAttempt = 0;
+    //TODO add empty pipe 
+    //in another point
+    emptyPipe();
+  }
+
+void ESP8266::emptyResponseBuffer() {
+    responseBuffer="";
+  }
+
 void ESP8266::setStationMode() {
     // AT+CWMODE (1: Station mode (client), 2 = AP mode (host), 3 : AP + Station mode)
-    addToPipe("AT+CWMODE=1");
+    //addToPipe("AT+CWMODE=1");
+    cmdToSend = "AT+CWMODE=1";
+    addToPipe(cmdToSend);
   }
 
 void ESP8266::setBaudRate() {
   //set baud rate
-  addToPipe("AT+UART_DEF=9600,8,1,0,0");
+  //addToPipe("AT+UART_DEF=9600,8,1,0,0");
+  cmdToSend = "AT+UART_DEF=9600,8,1,0,0";
+  addToPipe(cmdToSend);
  };
  
 void ESP8266::checkFirmware () {
     //AT+GMR check firmware
-    addToPipe("AT+GMR");
+    //addToPipe("AT+GMR");
+    cmdToSend = "AT+GMR";
+  addToPipe(cmdToSend);
   };
 
 void ESP8266::connect() {
   Serial.println("...Trying to connect to WIFI");
   // AT+CWJAP connect to wifi
-
-  addToPipe("AT+CWJAP=\"" + String(WIFI_SSID) + "\",\"" + String(WIFI_PASS) + "\"");
-
-  // AT+CIFSR check ip of wifi module
-  addToPipe("AT+CIFSR");
-
   connectionStatus ();
+  if(!isWifiConnected) {
+    addToPipe("AT+CWJAP=\"" + String(WIFI_SSID) + "\",\"" + String(WIFI_PASS) + "\"");  
+   } else {
+    popItemFromPipe("AT+CWJAP");
+    }
+  // AT+CIFSR check ip of wifi module
+  //addToPipe("AT+CIFSR");  
 };
 
 void ESP8266::disconnect() {
   // AT+CWQAP disconnect from current WIFI
-  addToPipe("AT+CWQAP");  
+  //addToPipe("AT+CWQAP");  
+  cmdToSend = "AT+CWQAP";
+  addToPipe(cmdToSend);
 };
 
-void ESP8266::connectionStatus () {
+void ESP8266::connectionStatus() {
   // AT+CIPSTATUS status from the connection
-  addToPipe("AT+CIPSTATUS");
+  //addToPipe("AT+CIPSTATUS");
+  cmdToSend = "AT+CIPSTATUS";
+  addToPipe(cmdToSend);
+  
 };
 
+void ESP8266::printFlags () {
+  Serial.print("isWifiConnected:");
+  Serial.print(isWifiConnected);
+  Serial.print(" | isChannelFree:");
+  Serial.print(isChannelFree);
+  Serial.print(" | sendAttempt:");
+  Serial.print(sendAttempt);
+  Serial.print(" | isResponseBufferReady:");
+  Serial.print(isResponseBufferReady);
+  Serial.print(" | responseBuffer Size:");
+  Serial.println(responseBuffer.length());
+  }
 
 void ESP8266::htmlRequest(String url, String endpoint, String reqType, String data = "") {
   if (!isWifiConnected){
       connect();
+      return;
     }
   // AT+CIPMUX (0: single connection, 1: multiple connection)
-  addToPipe("AT+CIPMUX=1");
+  cmdToSend = "AT+CIPMUX=1";
+  addToPipe(cmdToSend);
 
   // AT+CWMODE (1: Station mode (client), 2 = AP mode (host), 3 : AP + Station mode)
-  addToPipe("AT+CWMODE=1");
+  //addToPipe("AT+CWMODE=1");
+  cmdToSend = "AT+CWMODE=1";
+  addToPipe(cmdToSend);
 
   // AT+CIPSTART establishes TCP connection
-  addToPipe("AT+CIPSTART=4,\"TCP\",\"" + String(url) + "\",80");
+  //addToPipe("AT+CIPSTART=0,\"TCP\",\"" + String(url) + "\",80");
+  cmdToSend = "AT+CIPSTART=0,\"TCP\",\"" + String(url) + "\",80";
+  addToPipe(cmdToSend);
 
-  String cmd = "";
   if(reqType == "GET") {
-    cmd = "GET " + endpoint +  " HTTP/1.1 \r\nHost: " + url + "\r\n\r\n";     
+    cmdHtmlToSend = "GET " + endpoint +  " HTTP/1.1\r\nHost: " + url + "\r\n\r\n";     
   } else if (reqType == "POST") {
     //TODO
-    cmd = "POST " + endpoint +  " HTTP/1.1 \r\nHost: " + url + "\r\n\r\n";        
+    cmdHtmlToSend = "POST " + endpoint +  " HTTP/1.1\r\nHost: " + url + "\r\n\r\n";        
     }
 
-  //test
-  //cmd = "GET /posts/42 HTTP/1.1\r\nHost: jsonplaceholder.typicode.com\r\n\r\n";     
-  //cmd = "GET /v2/5cdc13222d00005211f5a574 HTTP/1.1\r\nHost: mocky.io\r\n\r\n";     
   // AT+CIPSTART set the command size
-  addToPipe("AT+CIPSEND=4," + String(cmd.length() + 2));
-
-  delay(1000);
+  //addToPipe("AT+CIPSEND=0," + String(cmd.length() + 4));
+  cmdToSend = "AT+CIPSEND=0," + String(cmdHtmlToSend.length() + 4);
+  addToPipe(cmdToSend);
+  
   // Send the command
-  addToPipe(cmd);
+  addToPipe(cmdHtmlToSend);
  };
 
  void ESP8266::getRequest(String url, String endpoint){
@@ -211,39 +335,4 @@ void ESP8266::htmlRequest(String url, String endpoint, String reqType, String da
   
  };
 
-
- /*
-
-bool ESP8266::sendCommand(String command) {
-  Serial.println("SEND:" + command);
-  Serial.print("RECEIVE:");
-  SoftSerial.println(command);
-  while (true && sendTimeout < 5) {
-    Serial.print(".");
-    sendTimeout++;
-    response = getResponse();
-    
-    response.trim();
-    if (response.length() > 0) {
-      Serial.println(response);
-      //intermediate response
-      if (response == "WIFI CONNECTED") {wifiIsConnected = true;}
-      if (response == "WIFI DISCONNECT") {wifiIsConnected = false;}    
-      
-      if (response == "OK" || response == "SEND OK" || response == "ALREADY CONNECTED"){
-    
-        if(command.indexOf("AT+CIPSEND" >= 0)) {
-            if(response == ">")
-              return true;
-          } else {
-              return true;
-            }
-
-            //return true;
-       }
-      if (response == "ERROR" || response == "FAIL" || response == "SEND FAIL")
-        return false;
-    }
-  }
- }
-  */
+ 
