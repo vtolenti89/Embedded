@@ -13,7 +13,7 @@ const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevel = PC0;
 const int sWaterLevel = PC1;
-String response = "";
+char * response = "";
 
 ESP8266 esp8266(WIFI_RX, WIFI_TX);
 Helper helper;
@@ -53,7 +53,7 @@ void loop() {
     //esp8266.printPipe();
     
     response = esp8266.watcher();
-    if(response.length() > 0) {
+    if(!esp8266.isCharArrayEmpty(response)) {
       Serial.print("<<<<<RESPONSE:");
       Serial.println(response);
       Serial.println("++++++");  
