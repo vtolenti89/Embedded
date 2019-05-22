@@ -16,7 +16,7 @@ class ESP8266
     String cmdToSend;
     String cmdHtmlToSend;
     int pipeSlot;
-    String pipe[PIPEMAXSIZE] = {};
+    String pipe[PIPEMAXSIZE] = {""};
     String responseBuffer;
     bool isWifiConnected;
     bool isResponseBufferReady;
@@ -26,16 +26,16 @@ class ESP8266
     
   public:
    void init();
-   void addToPipe(String & cmd);
+   void addToPipe(String  cmd);
    void printPipe();
    void emptyPipe();
    int getPipeSize();
-   bool popItemFromPipe(int slot);
-   bool popItemFromPipe(String & cmd);
+   void popItemFromPipe(int slot);
+   void popItemFromPipe(String  cmd);
    String watcher();
-   void sendCommand(String & cmd);
+   void sendCommand(String  cmd);
    void readResponse();
-   bool checkResponse(String & response);
+   bool checkResponse(String  response);
    void printResponse();
    void resetConnection();
    void emptyResponseBuffer();
@@ -52,9 +52,9 @@ class ESP8266
    void connectionStatus();
 
    //web request
-   void htmlRequest(String url, String endpoint, String reqType, String data = "");
-   void getRequest(String url, String endpoint);
-   void postRequest(String url, String endpoint, String data);
+   void htmlRequest(const String& url, const String& endpoint, const String& reqType, String data = "");
+   void getRequest(const String& url, const String& endpoint);
+   void postRequest(const String& url, const String& endpoint, const String& data);
 
    SoftwareSerial SoftSerial;
    
