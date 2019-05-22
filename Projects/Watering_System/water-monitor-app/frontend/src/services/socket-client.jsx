@@ -1,5 +1,5 @@
 import openSocket from 'socket.io-client';
-const url = "http://localhost:3001";
+const url = "http://votolentino:43000";
 
 const socket = openSocket(url);
 

@@ -1,4 +1,5 @@
-const url = "http://localhost:3001";
+//const localhost = "https://localhost:3000";
+const url = "http://votolentino.com:43000";
 const localhost = "https://localhost:3000";
 
 class HttpService {
@@ -9,7 +10,7 @@ class HttpService {
     return new Promise(function (resolve, reject) {
       fetch(url + endpoint, {
         method: 'GET',
-        //credentials: 'same-origin', // persistent cookies
+        credentials: 'same-origin', // persistent cookies
         //credentials: "include",
         headers: {
           'Accept': 'application/json',
@@ -46,8 +47,8 @@ class HttpService {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin':url,
-          'x-access-token': values ? values.user.token : ''
+          //'Access-Control-Allow-Origin':url,
+          //'x-access-token': values ? values.user.token : ''
         },
         body: JSON.stringify(data)
       })
@@ -73,9 +74,10 @@ class HttpService {
   put(endpoint, data, options) {
     var values = JSON.parse(localStorage.getItem("rootKeys"));
     return new Promise(function (resolve, reject) {
+      console.log(url + endpoint);
       fetch( url + endpoint, {
         method: 'PUT',
-        //credentials: 'same-origin', // persistent cookies
+        credentials: 'same-origin', // persistent cookies
         //credentials: "include",
         headers: {
           'Accept': 'application/json',
