@@ -1,11 +1,12 @@
 #include<SoftwareSerial.h>
+#include "MemoryFree.h"
 #include "esp8266.h"
 #include "helper.h"
 #define WIFI_RX PD2
 #define WIFI_TX PD3
 
-const char url [] = "jsonplaceholder.typicode.com";
-const char endpoint [] = "/posts/42";
+const String url = "jsonplaceholder.typicode.com";
+const String endpoint = "/posts/42";
 //const char url [] = "2886795456-3000-cykoria03.environments.katacoda.com";
 //const char endpoint [] = "/data";
 const int yellowLed = PD6;
@@ -49,8 +50,8 @@ void loop() {
   }
 
    if(helper.getTimerFlag(3)){
-    //esp8266.printPipe();
-    //esp8266.printPipe();
+    Serial.print("freeMemory()=");
+    Serial.println(freeMemory());
     
     response = esp8266.watcher();
     if(response.length() > 0) {

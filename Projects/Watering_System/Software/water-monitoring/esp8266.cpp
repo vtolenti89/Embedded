@@ -8,10 +8,13 @@ void ESP8266::init() {
     connect();
 };
 
-void ESP8266::addToPipe(String & cmd) {
-  //char command[cmd.length()+1]; 
-  //cmd.toCharArray(command, cmd.length()+1);
+void ESP8266::addToPipe(String  cmd) {
+  Serial.print("Trying to add:");
+  Serial.println(cmd);
+  if(cmd.length() < 1)
+    return;
   for(pipeSlot = 0; pipeSlot < PIPEMAXSIZE; pipeSlot++) {
+<<<<<<< HEAD
     //check if the command already exists in the pipeline
     if(pipe[pipeSlot].indexOf(cmd) > -1) {
         //Serial.println("Command already exists");
@@ -30,10 +33,23 @@ void ESP8266::addToPipe(String & cmd) {
               }
         }
     
+=======
+    if(pipe[pipeSlot].indexOf(cmd) > -1) {
+       Serial.println("$$DATA already exists in slot " + String(pipeSlot));
+       pipeSlot = PIPEMAXSIZE;
+      } else {
+        if(pipe[pipeSlot].length()>0){
+          Serial.print("Slot " + String(pipeSlot) + " occupied with:");
+          Serial.println(pipe[pipeSlot]);
+        } else {
+          Serial.print("Slot " + String(pipeSlot) + " is Empty. New data:");
+          Serial.println(cmd);
+          pipe[pipeSlot] = cmd;
+          printPipe();
+          }
+        }
+>>>>>>> 07c40e4c51665afd2422b71b926ef3777eeeee1e
   }
-  Serial.println("§§NOT POSSIBLE TO ADD TO PIPE");
-  printPipe();
-  return false;
 }
 
 void ESP8266::printPipe() {
@@ -60,27 +76,32 @@ int ESP8266::getPipeSize() {
     return PIPEMAXSIZE;
 }
 
-bool ESP8266::popItemFromPipe(int slot) {
+void ESP8266::popItemFromPipe(int slot) {
   //Serial.println("Popping item from pipe");
   if(pipe[slot]){
-    for(pipeSlot = slot; pipeSlot < PIPEMAXSIZE - 1; pipeSlot++) {
-      pipe[pipeSlot] = pipe[pipeSlot + 1];
-    }
-  } else {
-    return false;
-  }
-}
-
-bool ESP8266::popItemFromPipe(String & cmd) {
-  //Serial.println("Popping item from pipe");
-  
-    for(pipeSlot = 0; pipeSlot < PIPEMAXSIZE - 1; pipeSlot++) {
-      if (pipe[pipeSlot].indexOf(cmd) > -1) {
-          pipe[pipeSlot] = pipe[pipeSlot + 1];
+    for(pipeSlot = slot; pipeSlot < PIPEMAXSIZE; pipeSlot++) {
+      if(pipeSlot < PIPEMAXSIZE - 1) {
+        pipe[pipeSlot] = pipe[pipeSlot + 1];  
+      } else {
+          pipe[pipeSlot] = "";
         }
     }
-    if (pipe[pipeSlot].indexOf(cmd) > -1) {
-          pipe[pipeSlot] = "";
+  } else {
+   Serial.println("Cannot pop item. Slot is already empty"); 
+   }
+}
+
+void ESP8266::popItemFromPipe(String  cmd) {
+  //Serial.println("Popping item from pipe");
+  
+    for(pipeSlot = 0; pipeSlot < PIPEMAXSIZE; pipeSlot++) {
+      if(pipeSlot < PIPEMAXSIZE - 1) {
+        if (pipe[pipeSlot].indexOf(cmd) > -1) {
+          pipe[pipeSlot] = pipe[pipeSlot + 1];
+        }
+      } else {
+        pipe[pipeSlot] = "";
+        }
     }
 }
 
@@ -88,12 +109,15 @@ String ESP8266::watcher() {
   
 
    if(isWifiConnected) {
+    Serial.println("POPPING AT+CWJAP");
     popItemFromPipe("AT+CWJAP");
    } 
    
   //sending new commands if the channel is free
   Serial.println("::FLAGS BEFORE:");
   printFlags();
+
+  
   if(!isChannelFree) {
     sendAttempt++;
       if(sendAttempt > 10) {
@@ -127,7 +151,7 @@ String ESP8266::watcher() {
     return responseBuffer;
 }
 
-void ESP8266::sendCommand(String & cmd) {
+void ESP8266::sendCommand(String  cmd) {
   Serial.print(">>>Sending command:");
   Serial.println(cmd);
   currentCommand = cmd;
@@ -147,7 +171,7 @@ void ESP8266::readResponse() {
 
 };
 
-bool ESP8266::checkResponse(String & response) {
+bool ESP8266::checkResponse(String  response) {
     if (response.length() > 0) {
       Serial.print("Current command:");
       Serial.println(currentCommand);
@@ -161,6 +185,7 @@ bool ESP8266::checkResponse(String & response) {
           || response.indexOf("WIFI GOT IP") > - 1
           || response.indexOf("STATUS:2") > -1) {
             isWifiConnected = true;
+            
           }
       if (response.indexOf("WIFI DISCONNECT") > -1
           || response.indexOf("STATUS:4") > -1) {isWifiConnected = false;}
@@ -300,7 +325,7 @@ void ESP8266::printFlags () {
   Serial.println(responseBuffer.length());
   }
 
-void ESP8266::htmlRequest(String url, String endpoint, String reqType, String data = "") {
+void ESP8266::htmlRequest(const String& url, const String& endpoint, const String& reqType, String data = "") {
   if (!isWifiConnected){
       connect();
       return;
@@ -310,36 +335,52 @@ void ESP8266::htmlRequest(String url, String endpoint, String reqType, String da
   addToPipe(cmdToSend);
 
   // AT+CWMODE (1: Station mode (client), 2 = AP mode (host), 3 : AP + Station mode)
-  //addToPipe("AT+CWMODE=1");
   cmdToSend = "AT+CWMODE=1";
   addToPipe(cmdToSend);
 
   // AT+CIPSTART establishes TCP connection
-  //addToPipe("AT+CIPSTART=0,\"TCP\",\"" + String(url) + "\",80");
-  cmdToSend = "AT+CIPSTART=0,\"TCP\",\"" + String(url) + "\",80";
-  addToPipe(cmdToSend);
+    Serial.print("URL:");
+    Serial.println(url);
+    Serial.print("END:");
+    Serial.println(endpoint);
+    cmdToSend = "AT+CIPSTART=0,\"TCP\",\"";
+    cmdToSend.concat(url);
+    cmdToSend.concat("\",80");
+    Serial.print("LINK:");
+    Serial.println(cmdToSend);
+    addToPipe(cmdToSend);
 
+  
+  cmdHtmlToSend = "GET ";
   if(reqType == "GET") {
-    cmdHtmlToSend = "GET " + endpoint +  " HTTP/1.1\r\nHost: " + url + "\r\n\r\n";     
+    //cmdHtmlToSend = "GET " + endpoint +  " HTTP/1.1\r\nHost: " + url + "\r\n\r\n";
+    cmdHtmlToSend.concat(endpoint);
+    cmdHtmlToSend.concat(" HTTP/1.1\r\nHost: ");
+    cmdHtmlToSend.concat(url);
+    cmdHtmlToSend.concat("\r\n\r\n");
+    Serial.println(cmdHtmlToSend);
   } else if (reqType == "POST") {
     //TODO
+    Serial.println("POSTTT");
     cmdHtmlToSend = "POST " + endpoint +  " HTTP/1.1\r\nHost: " + url + "\r\n\r\n";        
     }
 
   // AT+CIPSTART set the command size
   //addToPipe("AT+CIPSEND=0," + String(cmd.length() + 4));
-  cmdToSend = "AT+CIPSEND=0," + String(cmdHtmlToSend.length() + 4);
+  cmdToSend = "AT+CIPSEND=0,";
+  cmdToSend.concat(String(cmdHtmlToSend.length() + 4));
   addToPipe(cmdToSend);
-  
-  // Send the command
+    
+  Serial.println(cmdHtmlToSend);
+   // Send the command
   addToPipe(cmdHtmlToSend);
  };
 
- void ESP8266::getRequest(String url, String endpoint){
+ void ESP8266::getRequest(const String& url, const String& endpoint){
     htmlRequest(url, endpoint, "GET");
  };
 
- void ESP8266::postRequest(String url, String endpoint, String data) {
+ void ESP8266::postRequest(const String& url, const String& endpoint, const String& data) {
   
  };
 
