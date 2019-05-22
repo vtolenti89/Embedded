@@ -58,11 +58,12 @@ void loop() {
       Serial.println(response);
       Serial.println("++++++");  
     }
+        esp8266.getRequest(url, endpoint);
    }
 
    if(helper.getTimerFlag(4)){ 
     PORTD^=(1 << redLed);
-    esp8266.getRequest(url, endpoint);
+
    }
 
   helper.updateTimer();

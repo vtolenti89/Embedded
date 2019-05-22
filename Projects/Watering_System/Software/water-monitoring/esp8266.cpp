@@ -12,17 +12,24 @@ void ESP8266::addToPipe(String & cmd) {
   //char command[cmd.length()+1]; 
   //cmd.toCharArray(command, cmd.length()+1);
   for(pipeSlot = 0; pipeSlot < PIPEMAXSIZE; pipeSlot++) {
-    if(pipe[pipeSlot].length()>0){
-      //Serial.print("Slot occupied with:");
-      //Serial.println(pipe[pipeSlot]);
-    } else {
-      //Serial.print("Slot is Empty. New data:");
-      //Serial.println(cmd);
-      pipe[pipeSlot] = cmd;
-      Serial.println("§§ADDED TO PIPE");
-      printPipe();
-      return true;
-    }
+    //check if the command already exists in the pipeline
+    if(pipe[pipeSlot].indexOf(cmd) > -1) {
+        //Serial.println("Command already exists");
+        pipeSlot = PIPEMAXSIZE;
+      } else {
+          if(pipe[pipeSlot].length()>0){
+            //Serial.print("Slot occupied with:");
+            //Serial.println(pipe[pipeSlot]);
+              } else {
+                //Serial.print("Slot is Empty. New data:");
+                //Serial.println(cmd);
+                pipe[pipeSlot] = cmd;
+                Serial.println("§§ADDED TO PIPE");
+                printPipe();
+                return true;
+              }
+        }
+    
   }
   Serial.println("§§NOT POSSIBLE TO ADD TO PIPE");
   printPipe();
@@ -256,6 +263,7 @@ void ESP8266::connect() {
   // AT+CWJAP connect to wifi
   connectionStatus ();
   if(!isWifiConnected) {
+    Serial.println("IT IS NOT CONNECTED");
     addToPipe("AT+CWJAP=\"" + String(WIFI_SSID) + "\",\"" + String(WIFI_PASS) + "\"");  
    } else {
     popItemFromPipe("AT+CWJAP");

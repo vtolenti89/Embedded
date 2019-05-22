@@ -3,10 +3,10 @@
 #include <Arduino.h>
 #include<SoftwareSerial.h>
 
-//#define WIFI_SSID "UPC6E2796A"
-//#define WIFI_PASS "Jmre8szre4ez"
-#define WIFI_SSID "FlixRouter"
-#define WIFI_PASS "12345678!"
+#define WIFI_SSID "UPC6E2796A"
+#define WIFI_PASS "Jmre8szre4ez"
+//#define WIFI_SSID "FlixRouter"
+//#define WIFI_PASS "12345678!"
 #define BAUD_RATE 9600
 #define PIPEMAXSIZE 10
 #define DEBUG true
