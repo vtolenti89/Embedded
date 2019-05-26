@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:WateringSystem-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -238,12 +238,6 @@ Wire Wire Line
 	5800 2700 5950 2700
 Text Label 5950 2700 0    50   ~ 0
 5V0
-Wire Wire Line
-	5700 3200 5700 2700
-Wire Wire Line
-	5700 2700 5600 2700
-Text Label 5600 2700 0    50   ~ 0
-3V3
 Wire Wire Line
 	1200 3700 1400 3700
 Text Label 1400 3700 0    50   ~ 0
@@ -777,4 +771,87 @@ Text Label 7550 6300 0    50   ~ 0
 RST_WIFI
 Text Label 8750 5650 0    50   ~ 0
 GPIO0_WIFI
+$Comp
+L Regulator_Linear:MIC5219-3.3YM5 U?
+U 1 1 5CEABBD1
+P 2250 6500
+F 0 "U?" H 2250 6842 50  0000 C CNN
+F 1 "MIC5219-3.3YM5" H 2250 6751 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2250 6825 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/MIC5219-500mA-Peak-Output-LDO-Regulator-DS20006021A.pdf" H 2250 6500 50  0001 C CNN
+	1    2250 6500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5700 3200
+$Comp
+L power:GND #PWR?
+U 1 1 5CEBC8EB
+P 2250 7350
+F 0 "#PWR?" H 2250 7100 50  0001 C CNN
+F 1 "GND" H 2255 7177 50  0000 C CNN
+F 2 "" H 2250 7350 50  0001 C CNN
+F 3 "" H 2250 7350 50  0001 C CNN
+	1    2250 7350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 6800 2250 7250
+Wire Wire Line
+	1950 6400 1750 6400
+Wire Wire Line
+	2550 6400 3050 6400
+Text Label 1250 6400 0    50   ~ 0
+5V0
+Text Label 3250 6400 0    50   ~ 0
+3V3
+Wire Wire Line
+	1950 6500 1750 6500
+Wire Wire Line
+	1750 6500 1750 6400
+Connection ~ 1750 6400
+Wire Wire Line
+	1750 6400 1250 6400
+$Comp
+L Device:C C?
+U 1 1 5CECCB8D
+P 3050 6900
+F 0 "C?" H 3165 6946 50  0000 L CNN
+F 1 "2u2" H 3165 6855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3088 6750 50  0001 C CNN
+F 3 "~" H 3050 6900 50  0001 C CNN
+	1    3050 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CECD573
+P 2700 6900
+F 0 "C?" H 2815 6946 50  0000 L CNN
+F 1 "470p" H 2815 6855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2738 6750 50  0001 C CNN
+F 3 "~" H 2700 6900 50  0001 C CNN
+	1    2700 6900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 6500 2700 6500
+Wire Wire Line
+	2700 6500 2700 6750
+Wire Wire Line
+	2700 7050 2700 7250
+Wire Wire Line
+	2700 7250 2250 7250
+Connection ~ 2250 7250
+Wire Wire Line
+	2250 7250 2250 7350
+Wire Wire Line
+	3050 7050 3050 7250
+Wire Wire Line
+	3050 7250 2700 7250
+Connection ~ 2700 7250
+Wire Wire Line
+	3050 6750 3050 6400
+Connection ~ 3050 6400
+Wire Wire Line
+	3050 6400 3250 6400
 $EndSCHEMATC

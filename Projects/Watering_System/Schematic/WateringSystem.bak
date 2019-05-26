@@ -776,5 +776,5 @@ Wire Wire Line
 Text Label 7550 6300 0    50   ~ 0
 RST_WIFI
 Text Label 8750 5650 0    50   ~ 0
-GPIO_WIFI
+GPIO0_WIFI
 $EndSCHEMATC
