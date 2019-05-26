@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include<SoftwareSerial.h>
 
-Helper::Helper(long counter = 20) {
+Helper::Helper(long counter = 10) {
     timerRefCounter = 0;
     timer10XCounter = 0;
     timer100XCounter = 0;
@@ -37,7 +37,7 @@ void Helper::updateTimer () {
         timer100XFlag = true;
         timer1000XCounter++;
 
-        if(timer1000XCounter >= 10) {
+        if(timer1000XCounter >= 60) {
           timer1000XCounter = 0;
           timer1000XClock = !timer1000XClock;
           timer1000XFlag = true;

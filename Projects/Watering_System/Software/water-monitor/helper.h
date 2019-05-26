@@ -19,7 +19,7 @@ class Helper {
     long timer1000XCounter;
   
   public:
-    Helper(long counter = 20);
+    Helper(long counter = 10);
     ~Helper();
     void updateTimer();
     bool getTimerFlag(int multiplier);

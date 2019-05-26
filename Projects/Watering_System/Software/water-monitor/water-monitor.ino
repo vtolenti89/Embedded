@@ -22,7 +22,10 @@ const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevel = PC0;
 const int sWaterLevel = PC1;
-
+const long motorTurnOnDelay = 60; //
+minutes
+const long motorOnTime = 5; //minutes 
+long motorTimeDelay = 0;
 
 Helper helper;
 
@@ -95,6 +98,7 @@ void loop()
     if(helper.getTimerFlag(2)){
       PORTD^=(1 << yellowLed);
       //esp8266.getRequest(url , endpoint);
+      
     }
 
    if(helper.getTimerFlag(3)){
@@ -103,8 +107,17 @@ void loop()
 
    if(helper.getTimerFlag(4)){ 
     PORTD^=(1 << redLed);
+    motorTimeDelay++;
     getReq(url, endpoint);
    }
+
+   if(motorTimeDelay >= motorTurnOnDelay) {
+      PORTB|=(1 << motorPWM);
+      if(motorTimeDelay - motorTurnOnDelay > motorOnTime) {
+          PORTB&=~(1 << motorPWM);
+          motorTimeDelay=0;
+        }
+    }
     helper.updateTimer();
 }
 
