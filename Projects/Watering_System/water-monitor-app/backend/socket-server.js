@@ -24,7 +24,6 @@ io.on('connection', function(socket) {
 });
 
 socketApi.sendNotification = function(data) {
-    console.log('SENDINGGGGG')
     io.sockets.emit('outgoingData', data);
 }
 

@@ -20,6 +20,7 @@ class App extends React.Component {
         waterLevel: 0
       },
       endpoint: "http://votolentino.com:43000"
+      // endpoint: "http://localhost:43000"
   };
 
     this.getGardenStatus = this.getGardenStatus.bind(this);

@@ -13,5 +13,5 @@ function getStatus() {
 }
 
 function setWaterLevel(waterLevel) {
-    return http.put('/garden/setwaterlevel', {waterLevel: waterLevel});
+    return http.put('/garden/updatewaterlevel', {waterLevel: waterLevel});
 }

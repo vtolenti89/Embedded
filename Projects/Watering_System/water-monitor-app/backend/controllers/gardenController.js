@@ -23,16 +23,47 @@ exports.status = async function(req, res) {
   }
 };
 
+exports.updateHeartBeat = async function(req, res) {
+  try {
+    let updateHeartBeat = await pool.query(
+      `UPDATE garden_system SET heartBeat = 'ok' WHERE id = 1`
+    );
+    if (updateHeartBeat.affectedRows) {
+      let heartBeat = await pool.query(
+        "SELECT * FROM garden_system WHERE id = 1"
+      );
+      response.sendResponse(heartBeat, res);
+    }
+  } catch (err) {}
+};
+
 exports.setWaterLevel = async function(req, res) {
+  let newWaterLevel = req.params.level;
+  console.log(req.body);
+  try {
+    let updateWaterLevel = await pool.query(
+      `UPDATE garden_system SET waterLevel = ${newWaterLevel} WHERE id = 1`
+    );
+    if (updateWaterLevel.affectedRows) {
+      let waterLevel = await pool.query(
+        "SELECT waterLevel FROM garden_system WHERE id = 1"
+      );
+      socketApi.sendNotification(waterLevel[0]);
+      response.sendResponse(waterLevel[0], res);
+    }
+  } catch (err) {}
+};
+
+exports.updateWaterLevel = async function(req, res) {
   let newWaterLevel = req.body.waterLevel;
   console.log(req.body);
   try {
     let updateWaterLevel = await pool.query(
-      `UPDATE garden_system SET waterLevel = ${newWaterLevel}`
+      `UPDATE garden_system SET waterLevel = ${newWaterLevel} WHERE id = 1`
     );
     if (updateWaterLevel.affectedRows) {
       let waterLevel = await pool.query(
-        "SELECT waterLevel FROM garden_system limit 1"
+        "SELECT waterLevel FROM garden_system WHERE id = 1"
       );
       socketApi.sendNotification(waterLevel[0]);
       response.sendResponse(waterLevel[0], res);

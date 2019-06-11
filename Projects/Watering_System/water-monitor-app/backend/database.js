@@ -6,7 +6,7 @@ var util = require('util')
 //   host: 'localhost',
 //   user: 'root',
 //   password: 'root',
-//   database: 'iot',
+//   database: 'votolent_iot',
 //   socketPath: process.platform === 'darwin' ? '/Applications/MAMP/tmp/mysql/mysql.sock' : ''
 // })
 
@@ -30,18 +30,17 @@ var dbInit = [
   `CREATE TABLE IF NOT EXISTS garden_system (
     id int(5) NOT NULL AUTO_INCREMENT,
     waterLevel int(5),
+    heartBeat char(20),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
   ) ENGINE=InnoDB  DEFAULT CHARSET=latin1`,
   //Mock data
-  `INSERT INTO garden_system (waterLevel) VALUES ('50')`,
-  // `DELIMITER //
-  //   CREATE TRIGGER garden_system_after_update AFTER UPDATE ON garden_system FOR EACH ROW
-  // BEGIN
-  //   DECLARE vUser varchar(50);
-  
-  // END; //
-  // DELIMITER ;`
+  // `INSERT INTO garden_system (waterLevel) VALUES ('50')`,
+  `INSERT INTO garden_system (waterLevel, heartBeat)
+  SELECT * FROM (SELECT '50', 'notok') AS tmp
+  WHERE NOT EXISTS (
+    SELECT id FROM garden_system WHERE id = 1
+) LIMIT 1;`
 ];
 
 //initial database setup
@@ -74,7 +73,6 @@ pool.getConnection((err, connection) => {
 
   connection.on('error', function (err) {
     console.log("[mysql error]", err);
-    res.json({ "code": 100, "status": "Error in connection database" });
     return;
   });
 
