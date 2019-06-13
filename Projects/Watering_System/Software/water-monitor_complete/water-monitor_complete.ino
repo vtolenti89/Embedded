@@ -1,30 +1,48 @@
 #include "helper.h"
 #include "WiFiEsp.h"
 
+enum waterLevelStates {
+  WL_0 = 0, // water level is empty
+  WL_20 = 20, // water level is 20%
+  WL_40 = 40, // water level is 40% 
+  WL_60 = 60, // water level is 60%
+  WL_80 = 80, // water level is 80%
+  WL_100= 100 // water level is 100%
+};
+
+
 // Emulate Serial1 on pins 6/7 if not present
 #ifndef HAVE_HWSERIAL1
 #include "SoftwareSerial.h"
 SoftwareSerial Serial1(PD2, PD3); // RX, TX
 #endif
 
+//wifi settings
 char ssid[] = "UPC6E2796A";            // your network SSID (name)
 char pass[] = "Jmre8szre4ez";        // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
-//const String url = "jsonplaceholder.typicode.com";
-//const String endpoint = "/posts/42";
+//router setting
+const char url[] = "votolentino.com";
+const long httpPort = 43000; //default 80
+const char epGetWaterLevel [] = "/garden";
+const char epSetWaterLevel [] = "/garden/setwaterlevel/";
+const char epUptHeartBeat [] = "/garden/updateheartbeat";
+char epSetWaterLevelBuffer [sizeof(epSetWaterLevel) + 1]; 
 
-//char server[] = "arduino.cc";
-char url[] = "jsonplaceholder.typicode.com";
-char endpoint [] = "/posts/42"; 
+//pin settings
 const int yellowLed = PD6;
 const int redLed = PD7;
 const int motorPWM = PB1;
 const int lWaterLevelPin = A0;
 const int sWaterLevelPin = PC1;
-const long motorTurnOnDelay = 1; // minutes
-const long motorOnTime = 2; //minutes 
-long motorTimeDelay = 0;
+
+//motor and water level settings
+enum waterLevelStates wlState;
+enum waterLevelStates previouswlState;
+const long motorTurnOnDelay = 720; // minutes
+const long motorOnTime = 20; //minutes 
+long motorTimeDelay = 0; //minutes
 long int lWaterLevel = 0;
 
 Helper helper;
@@ -66,14 +84,14 @@ void setup()
 
   // you're connected now, so print out the data
   Serial.println("You're connected to the network");
+
   
   printWifiStatus();
-
+  
   Serial.println();
   Serial.println("Starting connection to server...");
   // if you get a connection, report back via serial
-  //getReq("arduino.cc", "/asciilogo.txt");
-  getReq(url, endpoint);
+  getReq(url, epUptHeartBeat);
 }
 
 void loop()
@@ -87,12 +105,7 @@ void loop()
 
   // if the server's disconnected, stop the client
   if (!client.connected()) {
-    //Serial.println();
-    //Serial.println("Disconnecting from server...");
     client.stop();
-
-    // do nothing forevermore
-    //while (true);
   }
 
     if(helper.getTimerFlag(2)){
@@ -102,20 +115,24 @@ void loop()
     }
 
    if(helper.getTimerFlag(3)){
-    lWaterLevel = analogRead(lWaterLevelPin);
-    Serial.print("Water Level:");
-    Serial.println(lWaterLevel);
+    wlState = uptWaterState();
+    //check water level
    }
 
    if(helper.getTimerFlag(4)){ 
-    //PORTD^=(1 << redLed);
-    motorTimeDelay++;
-    getReq(url, endpoint);
+    //only increment the motor time
+    //if there is water in the tank
+    if(wlState > WL_0) {
+      motorTimeDelay++;      
+    }
+
+    getReq(url, epUptHeartBeat);
     Serial.print("motorTimeDelay:");
     Serial.println(motorTimeDelay);
+    uptDBWaterLevel(wlState);
    }
 
-   if(motorTimeDelay >= motorTurnOnDelay) {
+   if(motorTimeDelay >= motorTurnOnDelay && wlState > WL_0) {
       PORTB|=(1 << motorPWM);
       PORTD|=(1 << redLed);
       if(motorTimeDelay - motorTurnOnDelay > motorOnTime) {
@@ -130,13 +147,20 @@ void loop()
 
 
 void getReq (char * url, char * endpoint) {
-  if (client.connect(url, 80)) {
-    Serial.println("Connected to server");
+  // close any connection before send a new request
+  // this will free the socket on the WiFi shield
+  client.stop();
+  
+  if (client.connect(url, httpPort)) {
+    Serial.println("Connecting...");
     // Make a HTTP request
     client.println("GET " + String(endpoint) +" HTTP/1.1");
     client.println("Host: " + String(url));
     client.println("Connection: close");
     client.println();
+  }else {
+    // if you couldn't make a connection
+    Serial.println("Connection failed");
   }
 }
 
@@ -157,4 +181,40 @@ void printWifiStatus()
   Serial.print("Signal strength (RSSI):");
   Serial.print(rssi);
   Serial.println(" dBm");
+}
+
+
+waterLevelStates uptWaterState() {
+    lWaterLevel = analogRead(lWaterLevelPin);
+    Serial.print("Water Level:");
+    Serial.print(lWaterLevel);
+    Serial.print(",WLState:");
+    Serial.println(wlState);
+    
+  previouswlState = wlState;
+  if(lWaterLevel >= 900) {
+    return WL_0;
+    } else if (lWaterLevel >= 800){
+      return WL_20;
+      }else if (lWaterLevel >= 650){
+      return WL_40;
+      }else if (lWaterLevel >= 600){
+      return WL_60;
+      }else if (lWaterLevel >= 500){
+      return WL_80;
+      } else {
+        return WL_100;
+        }
+  //update the database if the wlState changed
+  //if(previouswlState != wlState) {
+      
+  //}
+}
+
+
+void uptDBWaterLevel(int waterLevel) {
+  sprintf(epSetWaterLevelBuffer, "%s%i", epSetWaterLevel, waterLevel);
+  Serial.print("Setting Water level - Calling:");
+  Serial.println(epSetWaterLevelBuffer);
+  getReq(url, epSetWaterLevelBuffer);
 }

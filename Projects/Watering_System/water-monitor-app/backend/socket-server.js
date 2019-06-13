@@ -1,5 +1,8 @@
 var socket_io = require('socket.io');
+var middleware = require('socketio-wildcard')();
 var io = socket_io();
+
+io.use(middleware);
 var socketApi = {};
 
 socketApi.io = io;
@@ -12,6 +15,22 @@ io.on('connection', function(socket) {
     socket.on('incomingData', function(data) {
         //Here we broadcast it out to all other sockets EXCLUDING the socket which sent us the data
         console.log('CLIENT SENDS:', data)
+            //broadcast to everyone but this user
+            //socket.broadcast.emit("outgoingData", { num: data });
+        //socket.emit("outgoingData", { num: data });
+    });
+
+    socket.on('incomingData', function(data) {
+        //Here we broadcast it out to all other sockets EXCLUDING the socket which sent us the data
+        console.log('CLIENT SENDS MSG:', data)
+            //broadcast to everyone but this user
+            //socket.broadcast.emit("outgoingData", { num: data });
+        //socket.emit("outgoingData", { num: data });
+    });
+
+    socket.on('*', function(data) {
+        //Here we broadcast it out to all other sockets EXCLUDING the socket which sent us the data
+        console.log('CLIENT SENDS FIN:', data)
             //broadcast to everyone but this user
             //socket.broadcast.emit("outgoingData", { num: data });
         //socket.emit("outgoingData", { num: data });
